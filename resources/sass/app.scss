@@ -1,0 +1,315 @@
+$base-color: #65bcab;
+$include-pictos-font: false;
+$include-default-icons: false;
+$include-highlights: false;
+$base-gradient: none;
+$basic-slider: true;
+$body-bg-color: #fff;
+$list-active-color: #54c2c2;
+$list-pressed-color: #42c2c1;
+$loading-spinner-color: #f64e8f;
+
+// exclude components that app is not using
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/src/tab/Panel';
+
+
+//@font-face {
+//  font-family: 'Kranky', cursive;
+//  src: url('../css/Kranky.ttf') format('truetype');}
+ 
+//$font-family: 'Kranky', sans-serif !default;
+
+
+//-------------------------------------------- LIST -------------------------------------------
+
+.gebarenlijst {
+  background-color: #66bbab !important;
+  color: #dde4ce !important;
+  padding: 20px auto !important;
+  text-align: center !important;
+}
+
+.x-list .x-list-item img {padding: 10px 0 !important;}
+
+.x-list .x-list-item.x-item-pressed, .x-list .x-list-item.x-item-selected.x-list-item-tpl {
+  background-color: #409d8b !important;
+}
+
+.x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml {
+padding: 10px !important;
+}
+
+.x-list .x-list-item {
+  color: #dde4ce !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  float: left;
+  display: block;
+  margin: 10px;
+  text-align: center !important;
+  width: 150px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+//-------------------------------------------- SIMPLE TEKST PAGEES -------------------------------
+
+.tekstscreen {
+  background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important;
+  background-repeat: repeat-x;
+  background-position: center 40%;
+//  background-color: #65bcab !important;
+//  background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important; /* For Safari 5.1 to 6.0 */
+//  padding: 0.5em  !important;  
+}
+
+h3 {color: #409d8b !important;} 
+h4 {color: #fff !important; font-size: 20px !important;} 
+
+#hometekst {position: fixed; bottom: 200px; left: 120px;} 
+
+.x-html {
+line-height: 1.6 !important;
+color: #777 !important;
+font-size: 1em !important;
+}
+
+//-------------------------------------------- BUTTONS -------------------------------------------
+.closepanel {
+  background-image: url('../images/close.png')  !important;
+  background-repeat: no-repeat;
+  background-color: #65bcab !important;
+  width: 768px;
+  height: 60px;
+  margin: -60px 0 0 0 !important;
+  border: none !important
+}
+
+.audioButton
+{
+ background-image: url('../images/sound-button-back.png')!important;
+ background-repeat: no-repeat;
+// padding: 3px 0 3px 60px!important;
+// margin: 0 auto 0 350px !important;
+ width: 230px;
+ height: 60px;
+// border-color: #fff !important;
+// color: #dce4d0 !important;
+ background-color: transparent !important;
+ text-transform:uppercase !important; 
+ border: 0 !important;
+// webkit-box-align: center;
+ position: absolute;
+top: 460px;
+left: 344px;
+// text-align: left !important;
+ // padding-bottom: 8px !important;
+}
+
+
+.x-button-label {
+  color: #dce4d0 !important;
+//  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+  margin-left: 80px !important;
+  text-align: left !important;
+}
+
+.backButton  {
+   background-image: url('../images/arrow-left-small.png')!important;
+   background-repeat: no-repeat;
+//   background-position: 10px 40px; 
+//   background-color: #54c3c1 !important;
+   width: 172px !important;
+   height: 60px !important; 
+//   padding: 35px 5px 0 55px !important;
+   border: 0 !important;
+//   margin: -15px auto -10px auto !important;
+//   border-radius: 10px; 
+   position: absolute !important;
+    top: 460px;
+    left: 20px;
+}
+
+.play-video-button {
+  display: block !important;
+  height: 432px;
+  background-image: url('../images/before-play-video.png');
+  background-repeat: no-repeat;
+  background-position: center 67px;
+  -webkit-animation: pulse2 2s linear infinite;
+
+//  background-color: #666 !important
+}
+
+//-------------------------------------------- VIDEO -------------------------------------------
+
+video {
+//  background-color: #7bcdca !important; // important moet erbij
+  width: 768px !important;
+  height: 432px !important;
+  overflow: hidden !important;
+ -webkit-animation: fadein .5s !important;
+ 
+}
+
+
+.x-video.loading {
+  -webkit-transform:translateX(2048px) !important;
+}
+
+.x-media {
+  top: 0px !important;
+}
+
+.x-video>* {
+  
+//-webkit-animation: fadein 1s !important;
+}
+
+.x-button {
+// display: none !important
+background-color: transparent !important;
+border: 0px !important;
+}
+
+.x-video-ghost {
+background-color: transparent !important;
+//background: url('../images/play-video.png') center center no-repeat !important;
+//-webkit-animation: fadein 2s 1s !important;
+}
+
+.x-layout-card-item {
+// background: none;
+}
+
+
+.x-video {
+  background: none !important;
+}
+
+
+*, *:after, *:before {
+ -webkit-tap-highlight-color: rgba(123, 205, 202, 1) !important;
+}
+
+
+//-------------------------------------------- VIDEO in panel carousel ----------------------------
+
+.x-panel.x-floating, .x-msgbox, .x-form.x-floating {
+ padding: 0px !important; 
+ background-color: transparent !important;
+}
+
+.x-panel.x-floating .x-panel-inner, .x-panel.x-floating>.x-body, .x-msgbox .x-panel-inner, .x-msgbox>.x-body, .x-form.x-floating .x-panel-inner, .x-form.x-floating>.x-body {
+z-index: 1;
+background-color: transparent !important;
+}
+
+.x-mask {
+  background: rgba(0,0,0,0) center center no-repeat !important;
+}
+
+//-------------------------------------------- ANIMATION -------------------------------------------
+
+
+.listdetailimage {-webkit-animation: fadein .3s; position: absolute; top: 20px}
+
+.fade-in {-webkit-animation: fadein .3s;}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@keyframes pulse2 {
+ 0% {-webkit-transform: scale(1);}
+ 100% {-webkit-transform: scale(0.9);}
+}
+
+@-webkit-keyframes "pulse2" {
+ 0% {
+   -webkit-transform: scale(1.0);
+   transform: scale(1.0);
+ }
+ 50% {
+   -webkit-transform: scale(0.9);
+   transform: scale(0.9);
+ }
+ 100% {
+   -webkit-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+.swipe-animation {-webkit-animation: swipeanimation 1s steps(30) 4 alternate; width: 86px; height: 103px; float: right;}
+@-webkit-keyframes swipeanimation {
+  -webkit-animation-timing-function: linear;
+   0% {padding-left:0px;}
+   100% {padding-left:70px;}
+}
+
+//-------------------------------------------- Tool bar bottom -------------------------------------------   
+
+.x-tabbar-dark.x-docked-bottom .x-tab-active {
+background-image: none !important;
+}
+
+.x-tabbar.x-docked-bottom .x-tab .x-button-icon {
+  margin: 8px auto 0 auto !important;
+}
+
+.x-tabbar.x-docked-bottom .x-tab {
+border-radius: 3em !important;
+}
+
+.x-img.x-img-background {
+  background-position: bottom;
+  background-size: auto;
+}
+
+.x-tabbar-dark {
+  border-top-color: #409d8b !important; 
+  border-bottom-color: #409d8b !important; 
+  background-image: #409d8b !important; 
+  background-color: #409d8b !important;
+}
+
+//-------------------------------------------- p ------------------------------------------- 
+
+#gebarencarousel, .gebarendetail {
+  background: url('../images/background.png')!important;
+  background-size: 100% !important;
+  background-repeat:no-repeat !important;
+//  background-color: #7bcdca !important; // important moet erbij
+}
+
+.mainimage {
+  margin-top: -50px !important;
+}
+
+
+
+//-------------------------------------------- NAVIGATION ICONS -------------------------------------------
+
+@include icon-font('icomoon', inline-font-files(
+  'icomoon/icomoon.eot', eot,
+  'icomoon/icomoon.woff', woff,
+  'icomoon/icomoon.ttf', truetype,
+  'icomoon/icomoon.svg', svg
+));
+ 
+@include icon("home"  , "\e600", "icomoon");
+@include icon("star"  , "\e605", "icomoon");
+@include icon("search", "\e602", "icomoon");
+@include icon("info"  , "\e606", "icomoon");
+
+
+
