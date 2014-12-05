@@ -13,6 +13,9 @@ $loading-spinner-color: #f64e8f;
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/src/tab/Panel';
 
+body {
+  overflow: hidden;
+}
 
 //@font-face {
 //  font-family: 'Kranky', cursive;

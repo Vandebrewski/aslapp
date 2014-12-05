@@ -19,6 +19,20 @@ Ext.define('ASLKids.view.Viewport', {
         {xtype: 'navlist'}, 
         {xtype: 'quizpanel'}, 
         {xtype: 'extrapanel'}
-        ]
+        ],
+
+        listeners: {
+            swipe: {
+                element: 'element',
+                fn: function(event, node, options, eOpts) {
+                    console.log('?');
+                    if (event.direction == 'right') {
+                        Ext.Viewport.showMenu('left');
+                    } else {
+                        Ext.Viewport.hideMenu('left');
+                    }
+                }
+            }
+        }
     }
 });
