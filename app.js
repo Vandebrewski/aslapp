@@ -16,7 +16,7 @@ Ext.application({
     ],
     // models: ['Gebaar'],
     // stores: ['Gebaar'],
-    controllers: ['Main'],
+    controllers: ['Main', 'Quiz'],
     // views: ['Home', 'Card', 'NavList', 'Extra'],
 
     icon: {

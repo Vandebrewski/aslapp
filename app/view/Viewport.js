@@ -17,6 +17,7 @@ Ext.define('ASLKids.view.Viewport', {
         {xtype: 'homepanel'}, 
         {xtype: 'cardpanel'}, 
         {xtype: 'navlist'}, 
+        {xtype: 'quizpanel'}, 
         {xtype: 'extrapanel'}
         ]
     }
