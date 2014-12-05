@@ -38,7 +38,7 @@ Ext.define('ASLKids.controller.Quiz', {
          * The number of questions to ask
          * @type {Number}
          */
-        questionCount: 3,
+        questionCount: 5,
 
         /**
          * The current question the user is answering
@@ -46,6 +46,13 @@ Ext.define('ASLKids.controller.Quiz', {
          * @private
          */
         currentQuestionIndex: 0,
+
+        /**
+         * The existing question indexes. We use this so we don't have the same question twice.
+         * @type {Array}
+         * @private
+         */
+        existingQuestionIndexes: [],
 
         /**
          * An object of correct and incorrect answers
@@ -72,6 +79,7 @@ Ext.define('ASLKids.controller.Quiz', {
         });
 
         this.setCurrentQuestionIndex(0);
+        this.setExistingQuestionIndexes([]);
         this.setFinished(false);
         this.generateQuestions();
 
@@ -142,9 +150,10 @@ Ext.define('ASLKids.controller.Quiz', {
     generateQuestions: function() {
         var questions = [],
             answerCount = 3,
+            existingQuestionIndexes = this.getExistingQuestionIndexes(),
             store = Ext.getStore('gebaarStore'),
             storeCount = store.getCount(),
-            answerIndexes = this.getRandomIndexes(0, storeCount - 1, answerCount),
+            answerIndexes = this.getRandomIndexes(0, storeCount - 1, answerCount, existingQuestionIndexes),
             correctIndex = this.getRandomIndexes(0, answerCount - 1, 1)[0],
             answersStore, i;
 
@@ -166,13 +175,21 @@ Ext.define('ASLKids.controller.Quiz', {
         this.getVideoView().setUrl("resources/images/" + correctAnswer.get('plaatje') + ".mp4");
 
         console.log("correct answer: ", correctAnswer.get('plaatje'));
+
+        existingQuestionIndexes.push(answerIndexes[correctIndex]);
     },
 
-    getRandomIndexes: function(min, max, number) {
+    getRandomIndexes: function(min, max, number, ignored) {
         var indexes = [];
 
         while (indexes.length < number) {
             var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            if (ignored && ignored.length > 0) {
+                if (ignored.indexOf(random) != -1) {
+                    continue;
+                }
+            }
 
             if (indexes.indexOf(random) == -1) {
                 indexes.push(random);
