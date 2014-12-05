@@ -32,7 +32,7 @@ Ext.define('ASLKids.controller.Quiz', {
          * True to show the alert after answering a question
          * @type {Boolean}
          */
-        showAnswerResultAlert: false,
+        showAnswerResultAlert: true,
 
         /**
          * The number of questions to ask
@@ -212,7 +212,16 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            Ext.Msg.alert('', correct ? "Your answer is correct!" : "Oops! Wrong answer.", function() {
+            var message = correct ? "Your answer is correct!" : "Oops! Wrong answer.";
+
+            if (!correct) {
+                var correctAnswer = store.getAt(store._correctIndex);
+
+                message += "<br />";
+                message += "The correct answer was: " + correctAnswer.get('plaatje');
+            }
+
+            Ext.Msg.alert('', message, function() {
                 this.next();
             }, this);
         }
