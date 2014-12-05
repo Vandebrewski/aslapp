@@ -33,17 +33,40 @@ Ext.application({
     },
 
     launch: function () {
-//        Ext.create('Test.view.Viewport'); I think this does exactly the same as underneath
-        
-        
-        Ext.Viewport.add([{ xtype: 'main-view' },
-        
-        
-        
-        
-        ]);
+        Ext.Viewport.add({
+            xtype: 'main-view'
+        });
 
+        // Create native side menu
+        var sideMenu = Ext.create('Ext.Menu', {
+            layout: 'fit',
+            width: 220,
+            items: [{
+                xtype: 'titlebar',
+                title: 'Side menu',
+                docked: 'top'
+            }, {
+                xtype: 'list',
+                itemTpl: '{title}',
+                data: [{
+                    title: 'Menu item 1'
+                }, {
+                    title: 'Menu item 2'
+                },
 
+                {
+                    title: 'Menu item 3'
+                }, {
+                    title: 'Menu item 4'
+                }]
+            }]
+        });
+
+        // Add side menu to viewport
+        Ext.Viewport.setMenu(sideMenu, {
+            side: 'left',
+            reveal: true
+        });
     }, // End launch
    
     onUpdated: function () {
