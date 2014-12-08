@@ -12,13 +12,13 @@ Ext.define('ASLKids.view.Viewport', {
                 duration: 300
             }
         },
+        
         items: [
-
-        {xtype: 'homepanel'}, 
-        {xtype: 'cardpanel'}, 
-        {xtype: 'navlist'}, 
-        {xtype: 'quizpanel'}, 
-        {xtype: 'extrapanel'}
+            {xtype: 'homepanel'}, 
+            {xtype: 'cardpanel'}, 
+            {xtype: 'navlist'}, 
+            {xtype: 'quizpanel'}, 
+            {xtype: 'extrapanel'}
         ],
 
         listeners: {
