@@ -9,7 +9,6 @@ Ext.define('ASLKids.controller.Quiz', {
             'questionView': 'quizpanel #questionView',
             'answersView': 'quizpanel dataview',
             'videoView': 'quizpanel #questionVideo',
-
             'resultsView': 'quizpanel #resultsView',
             'resultsText': 'quizpanel #resultsText'
         },
@@ -116,7 +115,7 @@ Ext.define('ASLKids.controller.Quiz', {
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "<div class='resulttekst'> You got <br />";
+        html += "<div class='resulttekst'> Good job!<br /><br /><img src='resources/images/correct.png'><br /><br />";
         
         var correct = results.correct;
         if (correct.length == 0) {
@@ -129,7 +128,7 @@ Ext.define('ASLKids.controller.Quiz', {
             html += correct.length + " answers";
         }
 
-        html += " correct <img src='resources/images/correct.png'>";
+        html += " correct";
 
         // incorrect
         html += " and<br /> ";
@@ -142,7 +141,7 @@ Ext.define('ASLKids.controller.Quiz', {
             html += incorrect.length;
         }
 
-        html += " incorrect <img src='resources/images/wrong.png'></div>";
+        html += " incorrect</div>";
 
         this.getResultsText().setHtml(html);
     },
@@ -174,7 +173,7 @@ Ext.define('ASLKids.controller.Quiz', {
         this.createVideoComponent();
         this.getVideoView().setUrl("resources/images/" + correctAnswer.get('plaatje') + ".mp4");
 
-        console.log("correct answer: ", correctAnswer.get('plaatje'));
+//        console.log("correct answer: ", correctAnswer.get('plaatje'));
 
         existingQuestionIndexes.push(answerIndexes[correctIndex]);
     },
@@ -218,7 +217,7 @@ Ext.define('ASLKids.controller.Quiz', {
                 var correctAnswer = store.getAt(store._correctIndex);
 
                 message += "<br />";
-                message += "The correct answer was: " + correctAnswer.get('plaatje');
+                message += "<br />The correct answer was: " + correctAnswer.get('plaatje');
             }
 
             Ext.Msg.alert('', message, function() {

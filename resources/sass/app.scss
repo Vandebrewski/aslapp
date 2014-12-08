@@ -30,17 +30,17 @@ body {
   background-color: #66bbab !important;
   color: #dde4ce !important;
   padding: 20px auto !important;
-  text-align: center !important;
+  text-align: center !important
 }
 
 .x-list .x-list-item img {padding: 10px 0 !important;}
 
 .x-list .x-list-item.x-item-pressed, .x-list .x-list-item.x-item-selected.x-list-item-tpl {
-  background-color: #409d8b !important;
+  background-color: #409d8b !important
 }
 
 .x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml {
-padding: 10px !important;
+padding: 10px !important
 }
 
 .x-list .x-list-item {
@@ -54,7 +54,7 @@ padding: 10px !important;
   text-align: center !important;
   width: 150px;
   border: 1px solid #fff;
-  border-radius: 10px;
+  border-radius: 10px
 }
 
 //-------------------------------------------- SIMPLE TEKST PAGES -------------------------------
@@ -62,21 +62,21 @@ padding: 10px !important;
 .tekstscreen {
   background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important;
   background-repeat: repeat-x;
-  background-position: center 40%;
+  background-position: center 40%
 //  background-color: #65bcab !important;
 //  background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important; /* For Safari 5.1 to 6.0 */
 //  padding: 0.5em  !important;  
 }
 
 h3 {color: #409d8b !important;} 
-h4 {color: #fff !important; font-size: 20px !important;} 
+h4 {color: #fff !important; font-size: 20px !important} 
 
-#hometekst {position: fixed; bottom: 200px; left: 120px;} 
+#hometekst {position: fixed; bottom: 200px; left: 120px} 
 
 .x-html {
 line-height: 1.6 !important;
 color: #777 !important;
-font-size: 1em !important;
+font-size: 1em !important
 }
 
 //-------------------------------------------- BUTTONS -------------------------------------------
@@ -106,7 +106,7 @@ font-size: 1em !important;
 // webkit-box-align: center;
  position: absolute;
 top: 460px;
-left: 344px;
+left: 344px
 // text-align: left !important;
  // padding-bottom: 8px !important;
 }
@@ -117,7 +117,7 @@ left: 344px;
 //  font-weight: 400 !important;
   letter-spacing: 2px !important;
   margin-left: 80px !important;
-  text-align: left !important;
+  text-align: left !important
 }
 
 .backButton  {
@@ -133,7 +133,23 @@ left: 344px;
 //   border-radius: 10px; 
    position: absolute !important;
     top: 460px;
-    left: 20px;
+    left: 20px
+}
+
+.nextButton  {
+   background-image: url('../images/nextButton.png')!important;
+   background-repeat: no-repeat;
+//   background-position: 10px 40px; 
+//   background-color: #54c3c1 !important;
+   width: 122px !important;
+   height: 60px !important; 
+//   padding: 35px 5px 0 55px !important;
+   border: 0 !important;
+//   margin: -15px auto -10px auto !important;
+//   border-radius: 10px; 
+   position: absolute !important;
+    top: 460px;
+    right: 20px
 }
 
 .play-video-button {
@@ -159,9 +175,8 @@ left: 344px;
 //   margin: -15px auto -10px auto !important;
 //   border-radius: 10px; 
    position: absolute !important;
-    top: 460px;
-    left: 300px;
- 
+    top: 540px;
+    left: 280px
 }
 
 //-------------------------------------------- QUIZ -------------------------------------
@@ -181,17 +196,17 @@ left: 344px;
   width: 200px;
   height: 200px;
   border: 1px solid #fff;
-  border-radius: 10px;
+  border-radius: 10px
 }
 
 .x-msgbox {
-  width: 400px !important;
+  width: 500px !important;
   height: 300px !important;
   margin: 50px !important;
   border: none !important;
   background-color: #0990d3 !important;
   border-radius: 10px;
-  color: #dde4ce;
+  color: #dde4ce
 }
 
 .x-msgbox-buttons .x-button {
@@ -200,17 +215,20 @@ background-color: #ea5f72 !important;
 height: 60px !important;
 color: #dde5ce;
 border-radius: 10px;
+text-align: center !important;
+padding-left: 70px
+
 }
 
 .x-toolbar {
-border-radius: 10px;
+border-radius: 10px
 }
 
 .resulttekst {
-  margin: 200px auto;
+  margin: 150px auto;
   color: #dde5ce;
   font-size: 30px;
-  text-align: center !important;
+  text-align: center !important
 }
 
 
@@ -221,17 +239,17 @@ video {
   width: 768px !important;
   height: 432px !important;
   overflow: hidden !important;
- -webkit-animation: fadein .5s !important;
+ -webkit-animation: fadein .5s !important
  
 }
 
 
 .x-video.loading {
-  -webkit-transform:translateX(2048px) !important;
+  -webkit-transform:translateX(2048px) !important
 }
 
 .x-media {
-  top: 0px !important;
+  top: 0px !important
 }
 
 .x-video>* {
@@ -242,7 +260,7 @@ video {
 .x-button {
 // display: none !important
 background-color: transparent !important;
-border: 0px !important;
+border: 0px !important
 }
 
 .x-video-ghost {
@@ -252,17 +270,17 @@ background-color: transparent !important;
 }
 
 .x-layout-card-item {
-  background: transparent;
+  background: transparent
 }
 
 
 .x-video {
-  background: none !important;
+  background: none !important
 }
 
 
 *, *:after, *:before {
- -webkit-tap-highlight-color: rgba(123, 205, 202, 1) !important;
+ -webkit-tap-highlight-color: rgba(123, 205, 202, 1) !important
 }
 
 
@@ -270,16 +288,16 @@ background-color: transparent !important;
 
 .x-panel.x-floating, .x-form.x-floating {
  padding: 0px !important; 
- background-color: transparent !important;
+ background-color: transparent !important
 }
 
 .x-panel.x-floating .x-panel-inner, .x-panel.x-floating>.x-body, .x-panel-inner, .x-form.x-floating .x-panel-inner, .x-form.x-floating>.x-body {
 z-index: 1;
-background-color: transparent !important;
+background-color: transparent !important
 }
 
 .x-mask {
-  background: rgba(0,0,0,0) center center no-repeat !important;
+  background: rgba(0,0,0,0) center center no-repeat !important
 }
 
 //-------------------------------------------- ANIMATION -------------------------------------------

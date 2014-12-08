@@ -20,9 +20,13 @@ Ext.define('ASLKids.view.GebarenDetail', {
             {
                 xtype: 'button',
                 itemId: 'backButton',
-                cls: 'backButton' //,
-//                text: 'BACK'
-            },             
+                cls: 'backButton'
+            },                         
+            {
+                xtype: 'button',
+                itemId: 'nextButton',
+                cls: 'nextButton'
+            }, 
             {
                 xtype: 'button',
                 itemId: 'listDetailButton', 

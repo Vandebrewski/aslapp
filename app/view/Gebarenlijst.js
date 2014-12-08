@@ -6,7 +6,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         cls: 'gebarenlijst',
         title: 'Dieren',
         scrollable: true,  
-        height: 1024,
+//        height: 1024,
 
 
         store: 'gebaarStore',//Ext.create('Test.store.Gebaar'),
