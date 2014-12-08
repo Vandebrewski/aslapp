@@ -2,7 +2,7 @@
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
-    "name": "ASLKids”,
+    "name": "ASLKids",
 
     /**
      * The file path to this application's front HTML document, relative to this app.json file
@@ -39,12 +39,8 @@
      *      }
      */
     "js": [
-		{
-			"path": "phonegap.js",
-			"remote": true
-		},
         {
-            "path": "touch/sencha-touch.js",
+            "path": "../touch/sencha-touch.js",
             "x-bootstrap": true
         },
         {
@@ -134,5 +130,5 @@
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "64c83dc2-6932-4bbb-9792-f78cf4040110"
+    "id": "e7ad1255-6f7e-43b3-ade0-99824b66c804"
 }

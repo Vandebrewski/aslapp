@@ -2,6 +2,7 @@ Ext.define('ASLKids.view.Quiz', {
     extend: 'Ext.Container',
     xtype: 'quizpanel',
     fullscreen: true,
+    
 
     config: {
         iconCls: 'home',
@@ -15,7 +16,7 @@ Ext.define('ASLKids.view.Quiz', {
             items: [{
                 flex: 1,
                 xtype: 'dataview',
-                itemTpl: '<img src="resources/images/{plaatje}.png" width="150">{plaatje}'
+                itemTpl: '<center><div class="quiz-options"><img src="resources/images/{plaatje}.png" width="150">{plaatje}</div></center>'
             }]
         }, {
             itemId: 'resultsView',
@@ -23,6 +24,7 @@ Ext.define('ASLKids.view.Quiz', {
                 itemId: 'resultsText'
             }, {
                 xtype: 'button',
+                cls:'again',
                 itemId: 'repeatButton',
                 text: 'do it again'
             }]

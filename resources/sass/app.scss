@@ -57,7 +57,7 @@ padding: 10px !important;
   border-radius: 10px;
 }
 
-//-------------------------------------------- SIMPLE TEKST PAGEES -------------------------------
+//-------------------------------------------- SIMPLE TEKST PAGES -------------------------------
 
 .tekstscreen {
   background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important;
@@ -147,6 +147,73 @@ left: 344px;
 //  background-color: #666 !important
 }
 
+.again {
+     background-image: url('../images/replay-button.png')!important;
+   background-repeat: no-repeat;
+//   background-position: 10px 40px; 
+//   background-color: #54c3c1 !important;
+   width: 372px !important;
+   height: 60px !important; 
+//   padding: 35px 5px 0 55px !important;
+   border: 0 !important;
+//   margin: -15px auto -10px auto !important;
+//   border-radius: 10px; 
+   position: absolute !important;
+    top: 460px;
+    left: 300px;
+ 
+}
+
+//-------------------------------------------- QUIZ -------------------------------------
+
+.quiz-options {
+//  background-color: #66bbab !important;
+  color: #dde4ce !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  float: left;
+  display: block;
+  margin: 50px 25px 0 25px;
+  padding: 30px;
+  text-align: center !important;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.x-msgbox {
+  width: 400px !important;
+  height: 300px !important;
+  margin: 50px !important;
+  border: none !important;
+  background-color: #0990d3 !important;
+  border-radius: 10px;
+  color: #dde4ce;
+}
+
+.x-msgbox-buttons .x-button {
+width: 100%;
+background-color: #ea5f72 !important;
+height: 60px !important;
+color: #dde5ce;
+border-radius: 10px;
+}
+
+.x-toolbar {
+border-radius: 10px;
+}
+
+.resulttekst {
+  margin: 200px auto;
+  color: #dde5ce;
+  font-size: 30px;
+  text-align: center !important;
+}
+
+
 //-------------------------------------------- VIDEO -------------------------------------------
 
 video {
@@ -185,7 +252,7 @@ background-color: transparent !important;
 }
 
 .x-layout-card-item {
-// background: none;
+  background: transparent;
 }
 
 
@@ -201,12 +268,12 @@ background-color: transparent !important;
 
 //-------------------------------------------- VIDEO in panel carousel ----------------------------
 
-.x-panel.x-floating, .x-msgbox, .x-form.x-floating {
+.x-panel.x-floating, .x-form.x-floating {
  padding: 0px !important; 
  background-color: transparent !important;
 }
 
-.x-panel.x-floating .x-panel-inner, .x-panel.x-floating>.x-body, .x-msgbox .x-panel-inner, .x-msgbox>.x-body, .x-form.x-floating .x-panel-inner, .x-form.x-floating>.x-body {
+.x-panel.x-floating .x-panel-inner, .x-panel.x-floating>.x-body, .x-panel-inner, .x-form.x-floating .x-panel-inner, .x-form.x-floating>.x-body {
 z-index: 1;
 background-color: transparent !important;
 }

@@ -116,7 +116,7 @@ Ext.define('ASLKids.controller.Quiz', {
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "You got ";
+        html += "<div class='resulttekst'> You got <br />";
         
         var correct = results.correct;
         if (correct.length == 0) {
@@ -129,10 +129,10 @@ Ext.define('ASLKids.controller.Quiz', {
             html += correct.length + " answers";
         }
 
-        html += " correct";
+        html += " correct <img src='resources/images/correct.png'>";
 
         // incorrect
-        html += " and ";
+        html += " and<br /> ";
         
         var incorrect = results.incorrect;
         if (incorrect.length == 0) {
@@ -142,7 +142,7 @@ Ext.define('ASLKids.controller.Quiz', {
             html += incorrect.length;
         }
 
-        html += " incorrect.";
+        html += " incorrect <img src='resources/images/wrong.png'></div>";
 
         this.getResultsText().setHtml(html);
     },
@@ -212,7 +212,7 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "Your answer is correct!" : "Oops! Wrong answer.";
+            var message = correct ? "<img src='resources/images/correct.png'>" : "<img src='resources/images/wrong.png'>";
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
