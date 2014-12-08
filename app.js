@@ -70,15 +70,6 @@ Ext.application({
             side: 'left',
             reveal: true
         });
-
-        // Add button to navbar
-        var tabBar = Ext.Viewport.query('tabbar')[0];
-        tabBar.insert(0, {
-            iconCls: 'search',
-            handler: function() {
-                Ext.Viewport.toggleMenu('left');
-            }
-        });
     }, // End launch
    
     onUpdated: function () {
