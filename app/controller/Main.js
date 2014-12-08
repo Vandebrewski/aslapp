@@ -9,6 +9,7 @@ Ext.define('ASLKids.controller.Main', {
         refs: {
             main: 'navlist',
             cardpanel:'cardpanel',
+            listView: 'gebarenlijst',
             listDetailAudio  : 'gebarendetail audio[name="listDetailAudio"]',
             listDetailButton : '#listDetailButton',
             listDetailVideo  : 'gebarendetail video[name="listDetailVideo"]',
@@ -24,6 +25,9 @@ Ext.define('ASLKids.controller.Main', {
 
             'gebarendetail #backButton': {
                 tap: 'onBackTap'
+            },
+            'gebarendetail #nextButton': {
+                tap: 'onNextTap'
             },
             'gebarenlijst': {
                 itemtap: 'showDetail'
@@ -59,6 +63,30 @@ Ext.define('ASLKids.controller.Main', {
         this.getMain().setActiveItem(0);
     },
 
+    onNextTap: function() {
+        var me = this,
+            store = Ext.getStore('gebaarStore'),
+            index = store.indexOf(me.currentDetailRecord);
+
+        index++;
+
+        if (index == store.getCount()) {
+            index = 0;
+        }
+
+        var record = store.getAt(index),
+            detail = me.getDetail(),
+            video = detail.down('video');
+            
+        video.stop();
+        video.setUrl(null);
+
+        setTimeout(function() {
+            me.showDetail(null, null, null, record);
+            video.media.dom.load();
+        }, 150);
+    },
+
     showDetail: function (view, index, target, record) {
         var me = this,
             detail = this.getDetail();
@@ -68,7 +96,13 @@ Ext.define('ASLKids.controller.Main', {
         me.getListDetailButton().setText(record.data.plaatje);
         me.getListDetailImage().setSrc("resources/images/" + record.data.plaatje + ".png");
      
-        this.getMain().setActiveItem(detail);
+        me.getMain().setActiveItem(detail);
+
+        me.currentDetailRecord = record;
+
+        setTimeout(function() {
+            me.getListView().deselectAll();
+        }, 100);
     },
 
 //-------------- CAROUSEL-------------------------------------------
