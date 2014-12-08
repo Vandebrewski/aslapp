@@ -11,6 +11,10 @@ Ext.define('ASLKids.view.Quiz', {
         layout: 'card',
 
         items: [{
+            xtype: 'toolbar',
+            docked: 'top',
+            html: 'test'
+        }, {
             itemId: 'questionView',
             layout: 'vbox',
             items: [{

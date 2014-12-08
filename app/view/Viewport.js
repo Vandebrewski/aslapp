@@ -40,7 +40,6 @@ Ext.define('ASLKids.view.Viewport', {
             swipe: {
                 element: 'element',
                 fn: function(event, node, options, eOpts) {
-                    console.log('?');
                     if (event.direction == 'right') {
                         Ext.Viewport.showMenu('left');
                     } else {
