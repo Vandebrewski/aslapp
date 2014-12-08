@@ -17,6 +17,11 @@ Ext.define('ASLKids.controller.Main', {
         }, // End refs
 
         control: {
+            // Menu
+            '#nav-menu list': {
+                select: 'onNavMenuSelect'
+            },
+
             'gebarendetail #backButton': {
                 tap: 'onBackTap'
             },
@@ -41,6 +46,21 @@ Ext.define('ASLKids.controller.Main', {
            } // End Cardpanel
         } // End control
     }, // End config
+
+    onNavMenuSelect: function(view, record) {
+        var action = record.get('action'); 
+        if (action && this[action]) {
+            this[action]();
+        }
+    },
+
+    doSomething: function() {
+        console.log('doSomething');
+    },
+
+    doSomethingElse: function() {
+        console.log('doSomethingElse');
+    },
 
     onBackTap: function() {
         this.getMain().setActiveItem(0);
