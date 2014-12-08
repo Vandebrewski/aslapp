@@ -34,5 +34,12 @@ Ext.define('ASLKids.view.Viewport', {
                 }
             }
         }
+    },
+
+    doTabChange: function(tabBar, newTab) {
+        var index = tabBar.indexOf(newTab);
+        if (index > 0) {
+            this.callSuper(arguments);
+        }
     }
 });
