@@ -41,6 +41,7 @@ Ext.application({
         var sideMenu = Ext.create('Ext.Menu', {
             layout: 'fit',
             width: 220,
+            id: 'nav-menu',
             items: [{
                 xtype: 'titlebar',
                 title: 'Side menu',
@@ -49,12 +50,12 @@ Ext.application({
                 xtype: 'list',
                 itemTpl: '{title}',
                 data: [{
-                    title: 'Menu item 1'
+                    title: 'Menu item 1',
+                    action: 'doSomething'
                 }, {
-                    title: 'Menu item 2'
-                },
-
-                {
+                    title: 'Menu item 2',
+                    action: 'doSomethingElse'
+                }, {
                     title: 'Menu item 3'
                 }, {
                     title: 'Menu item 4'
