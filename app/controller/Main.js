@@ -48,18 +48,11 @@ Ext.define('ASLKids.controller.Main', {
     }, // End config
 
     onNavMenuSelect: function(view, record) {
-        var action = record.get('action'); 
-        if (action && this[action]) {
-            this[action]();
-        }
-    },
+        var itemIndex = record.get('itemIndex'); 
+        Ext.Viewport.child('tabpanel').setActiveItem(parseInt(itemIndex));
 
-    doSomething: function() {
-        console.log('doSomething');
-    },
-
-    doSomethingElse: function() {
-        console.log('doSomethingElse');
+        // Hide the menu?
+        Ext.Viewport.toggleMenu('left');
     },
 
     onBackTap: function() {

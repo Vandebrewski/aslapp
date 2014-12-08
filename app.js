@@ -51,14 +51,16 @@ Ext.application({
                 itemTpl: '{title}',
                 data: [{
                     title: 'Menu item 1',
-                    action: 'doSomething'
+                    itemIndex: 0
                 }, {
                     title: 'Menu item 2',
-                    action: 'doSomethingElse'
+                    itemIndex: 1
                 }, {
-                    title: 'Menu item 3'
+                    title: 'Menu item 3',
+                    itemIndex: 2
                 }, {
-                    title: 'Menu item 4'
+                    title: 'Menu item 4',
+                    itemIndex: 3
                 }]
             }]
         });
