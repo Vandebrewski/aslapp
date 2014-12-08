@@ -4,7 +4,10 @@ Ext.define('ASLKids.view.Viewport', {
     
 
     config: {
-        tabBarPosition: 'bottom',
+        tabBar: {
+            hidden: true
+        },
+
         layout: {
 //            type: 'card', does not have to be here
             animation: {
@@ -18,7 +21,19 @@ Ext.define('ASLKids.view.Viewport', {
             {xtype: 'cardpanel'}, 
             {xtype: 'navlist'}, 
             {xtype: 'quizpanel'}, 
-            {xtype: 'extrapanel'}
+            {xtype: 'extrapanel'},
+            {
+                xtype: 'tabbar',
+                docked: 'bottom',
+                items: [
+                    {
+                        iconCls: 'search',
+                        handler: function() {
+                            Ext.Viewport.toggleMenu('left');
+                        }
+                    }
+                ]
+            }
         ],
 
         listeners: {
