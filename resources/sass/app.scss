@@ -4,10 +4,10 @@ $include-default-icons: false;
 $include-highlights: false;
 $base-gradient: none;
 $basic-slider: true;
-$body-bg-color: #fff;
-$list-active-color: #54c2c2;
-$list-pressed-color: #42c2c1;
-$loading-spinner-color: #f64e8f;
+$body-bg-color: #65bcab;
+$list-active-color: #65bcab;
+$list-pressed-color: #409d8b;
+$loading-spinner-color: #dde5cd;
 
 // exclude components that app is not using
 @import 'sencha-touch/default';
@@ -15,125 +15,181 @@ $loading-spinner-color: #f64e8f;
 
 body {
   overflow: hidden;
+  background-color: #65bcab !important;
+  background-image: url('../icons/splash.png');
+  background-repeat: no-repeat;
 }
 
-//@font-face {
-//  font-family: 'Kranky', cursive;
-//  src: url('../css/Kranky.ttf') format('truetype');}
+
+@font-face {
+  font-family: 'Kranky';
+  src: url('../fonts/Kranky.ttf');}
+  
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.ttf');}  
  
-//$font-family: 'Kranky', sans-serif !default;
+// $font-family: 'Kranky', sans-serif !default;
 
 
+.x-list .x-list-item, .x-button-label, h3, h4, .quizTitle, .resulttekst, .quiz-options {
+  font-family: 'Kranky', Helvetica Neue
+}
+
+
+//-------------------------------------------- MENU -------------------------------------------
+
+
+#nav-menu {
+  background-color: #E56072 !important;
+}
+
+#nav-menu .x-list .x-list-item {
+  width: 195px !important;
+  height: 195px !important;
+  color: #dde4ce;
+//  padding: 17px;
+}
+
+#nav-menu .x-list .x-list-item.x-item-selected.x-list-item-tpl {
+ background-color: #cb394d !important;
+}
+
+.menutitle {
+background-color: transparent;
+border: none !important;
+color: #dde4ce;
+font-size: 22px;
+padding: 20px !important;
+margin-bottom: 50px;
+}
+
+.menu-icon-big {
+font-size: 70px;
+padding: 20px 0 -5px 0 !important;
+  height: 150px;
+  font-family: 'icomoon' !important;
+}
+
+.menuHome {
+  height: 150px;
+  font-family: 'Kranky' !important;
+  padding: 20px 0 0px 0 !important
+//  background-image: url("../images/menu-home.png") !important;
+//  background-repeat: no-repeat;
+  
+}
+
+.menuQuiz {
+  height: 150px;
+  font-family: 'Kranky' !important;
+  padding: 20px 0 0px 0 !important
+//  background-image: url("../images/menu-quiz.png") !important;
+//  background-repeat: no-repeat;
+}
+
+.menuList {
+  height: 150px;
+  font-family: 'Kranky' !important;
+  padding: 20px 0 0px 0 !important
+//  background-image: url("../images/menu-list.png") !important;
+//  background-repeat: no-repeat;
+}
+
+.menuInfo {
+  height: 150px;
+  font-family: 'Kranky' !important;
+  padding: 20px 0 0px 0 !important  
+//  background-image: url("../images/menu-info.png") !important;
+//  background-repeat: no-repeat;
+
+}
 //-------------------------------------------- LIST -------------------------------------------
 
 .gebarenlijst {
-  background-color: #66bbab !important;
-  color: #dde4ce !important;
-  padding: 20px auto !important;
-  text-align: center !important
+  background-color: #65bcab !important;
+  color: #dde5cd !important;
+  padding: 30px 0 0 35px
+
 }
 
-.x-list .x-list-item img {padding: 10px 0 !important;}
+//.x-list .x-list-item img {padding: 5px 0 !important;}
 
 .x-list .x-list-item.x-item-pressed, .x-list .x-list-item.x-item-selected.x-list-item-tpl {
-  background-color: #409d8b !important
-}
-
-.x-list .x-list-item .x-list-item-body, .x-list .x-list-item.x-list-item-tpl .x-innerhtml {
-padding: 10px !important
+  background-color: #65bcab !important
 }
 
 .x-list .x-list-item {
-  color: #dde4ce !important;
-  font-weight: 300 !important;
-  letter-spacing: 1px !important;
+  color: !important;
+  font-weight: 400 !important;
+  /* letter-spacing: 1px !important; */
   text-transform: uppercase !important;
   float: left;
   display: block;
   margin: 10px;
   text-align: center !important;
   width: 150px;
-  border: 1px solid #fff;
-  border-radius: 10px
+  height: 150px;
+  border: 2px solid #dde5cd;
+  border-radius: 100%;
 }
 
 //-------------------------------------------- SIMPLE TEKST PAGES -------------------------------
 
 .tekstscreen {
-  background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important;
-  background-repeat: repeat-x;
-  background-position: center 40%
-//  background-color: #65bcab !important;
-//  background: -webkit-linear-gradient(#3f9d8b, #65bcab) !important; /* For Safari 5.1 to 6.0 */
-//  padding: 0.5em  !important;  
+  background-color: #65bcab !important
 }
 
-h3 {color: #409d8b !important;} 
-h4 {color: #fff !important; font-size: 20px !important} 
+h3 {color: #409d8b !important; margin:0; padding: 0} 
+//h4 {color: #fff !important; font-size: 20px !important} 
 
-#hometekst {position: fixed; bottom: 200px; left: 120px} 
+// #hometekst {position: fixed; bottom: 200px; left: 120px} 
 
 .x-html {
-line-height: 1.6 !important;
-color: #777 !important;
-font-size: 1em !important
+  line-height: 1.6 !important;
+  color: #dde5cd;
+  font-size: 1em !important;
+  padding: 20px 50px !important;
+  font-family: 'Helvetica Neue'
 }
 
 //-------------------------------------------- BUTTONS -------------------------------------------
-.closepanel {
-  background-image: url('../images/close.png')  !important;
-  background-repeat: no-repeat;
-  background-color: #65bcab !important;
-  width: 768px;
-  height: 60px;
-  margin: -60px 0 0 0 !important;
-  border: none !important
-}
 
 .audioButton
 {
  background-image: url('../images/sound-button-back.png')!important;
  background-repeat: no-repeat;
-// padding: 3px 0 3px 60px!important;
-// margin: 0 auto 0 350px !important;
  width: 230px;
  height: 60px;
-// border-color: #fff !important;
-// color: #dce4d0 !important;
  background-color: transparent !important;
  text-transform:uppercase !important; 
  border: 0 !important;
-// webkit-box-align: center;
  position: absolute;
 top: 460px;
-left: 344px
-// text-align: left !important;
- // padding-bottom: 8px !important;
+left: 344px;
+padding-left: 80px !important;
+
 }
 
 
 .x-button-label {
-  color: #dce4d0 !important;
+  color: #dde5cd !important;
 //  font-weight: 400 !important;
   letter-spacing: 2px !important;
-  margin-left: 80px !important;
-  text-align: left !important
+  text-align: left !important  
 }
 
 .backButton  {
    background-image: url('../images/arrow-left-small.png')!important;
    background-repeat: no-repeat;
-//   background-position: 10px 40px; 
-//   background-color: #54c3c1 !important;
-   width: 172px !important;
+  width: 60px !important;
    height: 60px !important; 
-//   padding: 35px 5px 0 55px !important;
-   border: 0 !important;
-//   margin: -15px auto -10px auto !important;
-//   border-radius: 10px; 
    position: absolute !important;
     top: 460px;
-    left: 20px
+    left: 20px;
+   border: 1px solid #dde5cd;//   margin: -15px auto -10px auto !important;
+  display: block;
+   border-radius: 100%
 }
 
 .nextButton  {
@@ -141,27 +197,21 @@ left: 344px
    background-repeat: no-repeat;
 //   background-position: 10px 40px; 
 //   background-color: #54c3c1 !important;
-   width: 122px !important;
+   width: 60px !important;
    height: 60px !important; 
 //   padding: 35px 5px 0 55px !important;
-   border: 0 !important;
-//   margin: -15px auto -10px auto !important;
-//   border-radius: 10px; 
+  border: 1px solid #dde5cd;//   margin: -15px auto -10px auto !important;
+  display: block;
+   border-radius: 100%; 
    position: absolute !important;
     top: 460px;
     right: 20px
 }
 
-.play-video-button {
-  display: block !important;
-  height: 432px;
-  background-image: url('../images/before-play-video.png');
-  background-repeat: no-repeat;
-  background-position: center 67px;
-  -webkit-animation: pulse2 2s linear infinite;
+//.nextButton-pressed, .backButton-pressed  {
+//  border: 1px solid #409d8b !important;
+//}
 
-//  background-color: #666 !important
-}
 
 .again {
      background-image: url('../images/replay-button.png')!important;
@@ -175,15 +225,34 @@ left: 344px
 //   margin: -15px auto -10px auto !important;
 //   border-radius: 10px; 
    position: absolute !important;
-    top: 540px;
-    left: 280px
+    top: 400px;
+    left: 280px;
+    padding-left: 80px !important;
+    text-align: left !important;
+    font-size: 22px;
 }
 
-//-------------------------------------------- QUIZ -------------------------------------
+//-------------------------------------------- PLAY / QUIZ -------------------------------------
+.quizbackground {
+  background: url('../images/quizbackground.png')!important;
+  height: 976px;
+  width: 768px;
+//  background-size: 100% !important;
+  background-repeat:no-repeat !important;
+//  background-color: #7bcdca !important; // important moet erbij
+}
+
+.quizTitle {
+  font-size: 42px;
+  background-color: transparent;
+  border: none !important;
+  color: #dde5cd;
+  padding: 30px 0 0 30px
+}
 
 .quiz-options {
 //  background-color: #66bbab !important;
-  color: #dde4ce !important;
+  color: #dde5cd !important;
   font-weight: 300 !important;
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
@@ -195,8 +264,10 @@ left: 344px
   text-align: center !important;
   width: 200px;
   height: 200px;
-  border: 1px solid #fff;
-  border-radius: 10px
+  border: 3px solid #dde5cd;
+  border-radius: 100%;
+  background-color: #65bcab;
+-webkit-box-shadow: 0 0 10px #409d8b
 }
 
 .x-msgbox {
@@ -206,7 +277,8 @@ left: 344px
   border: none !important;
   background-color: #0990d3 !important;
   border-radius: 10px;
-  color: #dde4ce
+  color: #dde4ce;
+  -webkit-box-shadow: 0 0 10px #4a5e5a
 }
 
 .x-msgbox-buttons .x-button {
@@ -215,8 +287,9 @@ background-color: #ea5f72 !important;
 height: 60px !important;
 color: #dde5ce;
 border-radius: 10px;
-text-align: center !important;
-padding-left: 70px
+padding-left: 160px;
+//text-align: center !important;
+// padding-left: 70px
 
 }
 
@@ -225,8 +298,8 @@ border-radius: 10px
 }
 
 .resulttekst {
-  margin: 150px auto;
-  color: #dde5ce;
+  margin: 60px auto;
+  color: #dde5cd;
   font-size: 30px;
   text-align: center !important
 }
@@ -239,8 +312,8 @@ video {
   width: 768px !important;
   height: 432px !important;
   overflow: hidden !important;
- -webkit-animation: fadein .5s !important
- 
+ -webkit-animation: fadein .5s !important;
+// -webkit-animation: pulse2 2s linear infinite;
 }
 
 
@@ -259,13 +332,13 @@ video {
 
 .x-button {
 // display: none !important
-background-color: transparent !important;
-border: 0px !important
+background-color: transparent !important
+// border: 0px !important
 }
 
 .x-video-ghost {
 background-color: transparent !important;
-//background: url('../images/play-video.png') center center no-repeat !important;
+//background: url('../images/poster-play-video.png') center center no-repeat !important;
 //-webkit-animation: fadein 2s 1s !important;
 }
 
@@ -284,26 +357,11 @@ background-color: transparent !important;
 }
 
 
-//-------------------------------------------- VIDEO in panel carousel ----------------------------
-
-.x-panel.x-floating, .x-form.x-floating {
- padding: 0px !important; 
- background-color: transparent !important
-}
-
-.x-panel.x-floating .x-panel-inner, .x-panel.x-floating>.x-body, .x-panel-inner, .x-form.x-floating .x-panel-inner, .x-form.x-floating>.x-body {
-z-index: 1;
-background-color: transparent !important
-}
-
-.x-mask {
-  background: rgba(0,0,0,0) center center no-repeat !important
-}
 
 //-------------------------------------------- ANIMATION -------------------------------------------
 
 
-.listdetailimage {-webkit-animation: fadein .3s; position: absolute; top: 20px}
+.listdetailimage {-webkit-animation: fadein .3s !important; position: absolute; top: 20px}
 
 .fade-in {-webkit-animation: fadein .3s;}
 @-webkit-keyframes fadein {
@@ -344,18 +402,26 @@ background-color: transparent !important
    100% {padding-left:70px;}
 }
 
-//-------------------------------------------- Tool bar bottom -------------------------------------------   
+//-------------------------------------------- Bottom menu bar -------------------------------------------   
 
 .x-tabbar-dark.x-docked-bottom .x-tab-active {
 background-image: none !important;
+background-color: transparent !important;
+}
+
+.x-tabbar.x-docked-bottom {
+ border-top-width: 0px !important;
 }
 
 .x-tabbar.x-docked-bottom .x-tab .x-button-icon {
-  margin: 8px auto 0 auto !important;
+//  margin: 8px auto 0 auto !important;
+width: 3em;
+
 }
 
 .x-tabbar.x-docked-bottom .x-tab {
-border-radius: 3em !important;
+border: 1px;
+border-radius: 100% !important;
 }
 
 .x-img.x-img-background {
@@ -370,11 +436,29 @@ border-radius: 3em !important;
   background-color: #409d8b !important;
 }
 
+
+
+
+#ext-element-88
+{
+    font-family: "Helvetica Neue" !important;
+    color: #dde5cd !important;
+    margin-top: 2px !important;
+    width: 100px;
+  text-align: center !important
+}
+
+#ext-element-95 {
+  padding-left:80px !important
+}
+
 //-------------------------------------------- p ------------------------------------------- 
 
-#gebarencarousel, .gebarendetail {
+.gebarendetail {
   background: url('../images/background.png')!important;
-  background-size: 100% !important;
+  height: 976px;
+  width: 768px;
+//  background-size: 100% !important;
   background-repeat:no-repeat !important;
 //  background-color: #7bcdca !important; // important moet erbij
 }
@@ -387,17 +471,13 @@ border-radius: 3em !important;
 
 //-------------------------------------------- NAVIGATION ICONS -------------------------------------------
 
-@include icon-font('icomoon', inline-font-files(
-  'icomoon/icomoon.eot', eot,
-  'icomoon/icomoon.woff', woff,
-  'icomoon/icomoon.ttf', truetype,
-  'icomoon/icomoon.svg', svg
-));
+@include icon-font('icomoon', inline-font-files ('../fonts/icomoon.ttf'));
  
-@include icon("home"  , "\e600", "icomoon");
-@include icon("star"  , "\e605", "icomoon");
-@include icon("search", "\e602", "icomoon");
-@include icon("info"  , "\e606", "icomoon");
+//@include icon("home"  , "\ea54", "icomoon");
+//@include icon("star"  , "\e600", "icomoon");
+//@include icon("search", "\e602", "icomoon");
+//@include icon("info"  , "\e604", "icomoon");
+@include icon("menu"  , "\ea54", "icomoon");
 
 
 

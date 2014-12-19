@@ -6,21 +6,25 @@ Ext.define('ASLKids.view.Quiz', {
 
     config: {
         iconCls: 'home',
-        scrollable: false,
-        cls: 'tekstscreen',
+//        scrollable: false,
+//        height: 976,
+        cls: 'quizbackground',
         layout: 'card',
 
         items: [{
             xtype: 'toolbar',
             docked: 'top',
-            html: 'test'
+            html: 'WHICH SIGN IS THIS?',
+            cls:'quizTitle'
         }, {
             itemId: 'questionView',
             layout: 'vbox',
             items: [{
                 flex: 1,
                 xtype: 'dataview',
-                itemTpl: '<center><div class="quiz-options"><img src="resources/images/{plaatje}.png" width="150">{plaatje}</div></center>'
+                scrollable: false,
+                height: 976,
+                itemTpl: '<center><div class="quiz-options"><img src="resources/images/objects/{plaatje}.png" width="150">{plaatje}</div></center>'
             }]
         }, {
             itemId: 'resultsView',

@@ -10,57 +10,63 @@ Ext.application({
         'Ext.Img',
         'Ext.Video',
         'Ext.Audio',
-        'Ext.Button', // should this be placed in the view page??
-        'Ext.carousel.Carousel', // should this be in it?
-        'Ext.data.proxy.JsonP' // should this be in it?
+        'Ext.Button',
+		'Ext.Menu',
+		'Ext.TitleBar',
+        'Ext.data.proxy.JsonP'
     ],
-    // models: ['Gebaar'],
-    // stores: ['Gebaar'],
+
     controllers: ['Main', 'Quiz'],
-    // views: ['Home', 'Card', 'NavList', 'Extra'],
 
     icon: {
-        '60': 'resources/icons/icons-60.png',
-        '120': 'resources/icons/icons-120.png',
+        '29': 'resources/icons/icons-29.png',
+        '40': 'resources/icons/icons-40.png',
         '76': 'resources/icons/icons-76.png',
+        '80': 'resources/icons/icons-80.png',
         '152': 'resources/icons/icons-152@2x.png'
     },
     isIconPrecomposed: true,
     startupImage: {
-        '640x1136': 'resources/icons/iphone5.png',
-        '768x1024': 'resources/icons/768x1024.png',
-        '1536x2048': 'resources/icons/768x1024.png'
+        '768x1024': 'resources/icons/splash.png',
+        '1536x2048': 'resources/icons/splash.png'
     },
 
     launch: function () {
         Ext.Viewport.add({
             xtype: 'main-view'
         });
+        
+        
 
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
-            layout: 'fit',
+            layout: 'fit',            
             width: 220,
             id: 'nav-menu',
-            items: [{
+            items: [           
+            {
                 xtype: 'titlebar',
-                title: 'Side menu',
-                docked: 'top'
-            }, {
+                docked: 'top',
+                cls: 'menutitle'
+            },                
+            {
                 xtype: 'list',
                 itemTpl: '{title}',
+                scrollable: false,
+                height: '1024',
                 data: [{
-                    title: 'Menu item 1',
+                    title: '<div class="menuHome">Home<br/><br/><span class="menu-icon-big">&#xe900;</span></div>',
                     itemIndex: 0
                 }, {
-                    title: 'Menu item 2',
+                    title: '<div class="menuList">Signs<br/><br/><span class="menu-icon-big">&#xe600;</span></div>',
                     itemIndex: 1
                 }, {
-                    title: 'Menu item 3',
+                    title: '<div class="menuQuiz">Play<br/><br/><span class="menu-icon-big">&#xe9df;</span></div>',
                     itemIndex: 2
                 }, {
-                    title: 'Menu item 4',
-                    itemIndex: 3
+                    title: '<div class="menuInfo">Info<br/><br/><span class="menu-icon-big">&#xe601;</span></div>',
+                    itemIndex: 3,
+                    iconCls: 'info'
                 }]
             }]
         });

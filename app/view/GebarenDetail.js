@@ -20,12 +20,14 @@ Ext.define('ASLKids.view.GebarenDetail', {
             {
                 xtype: 'button',
                 itemId: 'backButton',
-                cls: 'backButton'
+                cls: 'backButton' //,
+//                pressedCls: 'backButton-pressed'
             },                         
             {
                 xtype: 'button',
                 itemId: 'nextButton',
-                cls: 'nextButton'
+                cls: 'nextButton' //,
+//                pressedCls: 'nextButton-pressed'
             }, 
             {
                 xtype: 'button',
@@ -40,16 +42,15 @@ Ext.define('ASLKids.view.GebarenDetail', {
             {
                 xtype: 'video',
                 name: 'listDetailVideo',
-                posterUrl: 'resources/images/boat-play-video.png',
-//                id: 'listvideo',
+                posterUrl: 'resources/images/poster-play-video.png',
                 width: 768,
                 height: 432,           
                 enableControls: false,
                                 
                 listeners: {                    
-                    painted: function () {
-                        this.media.dom.load(); // for iOS8. Maybe in a conditional statement?
-                    },
+//                    painted: function () {
+//                        this.media.dom.load(); // for iOS8. Maybe in a conditional statement?
+//                    },
                     tap: {
                         fn: function () {                                                           
                             var me = this;

@@ -9,7 +9,6 @@ Ext.define('ASLKids.view.Viewport', {
         },
 
         layout: {
-//            type: 'card', does not have to be here
             animation: {
                 type: 'slide',
                 duration: 300
@@ -18,7 +17,6 @@ Ext.define('ASLKids.view.Viewport', {
         
         items: [
             {xtype: 'homepanel'}, 
-            {xtype: 'cardpanel'}, 
             {xtype: 'navlist'}, 
             {xtype: 'quizpanel'}, 
             {xtype: 'extrapanel'},
@@ -27,7 +25,9 @@ Ext.define('ASLKids.view.Viewport', {
                 docked: 'bottom',
                 items: [
                     {
-                        iconCls: 'search',
+                        iconCls: 'menu',
+                        title: 'MENU',
+ //                       cls: 'menuicon',
                         handler: function() {
                             Ext.Viewport.toggleMenu('left');
                         }

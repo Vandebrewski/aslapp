@@ -115,7 +115,7 @@ Ext.define('ASLKids.controller.Quiz', {
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "<div class='resulttekst'> Good job!<br /><br /><img src='resources/images/correct.png'><br /><br />";
+        html += "<div class='resulttekst'> Good job !<br /><br /><img src='resources/images/correct.png'><br /><br />";
         
         var correct = results.correct;
         if (correct.length == 0) {
@@ -171,7 +171,7 @@ Ext.define('ASLKids.controller.Quiz', {
         var correctAnswer = answersStore.getAt(correctIndex);
 
         this.createVideoComponent();
-        this.getVideoView().setUrl("resources/images/" + correctAnswer.get('plaatje') + ".mp4");
+        this.getVideoView().setUrl("resources/video/" + correctAnswer.get('plaatje') + ".mp4");
 
 //        console.log("correct answer: ", correctAnswer.get('plaatje'));
 
@@ -211,7 +211,7 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "<img src='resources/images/correct.png'>" : "<img src='resources/images/wrong.png'>";
+            var message = correct ? "<img src='resources/images/correct.png'><br /><br />Great!" : "<img src='resources/images/wrong.png'>";
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
@@ -237,7 +237,7 @@ Ext.define('ASLKids.controller.Quiz', {
         this.getAnswersView().getParent().insert(0, {
             xtype: 'video',
             itemId: 'questionVideo',
-            posterUrl: 'resources/images/boat-play-video.png',
+            posterUrl: 'resources/images/poster-play-video.png',
             width: 768,
             height: 432,           
             enableControls: false,

@@ -40,7 +40,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
   "ASLKids.store.Gebaar": [],
-  "ASLKids.view.Card": [],
   "ASLKids.view.Extra": [],
   "ASLKids.view.GebarenDetail": [],
   "ASLKids.view.Gebarenlijst": [],
@@ -676,9 +675,6 @@ Ext.ClassManager.addNameAliasMappings({
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
   "ASLKids.store.Gebaar": [],
-  "ASLKids.view.Card": [
-    "widget.cardpanel"
-  ],
   "ASLKids.view.Extra": [
     "widget.extrapanel"
   ],

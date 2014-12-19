@@ -10,7 +10,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
 
 
         store: 'gebaarStore',//Ext.create('Test.store.Gebaar'),
-        itemTpl: '<img src="resources/images/{plaatje}.png" width="150">{plaatje}'
+        itemTpl: '<img src="resources/images/objects/{plaatje}.png" width="150">{plaatje}'
 //        onItemDisclosure: true // not needed anymore
     }
 });
