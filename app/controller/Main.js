@@ -63,13 +63,15 @@ Ext.define('ASLKids.controller.Main', {
             detail = me.getDetail(),
             video = detail.down('video');
             
-//        video.stop();
+        // video.stop();
 		video.pause();
         video.setUrl(null);
 
         setTimeout(function() {
             me.showDetail(null, null, null, record);
             video.media.dom.load();
+            video.media.hide();
+            video.ghost.show();
         }, 150);
     },
 
@@ -90,8 +92,5 @@ Ext.define('ASLKids.controller.Main', {
             me.getListView().deselectAll();
         }, 100);
     }
-
-
-
 });
 
