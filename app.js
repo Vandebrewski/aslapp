@@ -6,13 +6,12 @@ Ext.application({
         'Ext.MessageBox',
         'ASLKids.store.Gebaar',
         'ASLKids.view.Viewport',
-        'ASLKids.view.Video',
+ //       'ASLKids.view.Video',
         'Ext.Img',
         'Ext.Video',
         'Ext.Audio',
         'Ext.Button',
 		'Ext.Menu',
-		'Ext.TitleBar',
         'Ext.data.proxy.JsonP'
     ],
 
@@ -21,6 +20,8 @@ Ext.application({
     icon: {
         '29': 'resources/icons/icons-29.png',
         '40': 'resources/icons/icons-40.png',
+        '57': 'resources/icons/icon.png',
+        '72': 'resources/icons/icons-72.png',
         '76': 'resources/icons/icons-76.png',
         '80': 'resources/icons/icons-80.png',
         '152': 'resources/icons/icons-152@2x.png'
@@ -29,6 +30,17 @@ Ext.application({
     startupImage: {
         '768x1024': 'resources/icons/splash.png',
         '1536x2048': 'resources/icons/splash.png'
+    },
+    
+    eventPublishers: {
+        touchGesture: {
+            recognizers: {
+                doubleTap : null,
+                longPress : null,
+                pinch : null,
+                rotate : null
+            }
+        }
     },
 
     launch: function () {
@@ -41,32 +53,27 @@ Ext.application({
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
             layout: 'fit',            
-            width: 220,
+            width: 150,
             id: 'nav-menu',
             items: [           
-            {
-                xtype: 'titlebar',
-                docked: 'top',
-                cls: 'menutitle'
-            },                
+               
             {
                 xtype: 'list',
                 itemTpl: '{title}',
                 scrollable: false,
-                height: '1024',
+ //               height: '1024',
                 data: [{
-                    title: '<div class="menuHome">Home<br/><br/><span class="menu-icon-big">&#xe900;</span></div>',
+                    title: '<div class="menu-icon-big">&#xe604;</div>Home',
                     itemIndex: 0
                 }, {
-                    title: '<div class="menuList">Signs<br/><br/><span class="menu-icon-big">&#xe600;</span></div>',
+                    title: '<div class="menu-icon-big">&#xe603;</div>Signs',
                     itemIndex: 1
                 }, {
-                    title: '<div class="menuQuiz">Play<br/><br/><span class="menu-icon-big">&#xe9df;</span></div>',
+                    title: '<div class="menu-icon-big">&#xe602;</div>Play',
                     itemIndex: 2
                 }, {
-                    title: '<div class="menuInfo">Info<br/><br/><span class="menu-icon-big">&#xe601;</span></div>',
-                    itemIndex: 3,
-                    iconCls: 'info'
+                    title: '<div class="menu-icon-big">&#xe600;</div>Info',
+                    itemIndex: 3
                 }]
             }]
         });
@@ -76,17 +83,17 @@ Ext.application({
             side: 'left',
             reveal: true
         });
-    }, // End launch
+    } //, // End launch
    
-    onUpdated: function () {
-        Ext.Msg.confirm(
-            "Application Update",
-            "This application has just successfully been updated to the latest version. Reload now?",
-            function (buttonId) {
-                if (buttonId === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
-    }
+//    onUpdated: function () {
+//        Ext.Msg.confirm(
+//            "Application Update",
+//            "This application has just successfully been updated to the latest version. Reload now?",
+//            function (buttonId) {
+//                if (buttonId === 'yes') {
+//                    window.location.reload();
+//                }
+ //           }
+//        );
+//    }
 });

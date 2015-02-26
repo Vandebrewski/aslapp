@@ -7,28 +7,26 @@ Ext.define('ASLKids.view.GebarenDetail', {
     
         layout: {
             type: 'vbox',
-            pack: 'end' // or maybe not?
+           pack: 'right'
             },
         items: [
             {
                 xtype: 'image',
                 name: 'listDetailImage',
-                cls: 'listdetailimage',
-                width: 768,
-                height: 430
+                flex: 1,
+                cls: 'listdetailimage'
             },
-            {
-                xtype: 'button',
-                itemId: 'backButton',
-                cls: 'backButton' //,
-//                pressedCls: 'backButton-pressed'
-            },                         
             {
                 xtype: 'button',
                 itemId: 'nextButton',
                 cls: 'nextButton' //,
 //                pressedCls: 'nextButton-pressed'
             }, 
+            {
+                xtype: 'button',
+                itemId: 'backButton',
+                cls: 'backButton'
+            },                         
             {
                 xtype: 'button',
                 itemId: 'listDetailButton', 
@@ -40,28 +38,41 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 }
             },
             {
+                xtype: 'audio',
+                name: 'listDetailAudio',
+                hidden: true
+            },
+            {
+                xtype: 'image',
+//                cls: 'videoborderoverlay' 
+            },
+            {
                 xtype: 'video',
+                flex: 1,
                 name: 'listDetailVideo',
-                posterUrl: 'resources/images/poster-play-video.png',
-                width: 768,
-                height: 432,           
+                itemId: 'videoView',
+                posterUrl: 'resources/images/playbutton.svg',          
                 enableControls: false,
                                 
                 listeners: {                    
-//                    painted: function () {
-//                        this.media.dom.load(); // for iOS8. Maybe in a conditional statement?
-//                    },
+                    painted: function () {
+                        this.media.dom.load(); 
+                       this.media.dom.setAttribute('webkit-playsinline', 'true'); // make it play inline on iphone                                             
+                    },
+                                        
                     tap: {
                         fn: function () {                                                           
-                            var me = this;
-                            
+                            var me = this;                            
                             me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo
 								me.play();
-								}, true);  
+								}, true);  // or should this be false?
                             
                             
                             if (me.isPlaying()) {                                       
                                 me.pause();
+//								me.media.setTop(-2000); // this doesn't work
+//            					me.ghost.show(); // this doesn't work
+                                
                             } else {                                  
                                 me.play();
                             }                            
@@ -69,12 +80,8 @@ Ext.define('ASLKids.view.GebarenDetail', {
                         element: 'element'
                     } // END tap
                 } // END listeners
-            }, // END video
-            {
-                xtype: 'audio',
-                name: 'listDetailAudio',
-                hidden: true
-            }
+            } // END video
+           
         ]
     }
 });

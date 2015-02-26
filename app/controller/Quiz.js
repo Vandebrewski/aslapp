@@ -95,6 +95,7 @@ Ext.define('ASLKids.controller.Quiz', {
             max = this.getQuestionCount();
 
         index++;
+        
 
         if (index >= max) {
             this.finish();
@@ -211,13 +212,13 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "<img src='resources/images/correct.png'><br /><br />Great!" : "<img src='resources/images/wrong.png'>";
+            var message = correct ? "<img src='resources/images/correct.png'><br /><br />Correct!" : "<img src='resources/images/wrong.png'>";
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
 
                 message += "<br />";
-                message += "<br />The correct answer was: " + correctAnswer.get('plaatje');
+                message += "<br />The correct answer was: <br /><br /><img src='resources/images/objects/thumbnails/" + correctAnswer.get('plaatje') + ".png'>";
             }
 
             Ext.Msg.alert('', message, function() {
@@ -237,7 +238,7 @@ Ext.define('ASLKids.controller.Quiz', {
         this.getAnswersView().getParent().insert(0, {
             xtype: 'video',
             itemId: 'questionVideo',
-            posterUrl: 'resources/images/poster-play-video.png',
+            posterUrl: 'resources/images/playbutton.svg',
             width: 768,
             height: 432,           
             enableControls: false,
