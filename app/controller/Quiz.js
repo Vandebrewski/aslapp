@@ -10,7 +10,8 @@ Ext.define('ASLKids.controller.Quiz', {
             'answersView': 'quizpanel dataview',
             'videoView': 'quizpanel #questionVideo',
             'resultsView': 'quizpanel #resultsView',
-            'resultsText': 'quizpanel #resultsText'
+            'resultsText': 'quizpanel #resultsText',
+            'quizTitle': 'quizpanel #quizTitle'
         },
 
         control: {
@@ -84,6 +85,24 @@ Ext.define('ASLKids.controller.Quiz', {
 
         var questionView = this.getQuestionView();
         questionView.getParent().setActiveItem(questionView);
+
+        this.updateQuizTitle();
+    },
+
+    updateQuizTitle: function() {
+        var index = this.getCurrentQuestionIndex(),
+            max = this.getQuestionCount(),
+            title = 'WHICH SIGN IS THIS?',
+            tmp = '<span class="count">{index} of {max}</span>';
+
+        if (index >= max) {
+            this.getQuizTitle().setHtml(title);
+        }
+        else {
+            tmp = tmp.replace('{index}', index + 1);
+            tmp = tmp.replace('{max}', max);
+            this.getQuizTitle().setHtml(title + tmp);
+        }
     },
 
     next: function() {
@@ -100,9 +119,11 @@ Ext.define('ASLKids.controller.Quiz', {
             this.finish();
         }
         else {
-            this.setCurrentQuestionIndex(index);
             this.generateQuestions();
         }
+
+        this.setCurrentQuestionIndex(index);
+        this.updateQuizTitle();
     },
 
     finish: function() {
