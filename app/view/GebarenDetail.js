@@ -4,6 +4,20 @@ Ext.define('ASLKids.view.GebarenDetail', {
 
     config: {
         cls: 'gebarendetail',
+
+        listeners: {
+            initialize: function(c) {
+                var me = this;
+
+                me.element.on({
+                    swipe: function(e, node, options) {
+                        if (e.direction == "left") {
+                            me.fireEvent('swipeleft', me);
+                        }
+                    }
+                });
+            }
+        } ,
     
         layout: {
             type: 'vbox',
