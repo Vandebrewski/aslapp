@@ -71,7 +71,6 @@ Ext.define('ASLKids.controller.Main', {
         video.pause();
         video.setUrl(null);  
 
-
         setTimeout(function() {
             me.showDetail(null, null, null, record);
             video.media.dom.load(); // this is needed for ios8

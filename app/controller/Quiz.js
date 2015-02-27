@@ -25,6 +25,10 @@ Ext.define('ASLKids.controller.Quiz', {
 
             'quizpanel #repeatButton': {
                 'tap': 'setup'
+            },
+
+            'videoView': {
+                ended: 'onVideoEnded'
             }
         },
 
@@ -287,6 +291,11 @@ Ext.define('ASLKids.controller.Quiz', {
                 } // END tap
             } // END listeners
         });
+    },
+
+    onVideoEnded: function(video) {
+        video.media.setTop(-2000);
+        video.ghost.show();
     }
 });
 
