@@ -1,7 +1,6 @@
 Ext.define('ASLKids.view.Viewport', {
     extend: 'Ext.TabPanel',
     xtype: 'main-view',
-    
 
     config: {
         tabBar: {
@@ -11,7 +10,7 @@ Ext.define('ASLKids.view.Viewport', {
         layout: {
             animation: {
                 type: 'slide',
-                duration: 300
+                duration: 100
             }
         },
         
@@ -26,8 +25,7 @@ Ext.define('ASLKids.view.Viewport', {
                 items: [
                     {
                         iconCls: 'menu',
-                        title: 'MENU',
- //                       cls: 'menuicon',
+//                        title: 'MENU',
                         handler: function() {
                             Ext.Viewport.toggleMenu('left');
                         }

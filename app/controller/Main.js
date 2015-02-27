@@ -7,8 +7,8 @@ Ext.define('ASLKids.controller.Main', {
         stores: ['Gebaar'],
         views: ['Home', 'NavList', 'Extra'],
         refs: {
+            'videoView': 'gebarendetail #videoView',
             main: 'navlist',
-//            cardpanel:'cardpanel',
             listView: 'gebarenlijst',
             listDetailAudio  : 'gebarendetail audio[name="listDetailAudio"]',
             listDetailButton : '#listDetailButton',
@@ -49,6 +49,7 @@ Ext.define('ASLKids.controller.Main', {
 
     onBackTap: function() {
         this.getMain().setActiveItem(0);
+
     },
 
     onNextTap: function() {
@@ -58,23 +59,24 @@ Ext.define('ASLKids.controller.Main', {
 
         index++;
 
-        if (index == store.getCount()) {
+        if (index === store.getCount()) {
             index = 0;
         }
 
         var record = store.getAt(index),
             detail = me.getDetail(),
-            video = detail.down('video');
-            
-        // video.stop();
-		video.pause();
-        video.setUrl(null);
+            video = detail.down('video');  
+
+        video.media.hide();
+        video.pause();
+        video.setUrl(null);  
+
 
         setTimeout(function() {
             me.showDetail(null, null, null, record);
-            video.media.dom.load();
+            video.media.dom.load(); // this is needed for ios8
             video.media.hide();
-            video.ghost.show();
+			video.ghost.show();
         }, 150);
     },
 
@@ -82,18 +84,17 @@ Ext.define('ASLKids.controller.Main', {
         var me = this,
             detail = this.getDetail();
 
+        me.getListDetailImage().setSrc("resources/images/objects/" + record.data.plaatje + ".png");
         me.getListDetailVideo().setUrl("resources/video/" + record.data.plaatje + ".mp4");
         me.getListDetailAudio().setUrl("resources/audio/" + record.data.plaatje + ".m4a");
         me.getListDetailButton().setText(record.data.plaatje);
-        me.getListDetailImage().setSrc("resources/images/objects/" + record.data.plaatje + ".png");
      
-        me.getMain().setActiveItem(detail);
-
         me.currentDetailRecord = record;
+        me.getMain().setActiveItem(detail);
 
         setTimeout(function() {
             me.getListView().deselectAll();
-        }, 100);
+        }, 150);
     }
 });
 

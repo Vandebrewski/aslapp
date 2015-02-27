@@ -5,151 +5,155 @@ $include-highlights: false;
 $base-gradient: none;
 $basic-slider: true;
 $body-bg-color: #65bcab;
-$list-active-color: #65bcab;
-$list-pressed-color: #409d8b;
+$list-pressed-color: #f3f005;
 $loading-spinner-color: #dde5cd;
+
+$experimental-support-for-mozilla : false;
+$experimental-support-for-webkit : false;
+$support-for-original-webkit-gradients : false;
+$experimental-support-for-opera : false;
+$experimental-support-for-microsoft : false;
+$experimental-support-for-khtml : false;
 
 // exclude components that app is not using
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/src/tab/Panel';
 
 body {
-  overflow: hidden;
   background-color: #65bcab !important;
   background-image: url('../icons/splash.png');
   background-repeat: no-repeat;
+  background-position: 50%;
+  margin: 0 auto;
+  background-size: cover
 }
 
-
 @font-face {
-  font-family: 'Kranky';
-  src: url('../fonts/Kranky.ttf');}
+  font-family: 'Handlee';
+  src: url('../fonts/Cookie-Regular.ttf')
+}
   
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon.ttf');}  
- 
-// $font-family: 'Kranky', sans-serif !default;
+  src: url('../fonts/icomoon.ttf')}  
 
-
-.x-list .x-list-item, .x-button-label, h3, h4, .quizTitle, .resulttekst, .quiz-options {
-  font-family: 'Kranky', Helvetica Neue
+.again, h3, .quizTitle, .resulttekst, .quiz-options, .x-list .x-list-item, .audioButton, .menu-hint {
+  font-family: 'Handlee', Helvetica Neue;
+  color: #dde5cd !important;
 }
 
 
 //-------------------------------------------- MENU -------------------------------------------
 
-
 #nav-menu {
-  background-color: #E56072 !important;
-}
+  background-color: #E56072;
+  color: #dde5cd;
+  padding: 30px 0 0 20px;
+//  position: relative;
 
-#nav-menu .x-list .x-list-item {
-  width: 195px !important;
-  height: 195px !important;
-  color: #dde4ce;
-//  padding: 17px;
 }
 
 #nav-menu .x-list .x-list-item.x-item-selected.x-list-item-tpl {
- background-color: #cb394d !important;
-}
-
-.menutitle {
-background-color: transparent;
-border: none !important;
-color: #dde4ce;
-font-size: 22px;
-padding: 20px !important;
-margin-bottom: 50px;
+ background-color: #cb394d !important
 }
 
 .menu-icon-big {
-font-size: 70px;
-padding: 20px 0 -5px 0 !important;
-  height: 150px;
-  font-family: 'icomoon' !important;
+  font-size: 50px;
+  margin: 10px 0 10px;
+  font-family: 'icomoon'
 }
 
-.menuHome {
-  height: 150px;
-  font-family: 'Kranky' !important;
-  padding: 20px 0 0px 0 !important
-//  background-image: url("../images/menu-home.png") !important;
-//  background-repeat: no-repeat;
-  
+.x-menu-inner {
+//    top: 10% !important;
+//  margin: 0 auto !important;
 }
 
-.menuQuiz {
-  height: 150px;
-  font-family: 'Kranky' !important;
-  padding: 20px 0 0px 0 !important
-//  background-image: url("../images/menu-quiz.png") !important;
-//  background-repeat: no-repeat;
+//-------------------------------------------- Hmme -------------------------------------------
+
+.homescreen {
+  background-image: url('../images/girl.svg') !important;
+  width: 100%;
+  margin: 0 auto;
+  /* just to get an apsect ratio same as the SVG's: */
+  padding-top: 100%; 
+  height: auto; 
+  background-size: cover;
+  background-repeat: no-repeat !important
+  }
+
+
+.menu-hint {
+  -webkit-animation: menudown 6s;
+  -webkit-animation-delay: 5s;
+  position: absolute;
+  bottom: 150px;
+  left: 334px;
+  width: 100px;
+  height: 65px;
+  background-color: rgba(0,0,0,0.3);
+  opacity:0;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  font-size: 28px
 }
 
-.menuList {
-  height: 150px;
-  font-family: 'Kranky' !important;
-  padding: 20px 0 0px 0 !important
-//  background-image: url("../images/menu-list.png") !important;
-//  background-repeat: no-repeat;
+//-------------------------------------------- list ------------------------------------------- 
+
+.gebarendetail {
+ background-color: #65bcab !important;
+ background-image: url('../images/textballoon.svg'), url('../images/rainbow.svg') !important;
+ background-position: center top, center bottom !important;
+background-repeat: no-repeat !important
 }
 
-.menuInfo {
-  height: 150px;
-  font-family: 'Kranky' !important;
-  padding: 20px 0 0px 0 !important  
-//  background-image: url("../images/menu-info.png") !important;
-//  background-repeat: no-repeat;
 
-}
-//-------------------------------------------- LIST -------------------------------------------
 
 .gebarenlijst {
   background-color: #65bcab !important;
-  color: #dde5cd !important;
-  padding: 30px 0 0 35px
-
+//  color: #dde5cd !important;
+  padding: 30px 0 0 15%;
 }
-
-//.x-list .x-list-item img {padding: 5px 0 !important;}
 
 .x-list .x-list-item.x-item-pressed, .x-list .x-list-item.x-item-selected.x-list-item-tpl {
   background-color: #65bcab !important
 }
 
 .x-list .x-list-item {
-  color: !important;
-  font-weight: 400 !important;
-  /* letter-spacing: 1px !important; */
-  text-transform: uppercase !important;
   float: left;
   display: block;
-  margin: 10px;
+  margin: 5px;
   text-align: center !important;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border: 2px solid #dde5cd;
-  border-radius: 100%;
+  border-radius: 10px;
+  font-size: 1em
+}
+
+.x-list img {
+  padding: 5px 30px 0 0;
+}
+
+.objectimages {
+  width: 125px
 }
 
 //-------------------------------------------- SIMPLE TEKST PAGES -------------------------------
 
-.tekstscreen {
+.infoscreen {
   background-color: #65bcab !important
 }
 
-h3 {color: #409d8b !important; margin:0; padding: 0} 
-//h4 {color: #fff !important; font-size: 20px !important} 
-
-// #hometekst {position: fixed; bottom: 200px; left: 120px} 
+h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important} 
 
 .x-html {
   line-height: 1.6 !important;
   color: #dde5cd;
   font-size: 1em !important;
-  padding: 20px 50px !important;
+  padding: 20px 5% !important;
   font-family: 'Helvetica Neue'
 }
 
@@ -157,89 +161,78 @@ h3 {color: #409d8b !important; margin:0; padding: 0}
 
 .audioButton
 {
- background-image: url('../images/sound-button-back.png')!important;
- background-repeat: no-repeat;
- width: 230px;
- height: 60px;
+  background-image: url('../images/audio.svg') !important;
+  background-size: 60px;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+ max-height: 100px;
+ width: 50%;
  background-color: transparent !important;
- text-transform:uppercase !important; 
  border: 0 !important;
  position: absolute;
-top: 460px;
-left: 344px;
-padding-left: 80px !important;
-
+top: 40%;
+left: 25%;
+padding: 65px 0 0 0 !important;
+font-size: 1.7em
 }
 
+.x-button-icon .x-shown menu .x-button-label {
+  color: #dde5cd !important;  
+  letter-spacing: 1px !important;
+  text-align: left !important;
+  font-family: Helvetica Neue 
+}
 
 .x-button-label {
-  color: #dde5cd !important;
-//  font-weight: 400 !important;
-  letter-spacing: 2px !important;
-  text-align: left !important  
+color: #dde5cd
 }
 
 .backButton  {
-   background-image: url('../images/arrow-left-small.png')!important;
-   background-repeat: no-repeat;
-  width: 60px !important;
-   height: 60px !important; 
+  background-image: url('../images/back.svg') !important;
+  background-size: 58px;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important;
+ height: 60px;
+   width: 60px;
    position: absolute !important;
-    top: 460px;
-    left: 20px;
-   border: 1px solid #dde5cd;//   margin: -15px auto -10px auto !important;
-  display: block;
-   border-radius: 100%
+    top: 50%;
+  left: 2%;
+    border: none;
 }
 
 .nextButton  {
-   background-image: url('../images/nextButton.png')!important;
-   background-repeat: no-repeat;
-//   background-position: 10px 40px; 
-//   background-color: #54c3c1 !important;
-   width: 60px !important;
-   height: 60px !important; 
-//   padding: 35px 5px 0 55px !important;
-  border: 1px solid #dde5cd;//   margin: -15px auto -10px auto !important;
-  display: block;
-   border-radius: 100%; 
+  background-image: url('../images/next.svg') !important;
+  background-size: 58px;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important;
+ height: 60px;
+  width: 60px;
    position: absolute !important;
-    top: 460px;
-    right: 20px
+    top: 50%;
+right: 2%;
+    border: none
 }
-
-//.nextButton-pressed, .backButton-pressed  {
-//  border: 1px solid #409d8b !important;
-//}
-
 
 .again {
      background-image: url('../images/replay-button.png')!important;
    background-repeat: no-repeat;
-//   background-position: 10px 40px; 
-//   background-color: #54c3c1 !important;
-   width: 372px !important;
+   width: 300px !important;
    height: 60px !important; 
-//   padding: 35px 5px 0 55px !important;
    border: 0 !important;
-//   margin: -15px auto -10px auto !important;
-//   border-radius: 10px; 
    position: absolute !important;
     top: 400px;
     left: 280px;
-    padding-left: 80px !important;
     text-align: left !important;
-    font-size: 22px;
+    font-size: 32px
 }
+
 
 //-------------------------------------------- PLAY / QUIZ -------------------------------------
 .quizbackground {
-  background: url('../images/quizbackground.png')!important;
-  height: 976px;
-  width: 768px;
-//  background-size: 100% !important;
-  background-repeat:no-repeat !important;
-//  background-color: #7bcdca !important; // important moet erbij
+  background-image: url('../images/video-background.svg') !important;
+  background-size: 100% 100%;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important
 }
 
 .quizTitle {
@@ -247,32 +240,27 @@ padding-left: 80px !important;
   background-color: transparent;
   border: none !important;
   color: #dde5cd;
-  padding: 30px 0 0 30px
+  padding: 35px 0 0 35px
 }
 
 .quiz-options {
-//  background-color: #66bbab !important;
-  color: #dde5cd !important;
-  font-weight: 300 !important;
-  letter-spacing: 1px !important;
-  text-transform: uppercase !important;
   text-align: center !important;
   float: left;
   display: block;
-  margin: 50px 25px 0 25px;
+  margin: 50px 25px 0;
   padding: 30px;
   text-align: center !important;
   width: 200px;
   height: 200px;
   border: 3px solid #dde5cd;
-  border-radius: 100%;
+  border-radius: 10px;
   background-color: #65bcab;
--webkit-box-shadow: 0 0 10px #409d8b
+  font-size: 32px
 }
 
 .x-msgbox {
-  width: 500px !important;
-  height: 300px !important;
+  width: 600px !important;
+  height: 400px !important;
   margin: 50px !important;
   border: none !important;
   background-color: #0990d3 !important;
@@ -286,11 +274,7 @@ width: 100%;
 background-color: #ea5f72 !important;
 height: 60px !important;
 color: #dde5ce;
-border-radius: 10px;
-padding-left: 160px;
-//text-align: center !important;
-// padding-left: 70px
-
+border-radius: 10px
 }
 
 .x-toolbar {
@@ -300,107 +284,95 @@ border-radius: 10px
 .resulttekst {
   margin: 60px auto;
   color: #dde5cd;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center !important
 }
 
+.quizvideoborderoverlay {
+  width: 768px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 0px;
+//  z-index: 5000;
+}
+
+.quizvideoborderoverlay2 {
+  width: 768px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 430px;
+//  z-index: 5000;
+}
 
 //-------------------------------------------- VIDEO -------------------------------------------
 
 video {
-//  background-color: #7bcdca !important; // important moet erbij
-  width: 768px !important;
-  height: 432px !important;
+//  width: 100% !important;
+//  height: 100% !important;
   overflow: hidden !important;
+//  align-self: flex-end;
  -webkit-animation: fadein .5s !important;
-// -webkit-animation: pulse2 2s linear infinite;
+   position: absolute !important;
+bottom: 0 !important;
+width: 100%;
+height: auto;
 }
 
-
-.x-video.loading {
-  -webkit-transform:translateX(2048px) !important
-}
-
-.x-media {
-  top: 0px !important
-}
-
-.x-video>* {
-  
-//-webkit-animation: fadein 1s !important;
-}
 
 .x-button {
-// display: none !important
 background-color: transparent !important
-// border: 0px !important
 }
 
 .x-video-ghost {
 background-color: transparent !important;
-//background: url('../images/poster-play-video.png') center center no-repeat !important;
-//-webkit-animation: fadein 2s 1s !important;
+background: rgba(0, 0, 0, 0) url() center center no-repeat;
 }
 
 .x-layout-card-item {
   background: transparent
 }
 
-
 .x-video {
   background: none !important
 }
 
-
-*, *:after, *:before {
- -webkit-tap-highlight-color: rgba(123, 205, 202, 1) !important
+.videoborderoverlay {
+  width: 100%;
+  height: 100%;
+  background-color: #64bba9;
+  position: absolute;
+  bottom: 428px;
+  z-index: 5000;
 }
-
-
 
 //-------------------------------------------- ANIMATION -------------------------------------------
 
 
-.listdetailimage {-webkit-animation: fadein .3s !important; position: absolute; top: 20px}
+.listdetailimage {
+  -webkit-animation: fadein .3s !important
+  }
 
 .fade-in {-webkit-animation: fadein .3s;}
+
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-@-webkit-keyframes fadeout {
-    from { opacity: 1; }
-    to   { opacity: 0; }
+@-webkit-keyframes menudown {
+    0% { top: 870px; opacity: 0; }
+    75%   { top: 890px; opacity: 1;}
+    100%   { top: 890px; opacity: 0;}
 }
 
-@keyframes pulse2 {
- 0% {-webkit-transform: scale(1);}
- 100% {-webkit-transform: scale(0.9);}
-}
-
-@-webkit-keyframes "pulse2" {
- 0% {
-   -webkit-transform: scale(1.0);
-   transform: scale(1.0);
- }
- 50% {
-   -webkit-transform: scale(0.9);
-   transform: scale(0.9);
- }
- 100% {
-   -webkit-transform: scale(1);
-   transform: scale(1);
- }
-
-}
-
-.swipe-animation {-webkit-animation: swipeanimation 1s steps(30) 4 alternate; width: 86px; height: 103px; float: right;}
-@-webkit-keyframes swipeanimation {
-  -webkit-animation-timing-function: linear;
-   0% {padding-left:0px;}
-   100% {padding-left:70px;}
-}
+//.swipe-animation {-webkit-animation: swipeanimation 1s steps(30) 4 alternate; width: 86px; height: 103px; float: right;}
+//@-webkit-keyframes swipeanimation {
+//  -webkit-animation-timing-function: linear;
+//   0% {padding-left:0;}
+//   100% {padding-left:70px;}
+//}
 
 //-------------------------------------------- Bottom menu bar -------------------------------------------   
 
@@ -414,19 +386,18 @@ background-color: transparent !important;
 }
 
 .x-tabbar.x-docked-bottom .x-tab .x-button-icon {
-//  margin: 8px auto 0 auto !important;
+   font-size: 1.3em;
+  height: 1.2em
+}
+
+.x-tabbar.x-docked-bottom .x-tab .x-button-icon {
 width: 3em;
 
 }
 
-.x-tabbar.x-docked-bottom .x-tab {
-border: 1px;
-border-radius: 100% !important;
-}
-
 .x-img.x-img-background {
-  background-position: bottom;
-  background-size: auto;
+  background-position: center top;
+  background-size: 100% auto;
 }
 
 .x-tabbar-dark {
@@ -437,47 +408,10 @@ border-radius: 100% !important;
 }
 
 
-
-
-#ext-element-88
-{
-    font-family: "Helvetica Neue" !important;
-    color: #dde5cd !important;
-    margin-top: 2px !important;
-    width: 100px;
-  text-align: center !important
-}
-
-#ext-element-95 {
-  padding-left:80px !important
-}
-
-//-------------------------------------------- p ------------------------------------------- 
-
-.gebarendetail {
-  background: url('../images/background.png')!important;
-  height: 976px;
-  width: 768px;
-//  background-size: 100% !important;
-  background-repeat:no-repeat !important;
-//  background-color: #7bcdca !important; // important moet erbij
-}
-
-.mainimage {
-  margin-top: -50px !important;
-}
-
-
-
 //-------------------------------------------- NAVIGATION ICONS -------------------------------------------
 
 @include icon-font('icomoon', inline-font-files ('../fonts/icomoon.ttf'));
- 
-//@include icon("home"  , "\ea54", "icomoon");
-//@include icon("star"  , "\e600", "icomoon");
-//@include icon("search", "\e602", "icomoon");
-//@include icon("info"  , "\e604", "icomoon");
-@include icon("menu"  , "\ea54", "icomoon");
+@include icon("menu", "\e601", "icomoon");
 
 
 
