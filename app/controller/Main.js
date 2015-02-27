@@ -35,9 +35,18 @@ Ext.define('ASLKids.controller.Main', {
             },
             'gebarenlijst': {
                 itemtap: 'showDetail'
+            },
+
+            'videoView': {
+                ended: 'onVideoEnded'
             }
         } // End control
     }, // End config
+
+    onVideoEnded: function(video) {
+        video.media.setTop(-2000);
+        video.ghost.show();
+    },
 
     onNavMenuSelect: function(view, record) {
         var itemIndex = record.get('itemIndex'); 
