@@ -24,6 +24,9 @@ Ext.define('ASLKids.controller.Main', {
                 select: 'onNavMenuSelect'
             },
 
+            'gebarendetail': {
+                swipeleft: 'onNextTap'
+            },
             'gebarendetail #backButton': {
                 tap: 'onBackTap'
             },
