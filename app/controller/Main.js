@@ -62,6 +62,7 @@ Ext.define('ASLKids.controller.Main', {
 
         var record = store.getAt(index),
             detail = me.getDetail(),
+<<<<<<< HEAD
             video = detail.down('video');  
 
         video.media.hide();
@@ -75,6 +76,19 @@ Ext.define('ASLKids.controller.Main', {
             video.media.hide();
 			video.ghost.show();
             
+=======
+            video = detail.down('video');
+            
+        // video.stop();
+		video.pause();
+        video.setUrl(null);
+
+        setTimeout(function() {
+            me.showDetail(null, null, null, record);
+            video.media.dom.load();
+            video.media.hide();
+            video.ghost.show();
+>>>>>>> FETCH_HEAD
         }, 150);
     },
 
@@ -94,6 +108,9 @@ Ext.define('ASLKids.controller.Main', {
             me.getListView().deselectAll();
         }, 150);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 });
 

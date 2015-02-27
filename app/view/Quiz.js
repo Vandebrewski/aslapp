@@ -14,7 +14,12 @@ Ext.define('ASLKids.view.Quiz', {
         {
             xtype: 'toolbar',
             docked: 'top',
+<<<<<<< HEAD
             html: 'Which sign is this?',
+=======
+            itemId: 'quizTitle',
+            html: 'WHICH SIGN IS THIS?',
+>>>>>>> FETCH_HEAD
             cls:'quizTitle'
         }, 
         {
