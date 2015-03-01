@@ -13,7 +13,7 @@ Ext.define('ASLKids.view.Quiz', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
-                html: 'Which sign is this?',
+//                html: 'Which sign is this?',
                 itemId: 'quizTitle',
                 cls:'quizTitle'
             }, 
@@ -25,15 +25,15 @@ Ext.define('ASLKids.view.Quiz', {
                         flex: 1,
                         xtype: 'dataview',
                         scrollable: false,
-                        height: 488,
-                        itemTpl: '<div class="quiz-options"><img src="resources/images/objects/thumbnails/{plaatje}.png" width="150">{plaatje}</div>'
-                	},
-                    {
-                		cls: 'quizvideoborderoverlay' 
-            		},
-            		{
-                		cls: 'quizvideoborderoverlay2' 
-            		}
+ //                       height: 488,
+                        itemTpl: '<div class="quiz-options"><img src="resources/images/objects/thumbnails/{plaatje}.png" width="100%">{plaatje}</div>'
+                	} //,
+ //                   {
+ //               		cls: 'quizvideoborderoverlay' 
+ //           		},
+ //           		{
+ //               		cls: 'quizvideoborderoverlay2' 
+ //           		}
             	]
             }, {
                 itemId: 'resultsView',
