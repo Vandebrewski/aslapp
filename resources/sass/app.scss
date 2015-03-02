@@ -155,9 +155,9 @@ h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important
  width: 50%;
  background-color: transparent !important;
  border: 0 !important;
- position: absolute;
-top: 40%;
-left: 25%;
+//  position: absolute;
+// top: 40%;
+// left: 25%;
 padding: 65px 0 0 0 !important;
 font-size: 1.7em
 }
@@ -180,9 +180,7 @@ color: #dde5cd
   background-repeat: no-repeat !important;
  height: 60px;
    width: 60px;
-   position: absolute !important;
-    top: 50%;
-  left: 2%;
+   margin-left: 10px;
     border: none;
 }
 
@@ -193,9 +191,7 @@ color: #dde5cd
   background-repeat: no-repeat !important;
  height: 60px;
   width: 60px;
-   position: absolute !important;
-    top: 50%;
-right: 2%;
+   margin-right: 10px;
     border: none
 }
 

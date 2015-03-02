@@ -257,10 +257,12 @@ Ext.define('ASLKids.controller.Quiz', {
 
     createVideoComponent: function() {
         if (this.getVideoView()) {
+            this.getVideoView().element.dom.src = "";
+            this.getVideoView().element.dom.load();
             this.getVideoView().destroy();
         }
 
-        this.getAnswersView().getParent().insert(0, {
+        this.getAnswersView().getParent().insert(1, {
             xtype: 'video',
             itemId: 'questionVideo',
             posterUrl: 'resources/images/playbutton.svg',

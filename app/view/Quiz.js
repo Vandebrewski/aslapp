@@ -22,20 +22,23 @@ Ext.define('ASLKids.view.Quiz', {
                 layout: 'vbox',
                 items: [
                     {
-                        flex: 1,
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
                         xtype: 'dataview',
                         scrollable: false,
- //                       height: 488,
-                        itemTpl: '<div class="quiz-options"><img src="resources/images/objects/thumbnails/{plaatje}.png" width="100%">{plaatje}</div>'
-                	} //,
- //                   {
- //               		cls: 'quizvideoborderoverlay' 
- //           		},
- //           		{
- //               		cls: 'quizvideoborderoverlay2' 
- //           		}
+                        height: 298,
+                        itemTpl: '<div class="quiz-options"><img src="resources/images/objects/thumbnails/{plaatje}.png" width="150">{plaatje}</div>'
+                	},
+                    {
+                        xtype: 'spacer'
+                    }
             	]
-            }, {
+            },
+            {
                 itemId: 'resultsView',
                 items: [
                     {
