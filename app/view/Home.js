@@ -23,7 +23,7 @@ Ext.define('ASLKids.view.Home', {
     		xtype: 'audio',
     		src: 'resources/audio/home-sample.mp3',
     		enableControls: true,
-    		autoplay:true,
+    		autoplay:true
 //    		hidden: true
     		
     	}, 

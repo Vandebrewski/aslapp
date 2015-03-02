@@ -314,8 +314,12 @@ video {
 //bottom: 0 !important;
 //width: 100%;
 //height: auto;
-border-style: inset; border-width: 5px 0 0 0; border-color: red;
-
+border-style: inset; border-width: 2px 0 0 0; border-color: red;
+min-width: 100% !important;
+height: auto !important;
+position: relative !important;
+bottom: 0px;
+margin-top: auto
 }
 
 
@@ -348,7 +352,7 @@ background: rgba(0, 0, 0, 0) url() center center no-repeat;
 //-------------------------------------------- ANIMATION -------------------------------------------
 
 .listdetailimage {
-  -webkit-animation: fadein .3s !important
+  -webkit-animation: fadein .3s !important;
   }
 
 .fade-in {-webkit-animation: fadein .3s;}

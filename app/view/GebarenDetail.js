@@ -20,8 +20,8 @@ Ext.define('ASLKids.view.GebarenDetail', {
         } ,
     
         layout: {
-           type: 'vbox',
-           pack: 'end'         
+           type: 'vbox' //,
+ //          align: 'end'         
             },
         items: [
             {
