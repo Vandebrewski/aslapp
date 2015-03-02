@@ -96,8 +96,8 @@ Ext.define('ASLKids.controller.Quiz', {
     updateQuizTitle: function() {
         var index = this.getCurrentQuestionIndex(),
             max = this.getQuestionCount(),
-            title = 'WHICH SIGN IS THIS?',
-            tmp = '<span class="count">{index} of {max}</span>';
+            title = 'Which sign is this?',
+            tmp = '<span class="count">{index} / {max}</span>';
 
         if (index >= max) {
             this.getQuizTitle().setHtml(title);
@@ -141,7 +141,7 @@ Ext.define('ASLKids.controller.Quiz', {
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "<div class='resulttekst'> Good job !<br /><br /><img src='resources/images/correct.png'><br /><br />";
+        html += "<div class='resulttekst'> Good job !<br /><img src='resources/images/correct.png'><br />";
         
         var correct = results.correct;
         if (correct.length == 0) {
@@ -266,13 +266,15 @@ Ext.define('ASLKids.controller.Quiz', {
             xtype: 'video',
             itemId: 'questionVideo',
             posterUrl: 'resources/images/playbutton.svg',
-            width: 768,
-            height: 432,           
+//            width: 768,
+//            height: 432,           
+			flex: 1,          
             enableControls: false,
                             
             listeners: {                    
                 painted: function () {
-                    this.media.dom.load(); // for iOS8. Maybe in a conditional statement?
+                    this.media.dom.load(); 
+                    this.media.dom.setAttribute('webkit-playsinline', 'true'); // make it play inline on iphone          
                 },
                 tap: {
                     fn: function () {                                                           

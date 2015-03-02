@@ -19,14 +19,6 @@ $experimental-support-for-khtml : false;
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/src/tab/Panel';
 
-body {
-  background-color: #65bcab !important;
-  background-image: url('../icons/splash.png');
-  background-repeat: no-repeat;
-  background-position: 50%;
-  margin: 0 auto;
-  background-size: cover
-}
 
 @font-face {
   font-family: 'Handlee';
@@ -48,9 +40,7 @@ body {
 #nav-menu {
   background-color: #E56072;
   color: #dde5cd;
-  padding: 30px 0 0 20px;
-//  position: relative;
-
+  padding: 30px 0 0 20px
 }
 
 #nav-menu .x-list .x-list-item.x-item-selected.x-list-item-tpl {
@@ -63,31 +53,23 @@ body {
   font-family: 'icomoon'
 }
 
-.x-menu-inner {
-//    top: 10% !important;
-//  margin: 0 auto !important;
-}
 
 //-------------------------------------------- Hmme -------------------------------------------
 
 .homescreen {
-  background-image: url('../images/girl.svg') !important;
-  width: 100%;
-  margin: 0 auto;
-  /* just to get an apsect ratio same as the SVG's: */
-  padding-top: 100%; 
-  height: auto; 
-  background-size: cover;
-  background-repeat: no-repeat !important
-  }
-
-
+background-color: #65bcab !important;
+background-image: url('../images/girl.svg'), url('../images/stars-background.svg') !important;
+background-position: center center, center top !important;
+background-repeat: no-repeat !important
+}
+  
 .menu-hint {
-  -webkit-animation: menudown 6s;
+  -webkit-animation: menudown 3s;
   -webkit-animation-delay: 5s;
   position: absolute;
   bottom: 150px;
-  left: 334px;
+  left: 50%;
+  margin-left: -50px;
   width: 100px;
   height: 65px;
   background-color: rgba(0,0,0,0.3);
@@ -108,7 +90,6 @@ body {
  background-position: center top, center bottom !important;
 background-repeat: no-repeat !important
 }
-
 
 
 .gebarenlijst {
@@ -159,12 +140,17 @@ h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important
 
 //-------------------------------------------- BUTTONS -------------------------------------------
 
+.homebutton {
+  height: 100%;
+  width: 100px !important
+}
+
 .audioButton
 {
-  background-image: url('../images/audio.svg') !important;
-  background-size: 60px;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
+ background-image: url('../images/audio.svg') !important;
+ background-size: 60px;
+ background-position: center top !important;
+ background-repeat: no-repeat !important;
  max-height: 100px;
  width: 50%;
  background-color: transparent !important;
@@ -212,14 +198,15 @@ color: #dde5cd
 .again {
      background-image: url('../images/replay-button.png')!important;
    background-repeat: no-repeat;
-   width: 300px !important;
-   height: 60px !important; 
+   width: 200px !important;
+   height: 150px !important; 
    border: 0 !important;
-   position: absolute !important;
-    top: 400px;
-    left: 280px;
-    text-align: left !important;
-    font-size: 32px
+//   position: absolute !important;
+//    top: 400px;
+//    left: 280px;
+//    text-align: left !important;
+    font-size: 2em;
+    margin: 0 auto
 }
 
 
@@ -232,26 +219,30 @@ color: #dde5cd
 }
 
 .quizTitle {
-  font-size: 42px;
+  font-size: 2em;
   background-color: transparent;
   border: none !important;
   color: #dde5cd;
-  padding: 35px 0 0 35px
+  padding: 30px 30px 0 30px
 }
 
 .quiz-options {
   text-align: center !important;
   float: left;
   display: block;
-  margin: 50px 25px 0;
-  padding: 30px;
+  margin: 50px 2% 0 0;
+  padding: 5px;
   text-align: center !important;
-  width: 200px;
-  height: 200px;
+  width: 30%;
+//  height: 100px;
   border: 3px solid #dde5cd;
   border-radius: 10px;
   background-color: #65bcab;
-  font-size: 32px
+  font-size: 1.1em
+}
+
+.quizOptionsCenter {
+  margin: 0 5%;
 }
 
 .x-msgbox {
@@ -278,9 +269,9 @@ border-radius: 10px
 }
 
 .resulttekst {
-  margin: 60px auto;
+  margin: 20px auto;
   color: #dde5cd;
-  font-size: 40px;
+  font-size: 1.7em;
   text-align: center !important
 }
 
@@ -302,18 +293,29 @@ border-radius: 10px
 //  z-index: 5000;
 }
 
+.count {
+  float: right;
+  color: #419e8c
+}
+
 //-------------------------------------------- VIDEO -------------------------------------------
 
 video {
 //  width: 100% !important;
 //  height: 100% !important;
-  overflow: hidden !important;
+//  overflow: hidden !important;
 //  align-self: flex-end;
  -webkit-animation: fadein .5s !important;
-   position: absolute !important;
-bottom: 0 !important;
-width: 100%;
-height: auto;
+//   position: absolute !important;
+//bottom: 0 !important;
+//width: 100%;
+//height: auto;
+border-style: inset; border-width: 2px 0 0 0; border-color: red;
+min-width: 100% !important;
+height: auto !important;
+position: relative !important;
+bottom: 0px;
+margin-top: auto
 }
 
 
@@ -345,9 +347,8 @@ background: rgba(0, 0, 0, 0) url() center center no-repeat;
 
 //-------------------------------------------- ANIMATION -------------------------------------------
 
-
 .listdetailimage {
-  -webkit-animation: fadein .3s !important
+  -webkit-animation: fadein .3s !important;
   }
 
 .fade-in {-webkit-animation: fadein .3s;}
@@ -358,9 +359,9 @@ background: rgba(0, 0, 0, 0) url() center center no-repeat;
 }
 
 @-webkit-keyframes menudown {
-    0% { top: 870px; opacity: 0; }
-    75%   { top: 890px; opacity: 1;}
-    100%   { top: 890px; opacity: 0;}
+    0% { bottom: 40px; opacity: 0; }
+    75%   { bottom: 20px; opacity: 1;}
+    100%   { bottom: 20px; opacity: 0;}
 }
 
 //.swipe-animation {-webkit-animation: swipeanimation 1s steps(30) 4 alternate; width: 86px; height: 103px; float: right;}
@@ -402,7 +403,6 @@ width: 3em;
   background-image: #409d8b !important; 
   background-color: #409d8b !important;
 }
-
 
 //-------------------------------------------- NAVIGATION ICONS -------------------------------------------
 

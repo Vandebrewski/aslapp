@@ -19,7 +19,6 @@ Ext.define('ASLKids.view.GebarenDetail', {
             }
         } ,
 
-        flex: 1,
         layout: 'vbox',
         items: [
             {
@@ -73,10 +72,10 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 name: 'listDetailAudio',
                 hidden: true
             },
-            {
-                xtype: 'image',
+//            {
+//                xtype: 'image' //,
 //                cls: 'videoborderoverlay' 
-            },
+//            },
             {
                 xtype: 'video',
                 name: 'listDetailVideo',
@@ -87,7 +86,7 @@ Ext.define('ASLKids.view.GebarenDetail', {
                                 
                 listeners: {                    
                     painted: function () {
-                        this.media.dom.load(); 
+                       this.media.dom.load(); 
                        this.media.dom.setAttribute('webkit-playsinline', 'true'); // make it play inline on iphone                                             
                     },
                                         

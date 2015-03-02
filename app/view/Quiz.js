@@ -13,7 +13,7 @@ Ext.define('ASLKids.view.Quiz', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
-                html: 'Which sign is this?',
+//                html: 'Which sign is this?',
                 itemId: 'quizTitle',
                 cls:'quizTitle'
             }, 
@@ -35,13 +35,7 @@ Ext.define('ASLKids.view.Quiz', {
                 	},
                     {
                         xtype: 'spacer'
-                    },
-                    {
-                		cls: 'quizvideoborderoverlay' 
-            		},
-            		{
-                		cls: 'quizvideoborderoverlay2' 
-            		}
+                    }
             	]
             },
             {

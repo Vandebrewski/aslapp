@@ -6,7 +6,6 @@ Ext.application({
         'Ext.MessageBox',
         'ASLKids.store.Gebaar',
         'ASLKids.view.Viewport',
- //       'ASLKids.view.Video',
         'Ext.Img',
         'Ext.Video',
         'Ext.Audio',
@@ -17,20 +16,20 @@ Ext.application({
 
     controllers: ['Main', 'Quiz'],
 
-    icon: {
-        '29': 'resources/icons/icons-29.png',
-        '40': 'resources/icons/icons-40.png',
-        '57': 'resources/icons/icon.png',
-        '72': 'resources/icons/icons-72.png',
-        '76': 'resources/icons/icons-76.png',
-        '80': 'resources/icons/icons-80.png',
-        '152': 'resources/icons/icons-152@2x.png'
-    },
-    isIconPrecomposed: true,
-    startupImage: {
-        '768x1024': 'resources/icons/splash.png',
-        '1536x2048': 'resources/icons/splash.png'
-    },
+//    icon: {
+//        '29': 'resources/icons/icons-29.png',
+//       '40': 'resources/icons/icons-40.png',
+//        '57': 'resources/icons/icon.png',
+//        '72': 'resources/icons/icons-72.png',
+//        '76': 'resources/icons/icons-76.png',
+//        '80': 'resources/icons/icons-80.png',
+//        '152': 'resources/icons/icons-152@2x.png'
+//    },
+//    isIconPrecomposed: true,
+//    startupImage: {
+//        '768x1024': 'resources/icons/splash.png',
+//        '1536x2048': 'resources/icons/splash.png'
+//    },
     
     eventPublishers: {
         touchGesture: {
@@ -42,14 +41,14 @@ Ext.application({
             }
         }
     },
-
+    
     launch: function () {
+    	
         Ext.Viewport.add({
             xtype: 'main-view'
         });
         
-        
-
+       
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
             layout: 'fit',            
@@ -61,7 +60,6 @@ Ext.application({
                 xtype: 'list',
                 itemTpl: '{title}',
                 scrollable: false,
- //               height: '1024',
                 data: [{
                     title: '<div class="menu-icon-big">&#xe604;</div>Home',
                     itemIndex: 0
@@ -84,16 +82,4 @@ Ext.application({
             reveal: true
         });
     } //, // End launch
-   
-//    onUpdated: function () {
-//        Ext.Msg.confirm(
-//            "Application Update",
-//            "This application has just successfully been updated to the latest version. Reload now?",
-//            function (buttonId) {
-//                if (buttonId === 'yes') {
-//                    window.location.reload();
-//                }
- //           }
-//        );
-//    }
 });
