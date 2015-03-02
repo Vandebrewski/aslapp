@@ -18,39 +18,56 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 });
             }
         } ,
-    
-        layout: {
-            type: 'vbox',
-           pack: 'right'
-            },
+
+        flex: 1,
+        layout: 'vbox',
         items: [
             {
                 xtype: 'image',
                 name: 'listDetailImage',
-                flex: 1,
+                height: 430,
                 cls: 'listdetailimage'
             },
             {
-                xtype: 'button',
-                itemId: 'nextButton',
-                cls: 'nextButton' //,
-//                pressedCls: 'nextButton-pressed'
-            }, 
-            {
-                xtype: 'button',
-                itemId: 'backButton',
-                cls: 'backButton'
-            },                         
-            {
-                xtype: 'button',
-                itemId: 'listDetailButton', 
-                cls: 'audioButton',  
-                handler: function () {
-                    var container = this.getParent(),
-                    audio = container.down('audio');
-                    audio.play();
-                }
+                layout: 'hbox',
+                items: [ 
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'button',
+                        itemId: 'listDetailButton', 
+                        cls: 'audioButton',  
+                        handler: function () {
+                            var container = this.getParent(),
+                            audio = container.down('audio');
+                            audio.play();
+                        }
+                    },
+                    {
+                        xtype: 'spacer'
+                    }
+                ]
             },
+            {
+                layout: 'hbox',
+                items: [
+                    {
+                        xtype: 'button',
+                        itemId: 'backButton',
+                        cls: 'backButton'
+                    },  
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'button',
+                        itemId: 'nextButton',
+                        cls: 'nextButton' //,
+        //                pressedCls: 'nextButton-pressed'
+                    }
+                ]
+            },   
             {
                 xtype: 'audio',
                 name: 'listDetailAudio',
@@ -62,11 +79,11 @@ Ext.define('ASLKids.view.GebarenDetail', {
             },
             {
                 xtype: 'video',
-                flex: 1,
                 name: 'listDetailVideo',
                 itemId: 'videoView',
                 posterUrl: 'resources/images/playbutton.svg',          
                 enableControls: false,
+                height: 432,
                                 
                 listeners: {                    
                     painted: function () {
