@@ -12,6 +12,9 @@ Ext.define('ASLKids.view.Extra', {
         {
         	xtype: 'button',
         	text: 'buy',
+        	handler: function () {
+        		ASLkids.app.getController ('IAP').buy ('50signs');
+        	}
         },
         
         {
