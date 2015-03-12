@@ -2,7 +2,7 @@ Ext.define('ASLKids.controller.IAP', {
      extend: 'Ext.app.Controller',
 
      config: {
-          list: ['adfree']
+          list: ['50signs']
      },
 
 	init: function() {
@@ -33,14 +33,14 @@ Ext.define('ASLKids.controller.IAP', {
 	},
 	
 	onPurchase: function(transactionId, productId, receipt) {
-          if(productId === 'adfree'){
-               alert("Ads Removed!");
+          if(productId === '50signs'){
+               alert("50 signs added");
                //Code to remove ads for the user
           }
 	},
 	
 	onRestore: function(transactionId, productId, transactionReceipt) {
-          if(productId == 'adfree'){
+          if(productId == '50signs'){
                //Code to remove ads for the user
           }
 	},
