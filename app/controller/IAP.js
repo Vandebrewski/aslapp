@@ -23,7 +23,7 @@ Ext.define('ASLKids.controller.IAP', {
 	},
 	
 	onReady: function() {
-          storekit.load(IAP.list, function (products, invalidIds) {
+          storekit.load(this.getList(), function (products, invalidIds) {
                IAP.products = products;
                IAP.loaded = true;
                for (var i = 0; i < invalidIds.length; ++i) {
