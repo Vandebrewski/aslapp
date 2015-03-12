@@ -97,7 +97,7 @@ Ext.define('ASLKids.controller.Quiz', {
         var index = this.getCurrentQuestionIndex(),
             max = this.getQuestionCount(),
             title = 'Which sign is this?',
-            tmp = '<span class="count">{index} / {max}</span>';
+            tmp = '<div class="quizcounter count{index}"></div>';
 
         if (index >= max) {
             this.getQuizTitle().setHtml(title);
@@ -141,33 +141,16 @@ Ext.define('ASLKids.controller.Quiz', {
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "<div class='resulttekst'> Good job !<br /><img src='resources/images/correct.png'><br />";
+        html += "<div class='resulttext'> Good job !<br /><img src='resources/images/correct.png'></div>";
         
         var correct = results.correct;
-        if (correct.length == 0) {
-            html += "no answers";
-        }
-        else if (correct.length == 1) {
-            html += correct.length + " answer";
-        }
-        else {
-            html += correct.length + " answers";
-        }
 
-        html += " correct";
+        html += "<div class='quizresult resultcount" + correct.length + "'></div>";
 
-        // incorrect
-        html += " and<br /> ";
         
-        var incorrect = results.incorrect;
-        if (incorrect.length == 0) {
-            html += "none";
-        }
-        else {
-            html += incorrect.length;
-        }
+ //       var incorrect = results.incorrect;
 
-        html += " incorrect</div>";
+//        html += incorrect.length + " <img src='resources/images/count5.png'></div>";
 
         this.getResultsText().setHtml(html);
     },
@@ -237,7 +220,7 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "<img src='resources/images/correct.png'><br /><br />Correct!" : "<img src='resources/images/wrong.png'>";
+            var message = correct ? "<img src='resources/images/correct.png'><br /><br /><img src='resources/images/cake.svg'>" : "<img src='resources/images/wrong.png'>";
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
@@ -257,30 +240,31 @@ Ext.define('ASLKids.controller.Quiz', {
 
     createVideoComponent: function() {
         if (this.getVideoView()) {
-            this.getVideoView().element.dom.src = "";
-            this.getVideoView().element.dom.load();
-            this.getVideoView().destroy();
+			 this.getVideoView().pause();
+			this.getVideoView().setUrl(null);
+			this.getVideoView().destroy();
         }
 
         this.getAnswersView().getParent().insert(1, {
             xtype: 'video',
             itemId: 'questionVideo',
-            posterUrl: 'resources/images/playbutton.svg',
+            posterUrl: 'resources/images/playbutton2.svg',
 //            width: 768,
 //            height: 432,           
-			flex: 1,          
+			flex:9,
+			cls: 'QuizVideo',
             enableControls: false,
                             
             listeners: {                    
                 painted: function () {
-                    this.media.dom.load(); 
-                    this.media.dom.setAttribute('webkit-playsinline', 'true'); // make it play inline on iphone          
+//                    this.media.dom.load(); // I don't think this is needed
+                    this.media.dom.setAttribute('webkit-playsinline', 'true')//; // make it play inline on iphone          
                 },
                 tap: {
                     fn: function () {                                                           
                         var me = this;
                         
-                        me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo
+                        me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo ------- try canplaythrough or canplay-------
                             me.play();
                             }, true);  
                         

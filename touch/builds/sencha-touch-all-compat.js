@@ -47130,7 +47130,7 @@ Ext.define('Ext.Video', {
 
     onErased: function() {
         this.pause();
-        this.media.setTop(-2000);
+        this.media.setBottom(-2000);
         this.ghost.show();
     },
 
@@ -47166,7 +47166,7 @@ Ext.define('Ext.Video', {
     onPause: function() {
         this.callParent(arguments);
         if (!this.isInlineVideo) {
-            this.media.setTop(-2000);
+            this.media.setBottom(-2000);
             this.ghost.show();
         }
     },
@@ -47177,7 +47177,7 @@ Ext.define('Ext.Video', {
      */
     onPlay: function() {
         this.callParent(arguments);
-        this.media.setTop(0);
+        this.media.setBottom(0);
     },
 
     /**

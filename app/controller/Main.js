@@ -42,9 +42,12 @@ Ext.define('ASLKids.controller.Main', {
             }
         } // End control
     }, // End config
+    
+	
+	
 
     onVideoEnded: function(video) {
-        video.media.setTop(-2000);
+        video.media.setBottom(-2000);
         video.ghost.show();
     },
 
@@ -58,7 +61,7 @@ Ext.define('ASLKids.controller.Main', {
 
     onBackTap: function() {
         this.getMain().setActiveItem(0);
-
+		video.pause(); // shouldn't we add this?
     },
 
     onNextTap: function() {

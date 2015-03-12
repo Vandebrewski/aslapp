@@ -19,14 +19,13 @@ Ext.define('ASLKids.view.Home', {
             ],
 
         items: [
-        {
-    		xtype: 'audio',
-    		src: 'resources/audio/home-sample.mp3',
-    		enableControls: true,
-    		autoplay:true
-//    		hidden: true
-    		
-    	}, 
+//        {
+//    		xtype: 'audio',
+//    		src: 'resources/audio/home-sample.mp3',
+//    		enableControls: true,
+//    		autoplay:true
+//    		hidden: true    		
+//    	}, 
         {       	
 			html: 'Menu<br />&#x25BC;',
 			cls: 'menu-hint'

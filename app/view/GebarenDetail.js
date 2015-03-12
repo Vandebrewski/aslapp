@@ -19,12 +19,16 @@ Ext.define('ASLKids.view.GebarenDetail', {
             }
         } ,
 
-        layout: 'vbox',
+        layout: {
+    		type: 'vbox',
+    		align: 'stretch',
+    		pack: 'end'
+			},
         items: [
             {
                 xtype: 'image',
                 name: 'listDetailImage',
-                height: 430,
+               flex: 1,
                 cls: 'listdetailimage'
             },
             {
@@ -43,6 +47,12 @@ Ext.define('ASLKids.view.GebarenDetail', {
                             audio.play();
                         }
                     },
+                	{
+                		xtype: 'audio',
+                		name: 'listDetailAudio',
+                		hidden: true
+            		},
+
                     {
                         xtype: 'spacer'
                     }
@@ -68,26 +78,20 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 ]
             },   
             {
-                xtype: 'audio',
-                name: 'listDetailAudio',
-                hidden: true
+                cls: 'videoborderoverlay',
             },
-//            {
-//                xtype: 'image' //,
-//                cls: 'videoborderoverlay' 
-//            },
             {
                 xtype: 'video',
                 name: 'listDetailVideo',
                 itemId: 'videoView',
                 posterUrl: 'resources/images/playbutton.svg',          
                 enableControls: false,
-                height: 432,
+                flex: 1,
                                 
                 listeners: {                    
                     painted: function () {
-                       this.media.dom.load(); 
-                       this.media.dom.setAttribute('webkit-playsinline', 'true'); // make it play inline on iphone                                             
+                      this.media.dom.load(); // do we need this; 
+                      this.media.dom.setAttribute('webkit-playsinline', 'true') //; // make it play inline on iphone                                             
                     },
                                         
                     tap: {
@@ -100,8 +104,6 @@ Ext.define('ASLKids.view.GebarenDetail', {
                             
                             if (me.isPlaying()) {                                       
                                 me.pause();
-//								me.media.setTop(-2000); // this doesn't work
-//            					me.ghost.show(); // this doesn't work
                                 
                             } else {                                  
                                 me.play();

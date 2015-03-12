@@ -42,12 +42,88 @@ Ext.application({
         }
     },
     
+
+
+
+    // -------------------------------------- IAP --------------------------------------
+    IAP = {
+		list: [ "adfree"]
+	};
+	
+	IAP.load = function () {
+ 
+     // Check availability of the storekit plugin
+     if (!window.storekit) {
+          console.log("In-App Purchases not available");
+          return;
+     }
+ 
+     // Initialize
+     storekit.init({
+          debug:    true, // Enable IAP messages on the console
+          ready:    IAP.onReady,
+          purchase: IAP.onPurchase,
+          restore:  IAP.onRestore,
+          error:    IAP.onError
+     });
+ 
+	}; // END IAP.load
+	
+	IAP.onReady = function () {
+     storekit.load(IAP.list, function (products, invalidIds) {
+          IAP.products = products;
+          IAP.loaded = true;
+          for (var i = 0; i < invalidIds.length; ++i) {
+               console.log("Error: could not load " + invalidIds[i]);
+          }
+     });
+	}; // END IAP.onready
+	
+	IAP.onPurchase = function (transactionId, productId, receipt) {
+     if(productId === 'adfree'){
+          alert("Ads Removed!");
+          //Code to remove ads for the user
+     }
+	}; // END IAP.onpurchase function
+	
+	IAP.onRestore = function (transactionId, productId, transactionReceipt) {
+     if(productId == 'adfree'){
+          //Code to remove ads for the user
+     }
+	}; // END IAP.onRestore
+	
+	IAP.onError = function (errorCode, errorMessage) {
+     console.log(errorCode);
+     console.log(errorMessage);
+	}; // END IAP.onError
+	
+	IAP.buy = function(productId){
+     storekit.purchase(productId);
+	}; // END IAP.buy
+	
+	IAP.restore = function(){
+     storekit.restore();
+	}; // END IAP
+	
+	// -------------------------------------- END IAP --------------------------------------
+	
+	
+
+
+
+
+    
     launch: function () {
     	
         Ext.Viewport.add({
             xtype: 'main-view'
         });
         
+       // 
+        document.addEventListener("deviceready", function(){
+     		IAP.load();
+		}, false);
+		
        
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
