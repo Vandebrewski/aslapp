@@ -61,7 +61,6 @@ Ext.define('ASLKids.controller.Main', {
 
     onBackTap: function() {
         this.getMain().setActiveItem(0);
-		video.pause(); // shouldn't we add this?
     },
 
     onNextTap: function() {
