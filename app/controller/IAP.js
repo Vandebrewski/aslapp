@@ -2,59 +2,88 @@ Ext.define('ASLKids.controller.IAP', {
      extend: 'Ext.app.Controller',
 
      config: {
-          list: ['com.basvanderwilk.aslkids.50signs']
+          identifier: 'com.basvanderwilk.aslkids.50signs',
+
+          ready: false,
+          purchased: false
      },
 
 	init: function() {
-          // Check availability of the storekit plugin
-          if (!window.storekit) {
-               console.log("In-App Purchases not available");
+          var me = this;
+
+          if (window.store) {
+               me.setup();
                return;
           }
+
+          document.addEventListener('deviceready', function() {
+               me.setup();
+          }, false);
+	},
+
+     setup: function() {
+          var me = this;
+
+          // Check availability of the storekit plugin
+          if (!window.store) {
+               console.log("window.store not found");
+               return;
+          }
+
+          store.verbosity = store.INFO;
       
-          // Initialize
-          storekit.init({
-               debug:    true, // Enable IAP messages on the console
-               ready:    this.onReady,
-               purchase: this.onPurchase,
-               restore:  this.onRestore,
-               error:    this.onError
+          store.when(this.getIdentifier()).owned(function(product) {
+               console.log('owned');
+               console.log(arguments);
           });
-	},
-	
-	onReady: function() {
-          storekit.load(this.getList(), function (products, invalidIds) {
-               IAP.products = products;
-               IAP.loaded = true;
-               for (var i = 0; i < invalidIds.length; ++i) {
-                    console.log("Error: could not load " + invalidIds[i]);
-               }
+      
+          store.when(this.getIdentifier()).approved(function(product) {
+               console.log('# approved');
+               console.log(arguments);
+
+               me.setPurchased(true);
+               me.fireEvent('purchase', me);
           });
-	},
-	
-	onPurchase: function(transactionId, productId, receipt) {
-          if(productId === 'com.basvanderwilk.aslkids.50signs'){
-               alert("50 signs added");
-               //Code to remove ads for the user
-          }
-	},
-	
-	onRestore: function(transactionId, productId, transactionReceipt) {
-          if(productId == 'com.basvanderwilk.aslkids.50signs'){
-               //Code to remove ads for the user
-          }
-	},
-	
-	onError: function(errorCode, errorMessage) {
-          console.log(errorCode);
-          console.log(errorMessage);
-	},
-	
-	buy: function(productId){
-          storekit.purchase(productId);
-	},
-	
-	restore: function(){
-          storekit.restore();
-	}
+      
+          store.when(this.getIdentifier()).cancelled(function(product) {
+               console.log('cancelled');
+               console.log(arguments);
+          });
+      
+          store.when(this.getIdentifier()).error(function(product) {
+               console.log('error');
+               console.log(arguments);
+          });
+      
+          // store.when(this.getIdentifier()).updated(function(product) {
+          //      console.log('updated');
+          //      console.log('updated', product);
+          //      // app.downloadExtraChapter().then(function() {
+          //           // console.log('downloaded');
+          //           // product.finish();
+          //      // });
+          // });
+
+          store.register({
+               id: this.getIdentifier(),
+               type: store.NON_CONSUMABLE
+          });
+
+          store.ready(function() {
+               console.log('# ready...');
+
+               me.setReady(true);
+               me.fireEvent('ready', me);
+          });
+
+          store.refresh();
+     },
+
+     purchase: function() {
+          store.order(this.getIdentifier());
+     },
+
+     restorePurchases: function() {
+          store.refresh();
+     }
 });

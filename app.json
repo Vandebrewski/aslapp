@@ -1,4 +1,20 @@
 {
+    "builds": {
+        "web": {"default": true},
+        "native": {
+            "packager": "cordova",
+            "cordova" : {
+                "config": {
+                    "platforms": "ios",
+
+                    "id": "com.basvanderwilk.aslkids",
+                    "name": "ASL Kids"
+                }
+            }
+        }
+    },
+
+                
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
@@ -11,7 +27,7 @@
 
     /**
      * The absolute URL to this application in development environment, i.e: the URL to run this application
-     * on your web browser during development, e.g: "http://localhost/asl/index.html".
+     * on your web browser during development, e.g: "http://localhost/myapp/index.html".
      *
      * This value is needed when build to resolve your application's dependencies if it requires server-side resources
      * that are not accessible via file system protocol.
@@ -40,7 +56,7 @@
      */
     "js": [
         {
-            "path": "../touch/sencha-touch.js",
+            "path": "touch/sencha-touch.js",
             "x-bootstrap": true
         },
         {
@@ -105,6 +121,7 @@
     "resources": [
         "resources/images",
         "resources/icons",
+        "resources/startup",
         "resources/fonts",
         "resources/audio",
         "resources/video"
@@ -133,5 +150,5 @@
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "e7ad1255-6f7e-43b3-ade0-99824b66c804"
+    "id": "e91bcf12-cf92-4d6b-9353-1dbe4ce5ba64"
 }
