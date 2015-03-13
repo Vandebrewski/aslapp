@@ -18,7 +18,7 @@ Ext.define('ASLKids.view.Extra', {
         	text: 'Buy 50 signs',
         	height: 50,
         	handler: function () {
-        		ASLKids.app.getController ('IAP').buy ('50signs');
+        		ASLKids.app.getController ('IAP').buy ('com.basvanderwilk.aslkids.50signs');
         		
         	}
         },

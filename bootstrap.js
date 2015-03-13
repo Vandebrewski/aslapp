@@ -36,6 +36,7 @@ Ext.Loader.addClassPathMappings({
 });
 
 Ext.ClassManager.addNameAlternateMappings({
+  "ASLKids.controller.IAP": [],
   "ASLKids.controller.Main": [],
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
@@ -671,6 +672,7 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 
 Ext.ClassManager.addNameAliasMappings({
+  "ASLKids.controller.IAP": [],
   "ASLKids.controller.Main": [],
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],

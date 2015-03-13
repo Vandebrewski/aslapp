@@ -6,7 +6,7 @@ Ext.define('ASLKids.view.Home', {
     config: {
         iconCls: 'home',
         cls: 'homescreen',
-        scrollable: false,
+        scrollable: null,
 
 		listeners:[
                  {

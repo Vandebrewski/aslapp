@@ -282,7 +282,7 @@ Ext.define('ASLKids.controller.Quiz', {
     },
 
     onVideoEnded: function(video) {
-        video.media.setTop(-2000);
+        video.media.setBottom(-2000);
         video.ghost.show();
     }
 });

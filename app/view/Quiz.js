@@ -31,7 +31,7 @@ Ext.define('ASLKids.view.Quiz', {
                 	},
                     {
                         xtype: 'dataview',
-                        scrollable: false,
+                        scrollable: null,
                         flex:6,
                         itemTpl: '<img src="resources/images/objects/thumbnails/{plaatje}.png">{plaatje}</div>',
                         cls: 'centerQuizOptions'                      
