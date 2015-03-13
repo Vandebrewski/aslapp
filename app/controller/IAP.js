@@ -2,7 +2,7 @@ Ext.define('ASLKids.controller.IAP', {
      extend: 'Ext.app.Controller',
 
      config: {
-          list: ['50signs']
+          list: ['com.basvanderwilk.aslkids.50signs']
      },
 
 	init: function() {
@@ -33,14 +33,14 @@ Ext.define('ASLKids.controller.IAP', {
 	},
 	
 	onPurchase: function(transactionId, productId, receipt) {
-          if(productId === '50signs'){
+          if(productId === 'com.basvanderwilk.aslkids.50signs'){
                alert("50 signs added");
                //Code to remove ads for the user
           }
 	},
 	
 	onRestore: function(transactionId, productId, transactionReceipt) {
-          if(productId == '50signs'){
+          if(productId == 'com.basvanderwilk.aslkids.50signs'){
                //Code to remove ads for the user
           }
 	},
