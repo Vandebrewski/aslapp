@@ -23,22 +23,22 @@ Ext.define('ASLKids.controller.IAP', {
 
      setup: function() {
           var me = this;
-          
+
           // Check availability of the storekit plugin
           if (!window.store) {
-               alert("window.store not found");
+               console.log("window.store not found");
                return;
           }
 
           store.verbosity = store.INFO;
       
           store.when(this.getIdentifier()).owned(function(product) {
-               alert('owned');
+               console.log('owned');
                console.log(arguments);
           });
       
           store.when(this.getIdentifier()).approved(function(product) {
-               alert('# approved');
+               console.log('# approved');
                console.log(arguments);
 
                me.setPurchased(true);
@@ -46,20 +46,20 @@ Ext.define('ASLKids.controller.IAP', {
           });
       
           store.when(this.getIdentifier()).cancelled(function(product) {
-               alert('cancelled');
+               console.log('cancelled');
                console.log(arguments);
           });
       
           store.when(this.getIdentifier()).error(function(product) {
-               alert('error');
+               console.log('error');
                console.log(arguments);
           });
       
           // store.when(this.getIdentifier()).updated(function(product) {
-          //      alert('updated');
+          //      console.log('updated');
           //      console.log('updated', product);
           //      // app.downloadExtraChapter().then(function() {
-          //           // alert('downloaded');
+          //           // console.log('downloaded');
           //           // product.finish();
           //      // });
           // });
@@ -70,7 +70,7 @@ Ext.define('ASLKids.controller.IAP', {
           });
 
           store.ready(function() {
-               alert('# ready...');
+               console.log('# ready...');
 
                me.setReady(true);
                me.fireEvent('ready', me);
