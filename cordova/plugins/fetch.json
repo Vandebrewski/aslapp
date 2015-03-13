@@ -1,0 +1,8 @@
+{
+    "cc.fovea.cordova.purchase": {
+        "source": {
+            "type": "registry",
+            "id": "cc.fovea.cordova.purchase"
+        }
+    }
+}

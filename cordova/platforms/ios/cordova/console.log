@@ -1,0 +1,108 @@
+2015-03-13 21:26:10.862 ASLKids[31830:10702230] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/06AC137B-0CC0-4AA4-9F53-7499182265EF/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:26:11.155 ASLKids[31830:10702230] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:26:11.156 ASLKids[31830:10702230] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:26:11.170 ASLKids[31830:10702230] Unlimited access to network resources
+2015-03-13 21:26:11.189 ASLKids[31830:10702230] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:26:11.753 ASLKids[31830:10702230] Resetting plugins due to page load.
+2015-03-13 21:26:15.461 ASLKids[31830:10702230] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/DDE359C3-0411-4AC1-8DC1-73FCF7B2A9BC/ASLKids.app/www/index.html
+2015-03-13 21:33:08.634 ASLKids[32961:10756908] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/7A16A4A1-885D-415E-BF86-C13D42FF58E5/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:33:08.686 ASLKids[32961:10756908] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:33:08.686 ASLKids[32961:10756908] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:33:08.688 ASLKids[32961:10756908] Unlimited access to network resources
+2015-03-13 21:33:08.691 ASLKids[32961:10756908] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:33:08.815 ASLKids[32961:10756908] Resetting plugins due to page load.
+2015-03-13 21:33:10.998 ASLKids[32961:10756908] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/F4252C58-8E72-4CE9-B126-6021A134A681/ASLKids.app/www/index.html
+2015-03-13 21:34:01.790 ASLKids[33966:10761915] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/F411FF56-86F8-477E-A6E8-B7EF2385663B/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:34:01.840 ASLKids[33966:10761915] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:34:01.840 ASLKids[33966:10761915] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:34:01.842 ASLKids[33966:10761915] Unlimited access to network resources
+2015-03-13 21:34:01.844 ASLKids[33966:10761915] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:34:01.959 ASLKids[33966:10761915] Resetting plugins due to page load.
+2015-03-13 21:34:04.050 ASLKids[33966:10761915] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/DC3F3287-821B-4A0B-8892-96EB1CFD2B26/ASLKids.app/www/index.html
+2015-03-13 21:38:19.680 ASLKids[35546:10800731] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/5850ADF4-17FA-4738-A051-A285A8643A81/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:38:19.857 ASLKids[35546:10800731] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:38:19.857 ASLKids[35546:10800731] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:38:19.859 ASLKids[35546:10800731] Unlimited access to network resources
+2015-03-13 21:38:19.861 ASLKids[35546:10800731] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:38:19.965 ASLKids[35546:10800731] Resetting plugins due to page load.
+2015-03-13 21:38:20.341 ASLKids[35546:10800731] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/699551CA-C6A5-4D49-855C-F4D63A557C5F/ASLKids.app/www/index.html
+2015-03-13 21:39:18.124 ASLKids[36502:10810846] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/5E950D0B-83EF-43A6-8CB0-FFBF55203B7F/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:39:18.216 ASLKids[36502:10810846] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:39:18.217 ASLKids[36502:10810846] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:39:18.218 ASLKids[36502:10810846] Unlimited access to network resources
+2015-03-13 21:39:18.220 ASLKids[36502:10810846] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:39:18.327 ASLKids[36502:10810846] Resetting plugins due to page load.
+2015-03-13 21:39:18.696 ASLKids[36502:10810846] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/7CFD1E1E-D0DE-44FA-A8B9-DE07A576EB4E/ASLKids.app/www/index.html
+2015-03-13 21:39:25.531 ASLKids[36502:10810846] Resetting plugins due to page load.
+2015-03-13 21:39:25.558 ASLKids[36502:10810846] THREAD WARNING: ['InAppPurchase'] took '12.044922' ms. Plugin should use a background thread.
+2015-03-13 21:39:26.055 ASLKids[36502:10810846] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/7CFD1E1E-D0DE-44FA-A8B9-DE07A576EB4E/ASLKids.app/www/index.html
+2015-03-13 21:39:26.597 ASLKids[36502:10810846] Resetting plugins due to page load.
+2015-03-13 21:39:27.830 ASLKids[36502:10810846] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/7CFD1E1E-D0DE-44FA-A8B9-DE07A576EB4E/ASLKids.app/www/index.html
+2015-03-13 21:42:39.022 ASLKids[37536:10845897] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/FA13000F-76C9-4B23-AE20-27CD2653B4EA/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:42:39.122 ASLKids[37536:10845897] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:42:39.122 ASLKids[37536:10845897] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:42:39.124 ASLKids[37536:10845897] Unlimited access to network resources
+2015-03-13 21:42:39.126 ASLKids[37536:10845897] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:42:39.244 ASLKids[37536:10845897] Resetting plugins due to page load.
+2015-03-13 21:42:39.612 ASLKids[37536:10845897] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/E72A8FB1-0E8C-4415-A536-67D833439CB9/ASLKids.app/www/index.html
+2015-03-13 21:42:46.144 ASLKids[37536:10845897] Resetting plugins due to page load.
+2015-03-13 21:42:47.372 ASLKids[37536:10845897] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/E72A8FB1-0E8C-4415-A536-67D833439CB9/ASLKids.app/www/index.html
+2015-03-13 21:43:48.930 ASLKids[38496:10858820] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Data/Application/C4C3012D-668D-451D-BEB8-3684FC423F71/Library/Cookies/Cookies.binarycookies
+2015-03-13 21:43:49.023 ASLKids[38496:10858820] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-13 21:43:49.023 ASLKids[38496:10858820] Multi-tasking -> Device: YES, App: YES
+2015-03-13 21:43:49.025 ASLKids[38496:10858820] Unlimited access to network resources
+2015-03-13 21:43:49.027 ASLKids[38496:10858820] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-13 21:43:49.131 ASLKids[38496:10858820] Resetting plugins due to page load.
+2015-03-13 21:43:49.503 ASLKids[38496:10858820] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/E4F64A97-457E-4201-B1B0-9C02FF60F5A5/ASLKids.app/www/index.html
+2015-03-13 21:43:55.760 ASLKids[38496:10858820] Resetting plugins due to page load.
+2015-03-13 21:43:56.110 ASLKids[38496:10858820] Finished load of: file:///Users/Robert/Library/Developer/CoreSimulator/Devices/0925E968-BEB3-455E-9598-F62478723D5C/data/Containers/Bundle/Application/E4F64A97-457E-4201-B1B0-9C02FF60F5A5/ASLKids.app/www/index.html
+2015-03-13 21:48:03.916 ASLKids[38496:10890974] Terminating since there is no system app.

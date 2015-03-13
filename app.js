@@ -47,12 +47,6 @@ Ext.application({
             xtype: 'main-view'
         });
         
-       // 
-        document.addEventListener("deviceready", function(){
-     		IAP.load();
-		}, false);
-		
-       
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
             layout: 'fit',            
@@ -63,7 +57,7 @@ Ext.application({
             {
                 xtype: 'list',
                 itemTpl: '{title}',
-                scrollable: false,
+                scrollable: null,
                 data: [{
                     title: '<div class="menu-icon-big">&#xe604;</div>Home',
                     itemIndex: 0

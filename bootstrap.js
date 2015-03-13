@@ -10,32 +10,33 @@
  */
 Ext.Loader.addClassPathMappings({
   "ASLKids": "app",
-  "Ext": "../touch/src",
-  "Ext-more": "../touch/src/core/Ext-more.js",
+  "Ext": "touch/src",
+  "Ext-more": "touch/src/core/Ext-more.js",
   "Ext.Boot": ".sencha/app/Boot.js",
-  "Ext.DomHelper": "../touch/src/dom/Helper.js",
-  "Ext.DomQuery": "../touch/src/dom/Query.js",
-  "Ext.Element-alignment": "../touch/src/dom/Element.alignment.js",
-  "Ext.Element-all": "../touch/src/dom/Element.traversal.js",
-  "Ext.Element-insertion": "../touch/src/dom/Element.insertion.js",
-  "Ext.Element-position": "../touch/src/dom/Element.position.js",
-  "Ext.Element-static": "../touch/src/dom/Element.static.js",
-  "Ext.Element-style": "../touch/src/dom/Element.style.js",
-  "Ext.Element-traversal": "../touch/src/dom/Element.traversal.js",
-  "Ext.core.DomQuery": "../touch/src/dom/Query.js",
-  "Ext.device.Purchases.Product": "../touch/src/device/purchases/Sencha.js",
-  "Ext.device.filesystem.DirectoryEntry": "../touch/src/device/filesystem/Sencha.js",
-  "Ext.device.filesystem.Entry": "../touch/src/device/filesystem/Sencha.js",
-  "Ext.device.filesystem.FileEntry": "../touch/src/device/filesystem/Sencha.js",
-  "Ext.device.filesystem.FileSystem": "../touch/src/device/filesystem/Sencha.js",
-  "Ext.device.purchases.Purchase": "../touch/src/device/purchases/Sencha.js",
-  "Ext.device.sqlite.Database": "../touch/src/device/sqlite/Sencha.js",
-  "Ext.device.sqlite.SQLResultSet": "../touch/src/device/sqlite/Sencha.js",
-  "Ext.device.sqlite.SQLResultSetRowList": "../touch/src/device/sqlite/Sencha.js",
-  "Ext.device.sqlite.SQLTransaction": "../touch/src/device/sqlite/Sencha.js"
+  "Ext.DomHelper": "touch/src/dom/Helper.js",
+  "Ext.DomQuery": "touch/src/dom/Query.js",
+  "Ext.Element-alignment": "touch/src/dom/Element.alignment.js",
+  "Ext.Element-all": "touch/src/dom/Element.traversal.js",
+  "Ext.Element-insertion": "touch/src/dom/Element.insertion.js",
+  "Ext.Element-position": "touch/src/dom/Element.position.js",
+  "Ext.Element-static": "touch/src/dom/Element.static.js",
+  "Ext.Element-style": "touch/src/dom/Element.style.js",
+  "Ext.Element-traversal": "touch/src/dom/Element.traversal.js",
+  "Ext.core.DomQuery": "touch/src/dom/Query.js",
+  "Ext.device.Purchases.Product": "touch/src/device/purchases/Sencha.js",
+  "Ext.device.filesystem.DirectoryEntry": "touch/src/device/filesystem/Sencha.js",
+  "Ext.device.filesystem.Entry": "touch/src/device/filesystem/Sencha.js",
+  "Ext.device.filesystem.FileEntry": "touch/src/device/filesystem/Sencha.js",
+  "Ext.device.filesystem.FileSystem": "touch/src/device/filesystem/Sencha.js",
+  "Ext.device.purchases.Purchase": "touch/src/device/purchases/Sencha.js",
+  "Ext.device.sqlite.Database": "touch/src/device/sqlite/Sencha.js",
+  "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
+  "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
+  "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js"
 });
 
 Ext.ClassManager.addNameAlternateMappings({
+  "ASLKids.controller.IAP": [],
   "ASLKids.controller.Main": [],
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
@@ -46,7 +47,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "ASLKids.view.Home": [],
   "ASLKids.view.NavList": [],
   "ASLKids.view.Quiz": [],
-  "ASLKids.view.Video": [],
   "ASLKids.view.Viewport": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
@@ -671,6 +671,7 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 
 Ext.ClassManager.addNameAliasMappings({
+  "ASLKids.controller.IAP": [],
   "ASLKids.controller.Main": [],
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
@@ -692,9 +693,6 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "ASLKids.view.Quiz": [
     "widget.quizpanel"
-  ],
-  "ASLKids.view.Video": [
-    "widget.video"
   ],
   "ASLKids.view.Viewport": [
     "widget.main-view"
