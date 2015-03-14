@@ -17,17 +17,6 @@ Ext.define('ASLKids.view.NavList', {
             xtype: 'gebarenlijst'
         }, 
         {
-        	xtype: 'button',
-        	itemId: 'buyButton',
-        	disabled: true,
-//     		text: 'Buy 50 signs',
-       		height: 150,
-        	cls: 'listbuybutton',
-        	handler: function () {
-       		ASLKids.app.getController('IAP').purchase();
-      			}
-        },
-        {
             xtype: 'gebarendetail'
         }]
     }
