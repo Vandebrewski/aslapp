@@ -11,12 +11,6 @@ Ext.define('ASLKids.controller.IAP', {
 	init: function() {
           var me = this;
 
-          if (localStorage.getItem('purchased') === true) {
-               this.setPurchased(true);
-               me.fireEvent('purchased', me);
-               return;
-          }
-
           if (window.store) {
                me.setup();
                return;
@@ -26,6 +20,15 @@ Ext.define('ASLKids.controller.IAP', {
                me.setup();
           }, false);
 	},
+
+     getPurchased: function() {
+          if (localStorage.getItem('purchased') === "true") {
+               this._purchased = true;
+               return true;
+          }
+
+          return this._purchased;
+     },
 
      setup: function() {
           var me = this;

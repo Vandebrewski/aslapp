@@ -119,7 +119,6 @@ Ext.define('ASLKids.controller.Quiz', {
 
         index++;
         
-
         if (index >= max) {
             this.finish();
         }
@@ -136,6 +135,7 @@ Ext.define('ASLKids.controller.Quiz', {
 
         var resultsView = this.getResultsView(),
             results = this.getResults(),
+            buyButton = resultsView.getComponent('buyButton'),
             html = "";
 
         resultsView.getParent().setActiveItem(resultsView);
@@ -146,6 +146,14 @@ Ext.define('ASLKids.controller.Quiz', {
         var correct = results.correct;
 
         html += "<div class='quizresult resultcount" + correct.length + "'></div>";
+
+        var IAP = ASLKids.app.getController('IAP');
+        if (IAP.getPurchased()) {
+            buyButton.setHidden(true);
+        }
+        else if (IAP.getReady()) {
+            buyButton.setDisabled(false);
+        }
 
         
  //       var incorrect = results.incorrect;
