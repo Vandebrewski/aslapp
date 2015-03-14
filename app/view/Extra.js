@@ -32,8 +32,6 @@ Ext.define('ASLKids.view.Extra', {
     },
 
     initialize: function() {
-        console.log('initialize');
-        
         this.callParent(arguments);
 
         var IAP = ASLKids.app.getController('IAP');
@@ -58,14 +56,10 @@ Ext.define('ASLKids.view.Extra', {
     },
 
     _onReady: function() {
-        console.log('_onready');
-
         this.getBuyButton().setDisabled(false);
     },
 
     _onPurchase: function() {
-        console.log('_onPurchase');
-
         this.getBuyButton().setHidden(true);
     }
 });
