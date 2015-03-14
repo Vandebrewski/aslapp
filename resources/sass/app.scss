@@ -202,6 +202,24 @@ color: #dde5cd
     margin: 0 auto
 }
 
+.quizresultbuybutton {
+  width: 280px;
+  height: 140px;
+  background-image: url('../images/quizresultbuybutton.png') !important;
+  background-repeat: no-repeat !important;
+  margin:0 auto;
+  border: none
+}
+
+.listbuybutton {
+  width: 617px;
+  height: 203px;
+  background-image: url('../images/listbuybutton.png') !important;
+  background-repeat: no-repeat !important;
+  margin:0 auto;
+  border: none
+}
+
 
 //-------------------------------------------- PLAY / QUIZ -------------------------------------
 .quizbackground {

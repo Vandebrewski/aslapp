@@ -49,11 +49,23 @@ Ext.define('ASLKids.view.Quiz', {
                 items: [
                     {
                         itemId: 'resultsText'
-                    }, {
+                    }, 
+                    {
                         xtype: 'button',
                         cls:'again',
                         itemId: 'repeatButton'
-                    }
+                    },
+                    {
+        				xtype: 'button',
+            			itemId: 'buyButton',
+            			disabled: true,
+//        				text: 'Buy 50 signs',
+        				height: 150,
+        				cls: 'quizresultbuybutton',
+        				handler: function () {
+        				ASLKids.app.getController('IAP').purchase();
+        				}
+        			}
                 ]
             }
         ]

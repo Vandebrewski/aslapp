@@ -15,7 +15,19 @@ Ext.define('ASLKids.view.NavList', {
         // useTitleForBackButtonText: 'true', // true causes the back tekst to be something else than "back"
         items: [{
             xtype: 'gebarenlijst'
-        }, {
+        }, 
+        {
+        	xtype: 'button',
+        	itemId: 'buyButton',
+        	disabled: true,
+//     		text: 'Buy 50 signs',
+       		height: 150,
+        	cls: 'listbuybutton',
+        	handler: function () {
+       		ASLKids.app.getController('IAP').purchase();
+      			}
+        },
+        {
             xtype: 'gebarendetail'
         }]
     }
