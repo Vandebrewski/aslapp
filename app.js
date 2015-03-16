@@ -57,20 +57,25 @@ Ext.application({
             {
                 xtype: 'list',
                 itemTpl: '{title}',
-                scrollable: null,
-                data: [{
-                    title: '<div class="menu-icon-big">&#xe604;</div>Home',
-                    itemIndex: 0
-                }, {
-                    title: '<div class="menu-icon-big">&#xe603;</div>Signs',
+                scrollable: false,
+                data: [
+                {
+                    title: '<div class="menu-icon-big">&#xe603;</div>signs',
                     itemIndex: 1
-                }, {
-                    title: '<div class="menu-icon-big">&#xe602;</div>Play',
+                }, 
+                {
+                    title: '<div class="menu-icon-big">&#xe602;</div>play',
                     itemIndex: 2
-                }, {
-                    title: '<div class="menu-icon-big">&#xe600;</div>Info',
+                }, 
+                {
+                    title: '<div class="menu-icon-small">&#xe604;</div>',
+                    itemIndex: 0
+                },
+                {
+                    title: '<div class="menu-icon-small">&#xe600;</div>',
                     itemIndex: 3
-                }]
+                }
+                ]
             }]
         });
 
