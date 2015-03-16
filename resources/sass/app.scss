@@ -21,16 +21,16 @@ $experimental-support-for-khtml : false;
 
 
 @font-face {
-  font-family: 'Handlee';
-  src: url('../fonts/Cookie-Regular.ttf')
+  font-family: 'Dekko';
+  src: url('../fonts/Dekko-Regular.ttf')
 }
   
 @font-face {
   font-family: 'icomoon';
   src: url('../fonts/icomoon.ttf')}  
 
-.again, h3, .quizTitle, .resulttext, .x-dataview-item, .x-list .x-list-item, .audioButton, .menu-hint {
-  font-family: 'Handlee', Helvetica Neue;
+.again, h3, .quizTitle, .resulttext, .x-dataview-item, .x-list .x-list-item, .audioButton, .menu-hint, .x-msgbox-text {
+  font-family: 'Dekko', Helvetica Neue;
   color: #dde5cd !important;
 }
 
@@ -94,8 +94,8 @@ background-repeat: no-repeat !important
 
 .gebarenlijst {
   background-color: #65bcab !important;
-  padding: 30px 0 0 0;
-text-align: center;
+  margin: 20px 0 0 0 !important;
+  text-align: center;
 }
 
 
@@ -111,7 +111,7 @@ display:inline-block;
   border: 1px solid #dde5cd;
   border-radius: 5px;
   text-align: center;
-  font-size: 1.2em
+  font-size: 1em
 }
 
 .x-list .x-list-item.x-list-item-tpl .x-innerhtml {
@@ -149,8 +149,8 @@ background-position: center bottom !important;
 background-repeat: no-repeat !important;
 border: 0px none !important;
 width:100px;
-padding: 0px 0px 65px !important;
-font-size: 1.7em;
+padding: 0px 0px 60px !important;
+font-size: 1.1em;
 margin-top:-10px;
 z-index: 4
 }
@@ -212,9 +212,9 @@ color: #dde5cd
 }
 
 .listbuybutton {
-  width: 617px;
-  height: 203px;
-  background-image: url('../images/listbuybutton.png') !important;
+  width: 308px;
+  height: 70px;
+  background-image: url('../images/listbuybutton.svg') !important;
   background-repeat: no-repeat !important;
   margin:0 auto;
   border: none
@@ -230,7 +230,7 @@ color: #dde5cd
 }
 
 .quizTitle {
-  font-size: 2em;
+  font-size: 1.4em;
   background-color: transparent;
   border: none !important;
   color: #dde5cd;
@@ -248,7 +248,7 @@ text-align: center !important;
   height: 100px;
   border: 1px solid #dde5cd;
   border-radius: 5px;
-  font-size: 1.2em
+  font-size: 1em
 }
 
 .x-msgbox {
@@ -440,19 +440,13 @@ width: 3em;
 
 //-------------------------------------------- iPad specific -------------------------------------------
 
-// @media (orientation:portrait) {
-//  html.ipad.ios7 > video {
-//  width: 768px !important;
-//  height: 432px !important;
-//  }
-// }
  
 @media screen and (min-device-width: 768px) and (max-device-width : 1024px) {
 video {
  width: 768px !important;
  height: 432px !important;
  -webkit-animation: fadein 1s ease-in !important;
- bottom: 0
+ bottom: 0 !important
 }
 
 .again {
@@ -480,7 +474,13 @@ margin: 10px
   margin: 30px 0
 }
 .audioButton {
-  margin-top: -50px
+  margin-top: -50px;
+  font-size: 1.5em
+}
+
+
+.quizTitle {
+  font-size: 2em
 }
 
 } 
@@ -493,7 +493,7 @@ video {
  width: 414px !important;
  height: 233px !important;
   -webkit-animation: fadein 1s !important;
-   bottom: 0
+   bottom: 0 !important
 }
 
 .videoborderoverlay {
@@ -529,7 +529,7 @@ video {
  width: 375px !important;
  height: 211px !important;
   -webkit-animation: fadein 1s !important;
-   bottom: 0
+   bottom: 0 !important
 }
 
 .videoborderoverlay {
@@ -564,7 +564,7 @@ video {
  width: 320px !important;
  height: 180px !important;
  -webkit-animation: fadein 1s !important;
-  bottom: 0
+  bottom: 0 !important
 }
 
 .videoborderoverlay {

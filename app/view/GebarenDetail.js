@@ -78,7 +78,7 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 ]
             },   
             {
-                cls: 'videoborderoverlay',
+                cls: 'videoborderoverlay'
             },
             {
                 xtype: 'video',

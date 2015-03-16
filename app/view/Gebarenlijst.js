@@ -13,7 +13,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         	docked: 'bottom',
         	itemId: 'buyButton',
         	disabled: true,
-       		height: 150,
+       		height: 70,
         	cls: 'listbuybutton',
         	handler: function () {
 	       		ASLKids.app.getController('IAP').purchase();
