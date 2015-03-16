@@ -1,1 +1,29 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="60" height="63" viewBox="0 0 60 63" enable-background="new 0 0 60 63" xml:space="preserve"><circle fill="none" stroke="#DDE5CE" stroke-width="2" stroke-miterlimit="10" cx="29.9" cy="32" r="28"/><circle fill="#DDE5CE" cx="19.8" cy="21.8" r="3"/><circle fill="#DDE5CE" cx="30" cy="21.8" r="3"/><circle fill="#DDE5CE" cx="40.2" cy="21.8" r="3"/><circle fill="#DDE5CE" cx="19.8" cy="32.1" r="3"/><circle fill="#DDE5CE" cx="30" cy="32.1" r="3"/><circle fill="#DDE5CE" cx="40.2" cy="32.1" r="3"/><circle fill="#DDE5CE" cx="19.8" cy="41.9" r="3"/><circle fill="#DDE5CE" cx="30" cy="41.9" r="3"/><circle fill="#DDE5CE" cx="40.2" cy="41.9" r="3"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px"
+	 height="63px" viewBox="0 0 60 63" enable-background="new 0 0 60 63" xml:space="preserve">
+<g id="Layer_1">
+	<circle fill="none" stroke="#DDE5CE" stroke-width="2" stroke-miterlimit="10" cx="29.9" cy="32" r="28"/>
+</g>
+<g id="Layer_2">
+	<path fill="#DDE6CD" d="M18.973,16.342c-2.292,0-4.151,1.858-4.151,4.151c0,2.293,1.859,4.152,4.151,4.152s4.152-1.859,4.152-4.152
+		C23.125,18.201,21.265,16.342,18.973,16.342"/>
+	<path fill="#DDE6CD" d="M30.15,16.342c-2.293,0-4.152,1.858-4.152,4.151c0,2.293,1.859,4.152,4.152,4.152
+		c2.293,0,4.153-1.859,4.153-4.152C34.303,18.201,32.443,16.342,30.15,16.342"/>
+	<path fill="#DDE6CD" d="M41.327,16.342c-2.292,0-4.151,1.858-4.151,4.151c0,2.293,1.859,4.152,4.151,4.152
+		c2.293,0,4.152-1.859,4.152-4.152C45.479,18.201,43.62,16.342,41.327,16.342"/>
+	<path fill="#DDE6CD" d="M18.973,27.52c-2.292,0-4.151,1.858-4.151,4.151s1.859,4.151,4.151,4.151s4.152-1.858,4.152-4.151
+		S21.265,27.52,18.973,27.52"/>
+	<path fill="#DDE6CD" d="M30.15,27.52c-2.293,0-4.152,1.858-4.152,4.151s1.859,4.151,4.152,4.151c2.293,0,4.153-1.858,4.153-4.151
+		S32.443,27.52,30.15,27.52"/>
+	<path fill="#DDE6CD" d="M41.327,27.52c-2.292,0-4.151,1.858-4.151,4.151s1.859,4.151,4.151,4.151c2.293,0,4.152-1.858,4.152-4.151
+		S43.62,27.52,41.327,27.52"/>
+	<path fill="#DDE6CD" d="M18.973,38.697c-2.292,0-4.151,1.858-4.151,4.15c0,2.294,1.859,4.152,4.151,4.152s4.152-1.858,4.152-4.152
+		C23.125,40.556,21.265,38.697,18.973,38.697"/>
+	<path fill="#DDE6CD" d="M30.15,38.697c-2.293,0-4.152,1.858-4.152,4.15c0,2.294,1.859,4.152,4.152,4.152
+		c2.293,0,4.153-1.858,4.153-4.152C34.303,40.556,32.443,38.697,30.15,38.697"/>
+	<path fill="#DDE6CD" d="M41.327,38.697c-2.292,0-4.151,1.858-4.151,4.15c0,2.294,1.859,4.152,4.151,4.152
+		c2.293,0,4.152-1.858,4.152-4.152C45.479,40.556,43.62,38.697,41.327,38.697"/>
+</g>
+</svg>

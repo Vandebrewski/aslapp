@@ -39,18 +39,47 @@ $experimental-support-for-khtml : false;
 
 #nav-menu {
   background-color: #E56072;
+background-image: url('../images/navback.svg') !important;
+background-repeat: no-repeat !important;
   color: #dde5cd;
-  padding: 30px 0 0 20px
+  padding: 0 0 0 20px
 }
 
 #nav-menu .x-list .x-list-item.x-item-selected.x-list-item-tpl {
- background-color: #cb394d !important
+ background-color: rgba(221, 229, 206, 0.2) !important
 }
 
 .menu-icon-big {
   font-size: 50px;
-  margin: 10px 0 10px;
-  font-family: 'icomoon'
+  margin: 10px 0 0 0;
+  font-family: 'icomoon';
+  width: 100px;
+  color: rgba(221, 229, 206, 0.7) !important
+
+}
+
+.menu-icon-small {
+  font-size: 30px;
+  margin: 7px 0 0 0;
+  font-family: 'icomoon';
+  width:50px;
+color: rgba(221, 229, 206, 0.7) !important
+// height:50px
+
+  
+}
+
+#nav-menu .x-list .x-list-item {
+// display:inline-block;
+ margin: 27px 0;
+  width: auto;
+  height: auto;
+  border: none;
+  color: rgba(221, 229, 206, 0.7) !important
+//  display:inline-block;
+//  border-radius: 50%;
+//  text-align: center;
+//  font-size: 1em
 }
 
 
@@ -65,21 +94,38 @@ background-repeat: no-repeat !important
   
 .menu-hint {
   -webkit-animation: menudown 3s;
-  -webkit-animation-delay: 5s;
+  -webkit-animation-delay: 3s;
+  
+  -moz-animation: menudown 3s;
+  -moz-animation-delay: 3s;
+  
   position: absolute;
   bottom: 150px;
   left: 50%;
   margin-left: -50px;
   width: 100px;
-  height: 65px;
+  height: 100px;
   background-color: rgba(0,0,0,0.3);
   opacity:0;
   color: #fff;
-  padding: 5px;
+  padding-top: 20px;
   text-align: center;
-  line-height: 30px;
-  border-radius: 5px;
-  font-size: 28px
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 28px;
+
+}
+
+@-webkit-keyframes menudown {
+    0% { bottom: 0; opacity: 0; }
+    75%   { bottom: 20px; opacity: 1;}
+    100%   { bottom: 0; opacity: 0;}
+}
+
+@-moz-keyframes menudown {
+    0% { bottom: 0; opacity: 0; }
+    75%   { bottom: 20px; opacity: 1;}
+    100%   { bottom: 20px; opacity: 0;}
 }
 
 //-------------------------------------------- list ------------------------------------------- 
@@ -94,7 +140,7 @@ background-repeat: no-repeat !important
 
 .gebarenlijst {
   background-color: #65bcab !important;
-  margin: 20px 0 0 0 !important;
+  padding: 20px 0 0 0 !important;
   text-align: center;
 }
 
@@ -108,7 +154,7 @@ display:inline-block;
   margin: 2px;
   width: 100px;
   height: 100px;
-  border: 1px solid #dde5cd;
+  border: 1px solid #9ED0BB;
   border-radius: 5px;
   text-align: center;
   font-size: 1em
@@ -387,11 +433,7 @@ background-color: transparent !important
     to   { opacity: 1; }
 }
 
-@-webkit-keyframes menudown {
-    0% { bottom: 40px; opacity: 0; }
-    75%   { bottom: 20px; opacity: 1;}
-    100%   { bottom: 20px; opacity: 0;}
-}
+
 
 //.swipe-animation {-webkit-animation: swipeanimation 1s steps(30) 4 alternate; width: 86px; height: 103px; float: right;}
 //@-webkit-keyframes swipeanimation {
@@ -593,16 +635,4 @@ video {
   top: 230px;
   z-index: 2
 }
-
-
 }
-
-//@media (application-dpi: 160) AND (os-platform:"IOS") AND (min-os-version: 7)
-//{
-//    Application {
-//         osStatusBarHeight: 20;
-//    }
-//}
-
-
-
