@@ -49,6 +49,7 @@ Ext.define('ASLKids.controller.Main', {
     onVideoEnded: function(video) {
         video.media.setBottom(-2000);
         video.ghost.show();
+        video.media.pause(); // fix for: the .paused flag remains false when the media has ended
     },
 
     onNavMenuSelect: function(view, record) {

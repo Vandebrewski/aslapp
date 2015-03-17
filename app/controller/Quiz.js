@@ -233,13 +233,13 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "<img src='resources/images/correct.png'><br /><br /><img src='resources/images/cake.svg'>" : "<img src='resources/images/wrong.png'>";
+            var message = correct ? "<audio autoplay><source src='resources/audio/soundsapp/correct.mp3'></source></audio><img src='resources/images/correct.png'><br /><br /><img src='resources/images/cake.svg'>" : "<img src='resources/images/wrong.png'>";
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
 
                 message += "<br />";
-                message += "<br />The correct answer was: <br /><br /><img src='resources/images/objects/thumbnails/" + correctAnswer.get('plaatje') + ".png'>";
+                message += "<audio autoplay><source src='resources/audio/soundsapp/wrong.mp3'></source></audio><br />The correct answer was: <br /><br /><img src='resources/images/objects/thumbnails/" + correctAnswer.get('plaatje') + ".png'>";
             }
 
             Ext.Msg.alert('', message, function() {
@@ -297,6 +297,7 @@ Ext.define('ASLKids.controller.Quiz', {
     onVideoEnded: function(video) {
         video.media.setBottom(-2000);
         video.ghost.show();
+        video.media.pause(); // fix for: the .paused flag remains false when the media has ended
     }
 });
 

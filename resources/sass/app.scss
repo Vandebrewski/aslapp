@@ -6,7 +6,7 @@ $base-gradient: none;
 $basic-slider: true;
 $body-bg-color: #65bcab;
 $list-pressed-color: #f3f005;
-$loading-spinner-color: #dde5cd;
+$loading-spinner-color: #dde5ce;
 
 $experimental-support-for-mozilla : false;
 $experimental-support-for-webkit : false;
@@ -39,14 +39,15 @@ $experimental-support-for-khtml : false;
 
 #nav-menu {
   background-color: #E56072;
-background-image: url('../images/navback.svg') !important;
-background-repeat: no-repeat !important;
+  background-image: url('../images/navback.svg') !important;
+  background-repeat: no-repeat !important;
   color: #dde5cd;
   padding: 0 0 0 20px
 }
 
 #nav-menu .x-list .x-list-item.x-item-selected.x-list-item-tpl {
- background-color: rgba(221, 229, 206, 0.2) !important
+ background-color: rgba(221, 229, 206, 0) !important;
+ color: #dde5ce !important
 }
 
 .menu-icon-big {
@@ -54,16 +55,16 @@ background-repeat: no-repeat !important;
   margin: 10px 0 0 0;
   font-family: 'icomoon';
   width: 100px;
-  color: rgba(221, 229, 206, 0.7) !important
-
+  color: rgba(221, 229, 206, 0.6) !important
 }
+
 
 .menu-icon-small {
   font-size: 30px;
   margin: 7px 0 0 0;
   font-family: 'icomoon';
   width:50px;
-color: rgba(221, 229, 206, 0.7) !important
+  color: rgba(221, 229, 206, 0.6) !important
 // height:50px
 
   
@@ -75,7 +76,7 @@ color: rgba(221, 229, 206, 0.7) !important
   width: auto;
   height: auto;
   border: none;
-  color: rgba(221, 229, 206, 0.7) !important
+  color: rgba(221, 229, 206, 0.6) !important
 //  display:inline-block;
 //  border-radius: 50%;
 //  text-align: center;
@@ -105,9 +106,12 @@ background-repeat: no-repeat !important
   margin-left: -50px;
   width: 100px;
   height: 100px;
-  background-color: rgba(0,0,0,0.3);
+//  background-color: rgba(0,0,0,0.3);
+  background-color: #f4c151;
+  
+
   opacity:0;
-  color: #fff;
+  color: #c53c4c !important;
   padding-top: 20px;
   text-align: center;
   line-height: 35px;
@@ -140,8 +144,12 @@ background-repeat: no-repeat !important
 
 .gebarenlijst {
   background-color: #65bcab !important;
-  padding: 20px 0 0 0 !important;
+//  padding: 20px 0 0 0 !important;
   text-align: center;
+}
+
+.x-dock.x-sized > .x-dock-body > .x-body > .x-inner { 
+  top: 20px !important
 }
 
 

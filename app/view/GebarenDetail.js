@@ -72,8 +72,7 @@ Ext.define('ASLKids.view.GebarenDetail', {
                     {
                         xtype: 'button',
                         itemId: 'nextButton',
-                        cls: 'nextButton' //,
-        //                pressedCls: 'nextButton-pressed'
+                        cls: 'nextButton'
                     }
                 ]
             },   

@@ -29,6 +29,9 @@ Ext.define('ASLKids.view.Home', {
         {       	
 			html: 'Menu<br />&#x25BC;',
 			cls: 'menu-hint'
+		},
+		{
+			html: '<audio autoplay><source src="resources/audio/soundsapp/start.mp3"></source></audio>'
 		}
 		
 	]
