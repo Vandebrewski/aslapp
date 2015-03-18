@@ -51,11 +51,11 @@ $experimental-support-for-khtml : false;
 }
 
 .menu-icon-big {
-  font-size: 50px;
+  font-size: 60px;
   margin: 10px 0 0 0;
   font-family: 'icomoon';
   width: 100px;
-  color: rgba(221, 229, 206, 0.6) !important
+  color: rgba(221, 229, 206, 0.7) !important
 }
 
 
@@ -64,7 +64,7 @@ $experimental-support-for-khtml : false;
   margin: 7px 0 0 0;
   font-family: 'icomoon';
   width:50px;
-  color: rgba(221, 229, 206, 0.6) !important
+  color: rgba(221, 229, 206, 0.7) !important
 // height:50px
 
   
@@ -76,7 +76,7 @@ $experimental-support-for-khtml : false;
   width: auto;
   height: auto;
   border: none;
-  color: rgba(221, 229, 206, 0.6) !important
+  color: rgba(221, 229, 206, 0.7) !important
 //  display:inline-block;
 //  border-radius: 50%;
 //  text-align: center;
@@ -314,7 +314,7 @@ color: #DDE4CE
 }
 
 .x-msgbox-buttons .x-button {
-width: 262px;
+width: 100%;
 background-color: #ea5f72 !important;
 height: 70px !important;
 // color: #dde5ce;
@@ -512,6 +512,26 @@ video {
   bottom: 430px;
   z-index: 2
 } 
+
+.quizvideoborderoverlay1 {
+  width: 320px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  top: 147px;
+  z-index: 2
+}
+
+.quizvideoborderoverlay2 {
+  width: 320px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  bottom: 395px;
+  z-index: 2
+}
 .x-dataview-item {
 margin: 10px
 }
