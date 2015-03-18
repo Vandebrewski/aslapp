@@ -96,16 +96,16 @@ Ext.define('ASLKids.view.GebarenDetail', {
                     tap: {
                         fn: function () {                                                           
                             var me = this;                            
-                            me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo
-								me.play();
-								}, true);  // or should this be false?
+ //                           me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo
+//								me.play();
+//								}, true);  // or should this be false?
+//                            
                             
-                            
-                            if (me.isPlaying()) {                                       
-                                me.pause();
+                            if (me.paused()) {                                       
+                                me.play();
                                 
                             } else {                                  
-                                me.play();
+                                me.pause();
                             }                            
                         }, // END addEventListener
                         element: 'element'

@@ -51,6 +51,20 @@ Ext.define('ASLKids.controller.Main', {
         video.ghost.show();
         video.media.pause(); // fix for: the .paused flag remains false when the media has ended
     },
+    
+    onPlay: function(video) {
+        video.callParent(arguments);
+        video.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo
+		video.media.setBottom(0);
+	}, true);  // or should this be false?
+	},
+	
+	onErased: function(video) {
+        video.pause();
+        video.media.setBottom(-2000);
+        video.ghost.show();
+    },
+	
 
     onNavMenuSelect: function(view, record) {
         var itemIndex = record.get('itemIndex'); 
