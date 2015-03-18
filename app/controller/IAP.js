@@ -1,10 +1,12 @@
 Ext.define('ASLKids.controller.IAP', {
      extend: 'Ext.app.Controller',
 
+     requires: ['ASLKids.view.IAPConfirm'],
+
      config: {
           identifier: 'com.basvanderwilk.aslkids.50signs',
 
-          ready: false,
+          ready: true,
           purchased: false
      },
 
@@ -91,6 +93,19 @@ Ext.define('ASLKids.controller.IAP', {
      },
 
      purchase: function() {
+          console.log('#purchase');
+
+          var panel = Ext.create('ASLKids.view.IAPConfirm', {
+               listeners: {
+                    scope: this,
+                    confirmed: this._purchase
+               }
+          });
+
+          panel.show();
+     },
+
+     _purchase: function() {
           store.order(this.getIdentifier());
      },
 
