@@ -6,6 +6,7 @@ Ext.application({
         'Ext.MessageBox',
         'ASLKids.store.Gebaar',
         'ASLKids.view.Viewport',
+        'ASLKids.overrides.Video',
         'Ext.Img',
         'Ext.Video',
         'Ext.Audio',

@@ -25,7 +25,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
         items: [{
             html: 'Complete the following quiz to buy the sign pack'
         }, {
-            html: 'Enter the numbers below:',
+            html: 'Enter the numbers below:'
         }, {
             itemId: 'numbers'
         }, {
