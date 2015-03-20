@@ -15,17 +15,16 @@ Ext.define('ASLKids.view.IAPConfirm', {
     config: {
         modal: true,
         centered: true,
-        width: '90%',
-        height: 400,
+        cls: 'parentalgate',
         layout: {
             type: 'vbox',
             pack: 'center',
             align: 'stretch'
         },
         items: [{
-            html: 'Complete the following quiz to buy the sign pack'
+            html: 'Complete the following quiz to buy the sign pack.<br /><br />'
         }, {
-            html: 'Enter the numbers below:'
+            html: 'Enter the numbers below:<br /><br />'
         }, {
             itemId: 'numbers'
         }, {
@@ -41,8 +40,8 @@ Ext.define('ASLKids.view.IAPConfirm', {
                     },
                     defaults: {
                         xtype: 'button',
-                        width: 80,
-                        height: 50
+                        width: 70,
+                        height: 70
                     },
                     items: [
                         { text: '0' },
@@ -57,8 +56,8 @@ Ext.define('ASLKids.view.IAPConfirm', {
                     },
                     defaults: {
                         xtype: 'button',
-                        width: 80,
-                        height: 50
+                        width: 70,
+                        height: 70
                     },
                     items: [
                         { text: '3' },

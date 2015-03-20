@@ -5,8 +5,8 @@ $include-highlights: false;
 $base-gradient: none;
 $basic-slider: true;
 $body-bg-color: #65bcab;
-$list-pressed-color: #f3f005;
-$loading-spinner-color: #dde5ce;
+$list-pressed-color: none;
+$loading-spinner-color: #409d8b;
 
 $experimental-support-for-mozilla : false;
 $experimental-support-for-webkit : false;
@@ -29,7 +29,7 @@ $experimental-support-for-khtml : false;
   font-family: 'icomoon';
   src: url('../fonts/icomoon.ttf')}  
 
-.again, h3, .quizTitle, .resulttext, .x-dataview-item, .x-list .x-list-item, .audioButton, .menu-hint, .x-msgbox-text {
+.again, h3, .quizTitle, .resulttext, .x-dataview-item, .x-list .x-list-item, .audioButton, .menu-hint, .x-msgbox-text, .parentalgate {
   font-family: 'Dekko', Helvetica Neue;
   color: #dde5cd !important;
 }
@@ -45,10 +45,21 @@ $experimental-support-for-khtml : false;
   padding: 0 0 0 20px
 }
 
-#nav-menu .x-list .x-list-item.x-item-selected.x-list-item-tpl {
- background-color: rgba(221, 229, 206, 0) !important;
- color: #dde5ce !important
+.x-list .x-list-item.x-item-pressed {
+ background-color: transparent !important;
+border: 1px dashed rgba(222, 227, 206, 0.40) !important;
 }
+
+.x-list .x-list-item.x-item-selected .x-dock-horizontal {
+  background-color: transparent !important;
+border: 1px dashed rgba(222, 227, 206, 0.40) !important;
+}
+
+.x-list .x-list-item.x-item-selected.x-list-item-tpl {
+   background-color: transparent !important;
+border: 1px dashed rgba(222, 227, 206, 0.40) !important;
+}
+
 
 .menu-icon-big {
   font-size: 60px;
@@ -72,11 +83,11 @@ $experimental-support-for-khtml : false;
 
 #nav-menu .x-list .x-list-item {
 // display:inline-block;
- margin: 27px 0;
+ margin: 26px 0;
   width: auto;
   height: auto;
-  border: none;
-  color: rgba(221, 229, 206, 0.7) !important
+  border: 1px solid transparent;
+//  color: rgba(221, 229, 206, 0.7) !important
 //  display:inline-block;
 //  border-radius: 50%;
 //  text-align: center;
@@ -95,10 +106,10 @@ background-repeat: no-repeat !important
   
 .menu-hint {
   -webkit-animation: menudown 3s;
-  -webkit-animation-delay: 3s;
+  -webkit-animation-delay: 4s;
   
   -moz-animation: menudown 3s;
-  -moz-animation-delay: 3s;
+  -moz-animation-delay: 4s;
   
   position: absolute;
   bottom: 150px;
@@ -153,9 +164,6 @@ background-repeat: no-repeat !important
 }
 
 
-.x-list .x-list-item.x-item-pressed, .x-list .x-list-item.x-item-selected.x-list-item-tpl {
-  background-color: #65bcab !important
-}
 
 .x-list .x-list-item {
 display:inline-block;
@@ -311,6 +319,35 @@ border: medium none;
 background-color: #0990D3;
 border-radius: 10px;
 color: #DDE4CE
+}
+
+.parentalgate {
+  width: 280px;
+  height: 400px;
+border: medium none;
+background-color: #0990D3 !important;
+border-radius: 10px;
+padding: 25px !important;
+text-align: center;
+padding: 0 10px;
+margin: 5px;
+}
+
+span.number {
+  background-color: #d29f1c;
+  margin: 0 10px;
+padding: 0 10px;
+}
+
+.parentalgate .x-button {
+    background-color: transparent !important;
+    margin: 5px;
+    font-size: 30px;
+}
+
+
+.x-panel.x-floating .x-panel-inner {
+  background-color: transparent;
 }
 
 .x-msgbox-buttons .x-button {
@@ -495,7 +532,7 @@ width: 3em;
 video {
  width: 768px !important;
  height: 432px !important;
- -webkit-animation: fadein 1s ease-in !important;
+// -webkit-animation: fadein 1s ease-in !important;
  bottom: 0 !important
 }
 
@@ -562,7 +599,7 @@ margin: 10px
 video {
  width: 414px !important;
  height: 233px !important;
-  -webkit-animation: fadein 1s !important;
+//  -webkit-animation: fadein 1s !important;
    bottom: 0 !important
 }
 
@@ -598,7 +635,7 @@ video {
 video {
  width: 375px !important;
  height: 211px !important;
-  -webkit-animation: fadein 1s !important;
+//  -webkit-animation: fadein 1s !important;
    bottom: 0 !important
 }
 
@@ -633,7 +670,7 @@ video {
 video {
  width: 320px !important;
  height: 180px !important;
- -webkit-animation: fadein 1s !important;
+// -webkit-animation: fadein 1s !important;
   bottom: 0 !important
 }
 

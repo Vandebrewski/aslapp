@@ -6,7 +6,7 @@ Ext.define('ASLKids.controller.IAP', {
      config: {
           identifier: 'com.basvanderwilk.aslkids.50signs',
 
-          ready: false,
+          ready: true,
           purchased: false
      },
 

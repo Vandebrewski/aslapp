@@ -49,15 +49,8 @@ Ext.define('ASLKids.controller.Main', {
     onVideoEnded: function(video) {
         video.media.setBottom(-2000);
         video.ghost.show();
-        video.media.pause(); // fix for: the .paused flag remains false when the media has ended
+//        video.media.pause(); // fix for: the .paused flag remains false when the media has ended. But it also causes an error in browser console
     },
-    
-//    onVideoPlay: function(video) {
-//        video.callParent(arguments);
-//        video.media.dom.addEventListener("playing", function() { 
-//		video.media.setBottom(0);
-//	}, true);
-//	},
 	
 	
     onNavMenuSelect: function(view, record) {
@@ -69,7 +62,7 @@ Ext.define('ASLKids.controller.Main', {
     },
 
     onBackTap: function() {
-        this.getMain().setActiveItem(0);
+        this.getMain().animateActiveItem(0, {type: 'slide', direction:'right'});
     },
 
     onNextTap: function() {
@@ -109,7 +102,7 @@ Ext.define('ASLKids.controller.Main', {
         me.getListDetailButton().setText(record.data.plaatje);
      
         me.currentDetailRecord = record;
-        me.getMain().setActiveItem(detail);
+        me.getMain().animateActiveItem(detail, {type: 'fade', duration: 500});
 
         setTimeout(function() {
             me.getListView().deselectAll();
