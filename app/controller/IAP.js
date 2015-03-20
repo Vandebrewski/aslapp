@@ -102,14 +102,19 @@ Ext.define('ASLKids.controller.IAP', {
                }
           });
 
+          Ext.Viewport.add(panel);
           panel.show();
      },
 
      _purchase: function() {
-          store.order(this.getIdentifier());
+          if (window.store) {
+               store.order(this.getIdentifier());
+          }
      },
 
      restorePurchases: function() {
-          store.refresh();
+          if (window.store) {
+               store.refresh();
+          }
      }
 });
