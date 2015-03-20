@@ -1,25 +1,50 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 13.5 768 975" enable-background="new 0 13.5 768 975" xml:space="preserve">
 <refs><style>
+
+	#star path {
+	opacity: 0;
+	-webkit-animation: fadein 3s 4s forwards;
+	-moz-animation: fadein 3s 4s forwards;
+	}
+
+
 	#asl {
 	stroke-dasharray: 1000;
 	stroke-dashoffset: 1000;
-	-webkit-animation: dash 3s ease-in-out forwards;
-	-moz-animation: dash 3s ease-in-out forwards;
+	-webkit-animation: dash 3s 1s ease-in-out forwards;
+	-moz-animation: dash 3s 1s ease-in-out forwards;
 	}
 	
 	#asl path {
-    -webkit-animation: fill 2s 1s ease-in forwards;
-    -moz-animation: fill 2s 1s ease-in forwards;
+    -webkit-animation: fill 2s 2s ease-in forwards;
+    -moz-animation: fill 2s 2s ease-in forwards;
 	}
 	
 	@-moz-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
 
 	@-webkit-keyframes fill {from {fill: #dde5ce;}to {fill: #0990d3;}}
       
+	#spotlight {
+	opacity: 0;
+	-webkit-animation: fadein 0.5s 0.5s forwards;
+	-moz-animation: fadein 0.5s 0.5s forwards;
+	}
 	
-	#rainbow path, #kids {
-	-webkit-animation: fadein 2s;
-	-moz-animation: fadein 2s;
+	#girl {
+	-webkit-animation: fadein 1s forwards;
+	-moz-animation: fadein 1s forwards;
+	}
+	
+	#kids {
+	opacity: 0;
+	-webkit-animation: fadein 2s 2s linear forwards;
+	-moz-animation: fadein 2s 2s linear forwards;
+	}
+	
+	#rainbow path {
+	opacity: 0;
+	-webkit-animation: fadein 2s 3s linear forwards;
+	-moz-animation: fadein 2s 3s linear forwards;
 	}
 		
 	@-moz-keyframes dash {
@@ -84,7 +109,7 @@
 		</g>
 	</g>
 </g>
-<g id="girl_1_">
+<g id="girl">
 	<path fill="#DDE5CE" d="M602.972,657.904c-1.333-12.523-2.631-25.545-8.978-36.613c-1.851-3.213-3.414-5.734-4.727-7.838
 		c2.399-5.209,3.418-10.234,2.521-13.221c-20.3-65.4-56.9-170.201-81.8-234c-4.9-12.5-22-25.5-35.604-28.4
 		c-32.6-7-66.396-10.5-99.7-11c-44.714-0.607-74.145-10.224-96.483-35.622c0.969-20.174,7.789-40.168,21.277-55.436
@@ -181,5 +206,10 @@
 			c-1.051-1.062-1.575-2.781-1.575-5.155v-41.867c0-2.225,0.5-3.894,1.502-5.006c1.001-1.113,2.317-1.669,3.949-1.669
 			c1.655,0,2.997,0.551,4.023,1.65C442.155,384.973,442.669,386.648,442.669,388.897z"/>
 	</g>
+</g>
+
+<g id="star">
+	<path fill="#B6DDD3" d="M235.808,82.011c20.676-23.104,21.234-22.222,43.088-5.143c-18.992-18.701-20.459-20.369-4.645-39.083
+		l-0.227-0.196c-16.809,17.722-19.115,17.179-39.12,1.172C254.819,57.468,254.554,58.692,235.808,82.011z"/>
 </g>
 </svg>

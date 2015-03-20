@@ -40,11 +40,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "ASLKids.controller.Main": [],
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
+  "ASLKids.overrides.Video": [],
   "ASLKids.store.Gebaar": [],
   "ASLKids.view.Extra": [],
   "ASLKids.view.GebarenDetail": [],
   "ASLKids.view.Gebarenlijst": [],
   "ASLKids.view.Home": [],
+  "ASLKids.view.IAPConfirm": [],
   "ASLKids.view.NavList": [],
   "ASLKids.view.Quiz": [],
   "ASLKids.view.Viewport": [],
@@ -675,6 +677,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ASLKids.controller.Main": [],
   "ASLKids.controller.Quiz": [],
   "ASLKids.model.Gebaar": [],
+  "ASLKids.overrides.Video": [],
   "ASLKids.store.Gebaar": [],
   "ASLKids.view.Extra": [
     "widget.extrapanel"
@@ -688,6 +691,7 @@ Ext.ClassManager.addNameAliasMappings({
   "ASLKids.view.Home": [
     "widget.homepanel"
   ],
+  "ASLKids.view.IAPConfirm": [],
   "ASLKids.view.NavList": [
     "widget.navlist"
   ],
