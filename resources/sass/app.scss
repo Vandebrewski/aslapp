@@ -352,8 +352,12 @@ margin: 5px
 span.number {
   background-color: #d29f1c;
   margin: 0 10px;
-padding: 0 10px;
-font-size: 22px
+  padding: 0 10px;
+  font-size: 22px;
+
+  &.active {
+    opacity: 0.5;
+  }
 }
 
 .parentalgate .x-button {

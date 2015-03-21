@@ -93,8 +93,6 @@ Ext.define('ASLKids.controller.IAP', {
      },
 
      purchase: function() {
-          console.log('#purchase');
-
           var panel = Ext.create('ASLKids.view.IAPConfirm', {
                listeners: {
                     scope: this,
