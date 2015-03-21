@@ -16,14 +16,32 @@ Ext.define('ASLKids.view.IAPConfirm', {
         modal: true,
         centered: true,
         cls: 'parentalgate',
+        id: 'adultpanel',
         layout: {
             type: 'vbox',
             pack: 'center',
             align: 'stretch'
         },
         items: [{
-            html: 'Complete the following quiz to buy the sign pack.<br /><br />'
-        }, {
+//            html: 'Complete the following quiz to buy the sign pack.<br /><br />'
+            html: '<br /><br /><br /><br />'
+        }, 
+        
+        {
+        	xtype: 'button',
+// 			text:'Cancel',
+// 			ui:'confirm',
+			cls:'closebutton',
+// 			action:'Cancel',
+ 			handler: function() {
+           		var pnl = Ext.getCmp('adultpanel');
+           			pnl.destroy();
+     			}
+		},
+        
+        
+        
+        {
             html: 'Enter the numbers below:<br /><br />'
         }, {
             itemId: 'numbers'
@@ -103,7 +121,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
         if (numbers[0] != number) {
             this.hide();
 
-            Ext.Msg.alert(null, 'Looks like you got it incorrect.');
+            Ext.Msg.alert(null, 'Oops,<br /><br />looks like you got it incorrect.<br /><br />Please, try again.');
 
             return;
         }

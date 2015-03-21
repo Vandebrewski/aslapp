@@ -8,7 +8,7 @@
                     "platforms": "ios",
 
                     "id": "com.basvanderwilk.aslkids",
-                    "name": "ASL Kids"
+                    "name": "ASLKids"
                 }
             }
         }
@@ -121,7 +121,6 @@
     "resources": [
         "resources/images",
         "resources/icons",
-        "resources/startup",
         "resources/fonts",
         "resources/audio",
         "resources/video"

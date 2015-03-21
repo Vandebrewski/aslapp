@@ -15,9 +15,10 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         	disabled: true,
        		height: 70,
         	cls: 'listbuybutton',
+        	text:'Dynamic price',
         	handler: function () {
 	       		ASLKids.app.getController('IAP').purchase();
-			}
+			}   			
 		}
     },
 

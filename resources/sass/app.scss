@@ -199,6 +199,20 @@ h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important
 
 //-------------------------------------------- BUTTONS -------------------------------------------
 
+.closebutton {
+  width: 40px;
+  height: 40px;
+      display:block;
+        position:absolute;
+    top:-20px;
+    right: -20px;
+  background-image: url("../images/closebutton.svg") !important;
+background-size: 40px auto;
+background-position: center center !important;
+background-repeat: no-repeat !important;
+border: 0px none !important;
+}
+
 .homebutton {
   height: 100%;
   width: 100px !important
@@ -322,32 +336,36 @@ color: #DDE4CE
 }
 
 .parentalgate {
-  width: 280px;
-  height: 400px;
+width: 280px;
+height: 400px;
 border: medium none;
 background-color: #0990D3 !important;
+  background-image: url('../images/parentalgate.svg') !important;
+  background-repeat: no-repeat !important;
 border-radius: 10px;
 padding: 25px !important;
 text-align: center;
 padding: 0 10px;
-margin: 5px;
+margin: 5px
 }
 
 span.number {
   background-color: #d29f1c;
   margin: 0 10px;
 padding: 0 10px;
+font-size: 22px
 }
 
 .parentalgate .x-button {
     background-color: transparent !important;
-    margin: 5px;
+    margin: 10px 5px 0 5px;
     font-size: 30px;
+    border-radius: 5px
 }
 
 
 .x-panel.x-floating .x-panel-inner {
-  background-color: transparent;
+  background-color: transparent
 }
 
 .x-msgbox-buttons .x-button {
