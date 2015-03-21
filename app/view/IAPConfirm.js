@@ -16,7 +16,6 @@ Ext.define('ASLKids.view.IAPConfirm', {
         modal: true,
         centered: true,
         cls: 'parentalgate',
-        id: 'adultpanel',
         layout: {
             type: 'vbox',
             pack: 'center',
@@ -32,15 +31,9 @@ Ext.define('ASLKids.view.IAPConfirm', {
 // 			text:'Cancel',
 // 			ui:'confirm',
 			cls:'closebutton',
+            itemId: 'close-btn'
 // 			action:'Cancel',
- 			handler: function() {
-           		var pnl = Ext.getCmp('adultpanel');
-           			pnl.destroy();
-     			}
 		},
-        
-        
-        
         {
             html: 'Enter the numbers below:<br /><br />'
         }, {
@@ -59,7 +52,8 @@ Ext.define('ASLKids.view.IAPConfirm', {
                     defaults: {
                         xtype: 'button',
                         width: 70,
-                        height: 70
+                        height: 70,
+                        itemId: 'number-btn'
                     },
                     items: [
                         { text: '0' },
@@ -96,7 +90,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
 
         var me = this,
             numbersCmp = me.down('#numbers'),
-            buttons = me.query('button');
+            buttons = me.query('#number-btn');
 
         for (var i = 0; i < buttons.length; i++) {
             var button = buttons[i];
@@ -114,6 +108,11 @@ Ext.define('ASLKids.view.IAPConfirm', {
         }
 
         numbersCmp.setHtml(html);
+
+        this.down('#close-btn').on('tap', function() {
+            this.hide();
+            this.destroy();
+        }, this);
     },
 
     _tapped: function(number) {
