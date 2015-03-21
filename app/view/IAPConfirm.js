@@ -15,6 +15,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
     config: {
         modal: true,
         centered: true,
+        itemId: 'parentalgate',
         cls: 'parentalgate',
         layout: {
             type: 'vbox',
@@ -43,6 +44,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
                 type: 'vbox',
                 pack: 'center'
             },
+            itemId: 'button-container',
             items: [
                 {
                     layout: {
@@ -52,8 +54,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
                     defaults: {
                         xtype: 'button',
                         width: 70,
-                        height: 70,
-                        itemId: 'number-btn'
+                        height: 70
                     },
                     items: [
                         { text: '0' },
@@ -90,7 +91,7 @@ Ext.define('ASLKids.view.IAPConfirm', {
 
         var me = this,
             numbersCmp = me.down('#numbers'),
-            buttons = me.query('#number-btn');
+            buttons = me.query('#button-container button');
 
         for (var i = 0; i < buttons.length; i++) {
             var button = buttons[i];
