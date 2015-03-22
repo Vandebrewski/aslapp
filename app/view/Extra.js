@@ -13,13 +13,23 @@ Ext.define('ASLKids.view.Extra', {
         	height: 20
         },
         {
-        	xtype: 'button',
+            xtype: 'button',
             itemId: 'buyButton',
             disabled: true,
-        	text: 'Buy 50 signs',
+            text: 'Buy 50 signs',
+            height: 50,
+            handler: function () {
+                ASLKids.app.getController('IAP').purchase();
+            }
+        },
+        {
+        	xtype: 'button',
+            itemId: 'restoreButton',
+            disabled: true,
+        	text: 'Restore Signs',
         	height: 50,
         	handler: function () {
-        		ASLKids.app.getController('IAP').purchase();
+        		ASLKids.app.getController('IAP').restorePurchases();
         	}
         },
         {
@@ -55,11 +65,17 @@ Ext.define('ASLKids.view.Extra', {
         return this.getComponent('buyButton');
     },
 
+    getRestoreButton: function() {
+        return this.getComponent('restoreButton');
+    },
+
     _onReady: function() {
         this.getBuyButton().setDisabled(false);
+        this.getRestoreButton().setDisabled(false);
     },
 
     _onPurchase: function() {
         this.getBuyButton().setHidden(true);
+        this.getRestoreButton().setHidden(true);
     }
 });
