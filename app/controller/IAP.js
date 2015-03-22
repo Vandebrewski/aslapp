@@ -6,7 +6,8 @@ Ext.define('ASLKids.controller.IAP', {
      config: {
           identifier: 'com.basvanderwilk.aslkids.50signs',
 
-          ready: true,
+          setup: false,
+          ready: false,
           purchased: false
      },
 
@@ -14,13 +15,16 @@ Ext.define('ASLKids.controller.IAP', {
           var me = this;
 
           if (window.store) {
-               me.setup();
-               return;
+               me.setReady(true);
+               me.fireEvent('ready', me);
           }
 
           document.addEventListener('deviceready', function() {
-               me.setup();
-          }, false);
+              if (window.store) {
+                   me.setReady(true);
+                   me.fireEvent('ready', me);
+              }
+         }, false);
 	},
 
      getPurchased: function() {
@@ -35,6 +39,12 @@ Ext.define('ASLKids.controller.IAP', {
      setup: function() {
           var me = this;
 
+          if (me.getSetup()) {
+               return;
+          }
+
+          me.setSetup(true);
+
           // Check availability of the storekit plugin
           if (!window.store) {
                console.log("window.store not found");
@@ -43,19 +53,16 @@ Ext.define('ASLKids.controller.IAP', {
 
           store.verbosity = store.INFO;
       
-          store.when(this.getIdentifier()).owned(function(product) {
-               console.log('owned');
-               console.log(arguments);
-          });
+          // store.when(this.getIdentifier()).owned(function(product) {
+          //      console.log('owned');
+          //      console.log(arguments);
+          // });
       
-          store.when(this.getIdentifier()).approved(function(product) {
+          store.when(this.getIdentifier()).approved(function(order) {
                console.log('# approved');
                console.log(arguments);
 
-               me.setPurchased(true);
-               me.fireEvent('purchase', me);
-
-               localStorage.setItem('purchased', true);
+               order.finish();
           });
       
           store.when(this.getIdentifier()).cancelled(function(product) {
@@ -68,25 +75,27 @@ Ext.define('ASLKids.controller.IAP', {
                console.log(arguments);
           });
       
-          // store.when(this.getIdentifier()).updated(function(product) {
-          //      console.log('updated');
-          //      console.log('updated', product);
-          //      // app.downloadExtraChapter().then(function() {
-          //           // console.log('downloaded');
-          //           // product.finish();
-          //      // });
-          // });
+          store.when(this.getIdentifier()).updated(function(product) {
+               console.log('updated');
+               console.log(arguments);
 
-          store.register({
-               id: this.getIdentifier(),
-               type: store.NON_CONSUMABLE
+               if (product.owned) {
+                    me.setPurchased(true);
+                    me.fireEvent('purchase', me);
+
+                    localStorage.setItem('purchased', true);
+               } else {
+                    me.setPurchased(false);
+
+                    localStorage.setItem('purchased', true);
+               }
+
+               me.fireEvent('updated', product);
           });
 
-          store.ready(function() {
-               console.log('# ready...');
-
-               me.setReady(true);
-               me.fireEvent('ready', me);
+          store.register({
+               id: me.getIdentifier(),
+               type: store.NON_CONSUMABLE
           });
 
           store.refresh();
@@ -105,14 +114,32 @@ Ext.define('ASLKids.controller.IAP', {
      },
 
      _purchase: function() {
+          console.log('#_purchase');
+          var me = this;
+
           if (window.store) {
-               store.order(this.getIdentifier());
+               store.ready(function() {
+                    console.log('# ready...');
+
+                    store.order(me.getIdentifier());
+               });
+
+               me.setup();
           }
      },
 
      restorePurchases: function() {
+          console.log('#restorePurchases');
+          var me = this;
+
           if (window.store) {
-               store.refresh();
+               store.ready(function() {
+                    console.log('# ready...');
+
+                    store.refresh();
+               });
+
+               me.setup();
           }
      }
 });
