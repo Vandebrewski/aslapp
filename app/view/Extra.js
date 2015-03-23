@@ -70,12 +70,16 @@ Ext.define('ASLKids.view.Extra', {
     },
 
     _onReady: function() {
-        this.getBuyButton().setDisabled(false);
+        var IAP = ASLKids.app.getController('IAP'),
+            buyBtn = this.getBuyButton();
+
+        buyBtn.setText('Buy 50 signs for ' + IAP.getPrice());
+
+        buyBtn.setDisabled(false);
         this.getRestoreButton().setDisabled(false);
     },
 
     _onPurchase: function() {
         this.getBuyButton().setHidden(true);
-        this.getRestoreButton().setHidden(true);
     }
 });
