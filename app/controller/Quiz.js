@@ -302,7 +302,9 @@ Ext.define('ASLKids.controller.Quiz', {
     onVideoEnded: function(video) {
         video.media.setBottom(-2000);
         video.ghost.show();
-        video.media.pause(); // fix for: the .paused flag remains false when the media has ended
+        if (video.media.pause) {
+            video.media.pause(); // fix for: the .paused flag remains false when the media has ended
+        }
     }
 });
 
