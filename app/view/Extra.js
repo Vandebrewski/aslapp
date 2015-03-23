@@ -23,6 +23,10 @@ Ext.define('ASLKids.view.Extra', {
             }
         },
         {
+        	xtype: 'spacer',
+        	height: 20
+        },
+        {
         	xtype: 'button',
             itemId: 'restoreButton',
             disabled: true,

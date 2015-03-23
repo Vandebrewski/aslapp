@@ -8,6 +8,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         store: 'gebaarStore',
         itemTpl: '<img src="resources/images/objects/thumbnails/{plaatje}.png">{plaatje}',
 
+
         items: {
         	xtype: 'button',
         	docked: 'bottom',
@@ -15,7 +16,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         	disabled: true,
        		height: 70,
         	cls: 'listbuybutton',
-        	text:'Dynamic price',
+        	text:'Buy 50 signs',
         	handler: function () {
 	       		ASLKids.app.getController('IAP').purchase();
 			}   			
@@ -46,8 +47,18 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         return this.getComponent('buyButton');
     },
 
+//    getRestoreButton: function() {
+//        return this.getComponent('restoreButton');
+//    },
+
     _onReady: function() {
-        this.getBuyButton().setDisabled(false);
+        var IAP = ASLKids.app.getController('IAP'),
+            buyBtn = this.getBuyButton();
+
+        buyBtn.setText('Buy 50 signs for ' + IAP.getPrice());
+
+        buyBtn.setDisabled(false);
+        this.getRestoreButton().setDisabled(false);
     },
 
     _onPurchase: function() {
