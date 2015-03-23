@@ -99,6 +99,12 @@ Ext.define('ASLKids.controller.IAP', {
                me.fireEvent('updated', product);
           });
 
+          store.error(function() {
+               me.setCanPurchase(false);
+               me.setReady(true);
+               me.fireEvent('ready', me);
+          });
+
           store.register({
                id: me.getIdentifier(),
                type: store.NON_CONSUMABLE
