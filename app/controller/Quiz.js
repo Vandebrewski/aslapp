@@ -152,6 +152,8 @@ Ext.define('ASLKids.controller.Quiz', {
             buyButton.setHidden(true);
         }
         else {
+            buyButton.setText(IAP.getPrice());
+
             IAP.on('purchase', function() {
                 buyButton.setHidden(true);
             }, this);

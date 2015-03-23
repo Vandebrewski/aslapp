@@ -8,23 +8,24 @@ Ext.define('ASLKids.controller.IAP', {
 
           setup: false,
           ready: false,
-          purchased: false
+          purchased: false,
+          canPurchase: false,
+          price: null
      },
 
 	init: function() {
           var me = this;
 
           if (window.store) {
-               me.setReady(true);
-               me.fireEvent('ready', me);
+               me.setup();
           }
-
-          document.addEventListener('deviceready', function() {
-              if (window.store) {
-                   me.setReady(true);
-                   me.fireEvent('ready', me);
-              }
-         }, false);
+          else {
+               document.addEventListener('deviceready', function() {
+                   if (window.store) {
+                        me.setup();
+                   }
+              }, false);
+          }
 	},
 
      getPurchased: function() {
@@ -62,6 +63,8 @@ Ext.define('ASLKids.controller.IAP', {
                console.log('# approved');
                console.log(arguments);
 
+               Ext.Msg.alert('', 'Thanks for purchasing the signs pack!');
+
                order.finish();
           });
       
@@ -78,6 +81,9 @@ Ext.define('ASLKids.controller.IAP', {
           store.when(this.getIdentifier()).updated(function(product) {
                console.log('updated');
                console.log(arguments);
+
+               me.setCanPurchase(product.canPurchase);
+               me.setPrice(product.price);
 
                if (product.owned) {
                     me.setPurchased(true);
@@ -98,10 +104,22 @@ Ext.define('ASLKids.controller.IAP', {
                type: store.NON_CONSUMABLE
           });
 
+          store.ready(function() {
+               me.setReady(true);
+               me.fireEvent('ready', me);
+          });
+
           store.refresh();
      },
 
      purchase: function() {
+          var me = this;
+
+          if (!me.getCanPurchase()) {
+               Ext.Msg.alert('', 'Looks like you have disabled In App Purchase. Please turn it on in Settings.app');
+               return;
+          }
+
           var panel = Ext.create('ASLKids.view.IAPConfirm', {
                listeners: {
                     scope: this,
@@ -118,28 +136,21 @@ Ext.define('ASLKids.controller.IAP', {
           var me = this;
 
           if (window.store) {
-               store.ready(function() {
-                    console.log('# ready...');
-
-                    store.order(me.getIdentifier());
-               });
-
-               me.setup();
+               store.order(me.getIdentifier());
           }
      },
 
      restorePurchases: function() {
+          if (!this.getCanPurchase() && !this.getPurchased()) {
+               Ext.Msg.alert('', 'Looks like you have disabled In App Purchase. Please turn it on in Settings.app');
+               return;
+          }
+
           console.log('#restorePurchases');
           var me = this;
 
           if (window.store) {
-               store.ready(function() {
-                    console.log('# ready...');
-
-                    store.refresh();
-               });
-
-               me.setup();
+               store.refresh();
           }
      }
 });
