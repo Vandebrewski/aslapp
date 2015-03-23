@@ -62,7 +62,8 @@ Ext.define('ASLKids.controller.Main', {
     },
 
     onBackTap: function() {
-        this.getMain().animateActiveItem(0, {type: 'slide', direction:'right'});
+        this.getMain().setActiveItem(0);       
+//        video.pause(); // the video must be paused here, but this is not working correctly?
     },
 
     onNextTap: function() {
@@ -87,7 +88,7 @@ Ext.define('ASLKids.controller.Main', {
         setTimeout(function() {
             me.showDetail(null, null, null, record);
             video.media.dom.load(); // this is needed for ios8
-            video.media.hide();
+//            video.media.hide(); // already hidden above, is this correct?
 			video.ghost.show();
         }, 150);
     },

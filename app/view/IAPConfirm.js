@@ -22,21 +22,15 @@ Ext.define('ASLKids.view.IAPConfirm', {
             pack: 'center',
             align: 'stretch'
         },
-        items: [{
-//            html: 'Complete the following quiz to buy the sign pack.<br /><br />'
-            html: '<br /><br /><br /><br />'
-        }, 
-        
+        items: [
         {
         	xtype: 'button',
-// 			text:'Cancel',
-// 			ui:'confirm',
 			cls:'closebutton',
             itemId: 'close-btn'
-// 			action:'Cancel',
 		},
         {
-            html: 'Enter the numbers below:<br /><br />'
+            html: 'Enter the numbers below:',
+            cls: 'enterthenumbers'
         }, {
             itemId: 'numbers'
         }, {

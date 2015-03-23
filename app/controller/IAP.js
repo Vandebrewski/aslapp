@@ -7,7 +7,7 @@ Ext.define('ASLKids.controller.IAP', {
           identifier: 'com.basvanderwilk.aslkids.50signs',
 
           setup: false,
-          ready: false,
+          ready: true,
           purchased: false,
           canPurchase: false,
           price: null
@@ -63,7 +63,7 @@ Ext.define('ASLKids.controller.IAP', {
                console.log('# approved');
                console.log(arguments);
 
-               Ext.Msg.alert('', 'Thanks for purchasing the signs pack!');
+               Ext.Msg.alert('', 'Thanks! The signs pack is restored!');
 
                order.finish();
           });

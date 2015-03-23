@@ -69,49 +69,7 @@ Ext.define('ASLKids.view.Quiz', {
                 ]
             }
         ]
-    },
-
-    initialize: function() {
-        this.callParent(arguments);
-
-        var IAP = ASLKids.app.getController('IAP');
-
-        if (!IAP.getReady()) {
-            IAP.on('ready', this._onReady, this);
-        }
-        else {
-            this._onReady();
-        }
-
-        if (!IAP.getPurchased()) {
-            IAP.on('purchase', this._onPurchase, this);
-        }
-        else {
-            this._onPurchase();
-        }
-    },
-
-    getBuyButton: function() {
-        return this.getComponent('buyButton');
-    },
-
-    getRestoreButton: function() {
-        return this.getComponent('restoreButton');
-    },
-
-    _onReady: function() {
-        var IAP = ASLKids.app.getController('IAP'),
-            buyBtn = this.getBuyButton();
-
-        buyBtn.setText('Buy 50 signs for ' + IAP.getPrice());
-
-        buyBtn.setDisabled(false);
-        this.getRestoreButton().setDisabled(false);
-    },
-
-    _onPurchase: function() {
-        this.getBuyButton().setHidden(true);
-    }    
+    }   
     
 });
 
