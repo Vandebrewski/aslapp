@@ -7,7 +7,7 @@ Ext.define('ASLKids.controller.IAP', {
           identifier: 'com.basvanderwilk.aslkids.50signs',
 
           setup: false,
-          ready: true,
+          ready: false,
           purchased: false,
           canPurchase: false,
           price: null
@@ -93,7 +93,7 @@ Ext.define('ASLKids.controller.IAP', {
                } else {
                     me.setPurchased(false);
 
-                    localStorage.setItem('purchased', true);
+                    localStorage.setItem('purchased', false);
                }
 
                me.fireEvent('updated', product);

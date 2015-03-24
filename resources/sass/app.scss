@@ -74,7 +74,7 @@ border: 1px dashed rgba(222, 227, 206, 0.40) !important;
   font-size: 30px;
   margin: 7px 0 0 0;
   font-family: 'icomoon';
-  width:50px;
+  width:100px;
   color: rgba(221, 229, 206, 0.7) !important
 // height:50px
 
@@ -83,7 +83,7 @@ border: 1px dashed rgba(222, 227, 206, 0.40) !important;
 
 #nav-menu .x-list .x-list-item {
 // display:inline-block;
- margin: 26px 0;
+ margin: 25px 0;
   width: auto;
   height: auto;
   border: 1px solid transparent;
@@ -184,7 +184,8 @@ display:inline-block;
 //-------------------------------------------- SIMPLE TEKST PAGES -------------------------------
 
 .infoscreen {
-  background-color: #65bcab !important
+background: -webkit-linear-gradient(#65bcab, #1e8fd9); /* For Safari 5.1 to 6.0 */
+  background: -moz-linear-gradient(#65bcab, #1e8fd9); /* For Firefox 3.6 to 15 */
 }
 
 h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important} 
@@ -193,8 +194,8 @@ h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important
   line-height: 1.6 !important;
   color: #dde5cd;
   font-size: 1em !important;
-  padding: 20px 5% !important;
-  font-family: 'Helvetica Neue'
+  padding: 20px 5px 0 5px !important
+//  font-family: 'Helvetica Neue'
 }
 
 //-------------------------------------------- BUTTONS -------------------------------------------
@@ -202,15 +203,15 @@ h3 {color: #409d8b !important; margin:0; padding: 0; font-size: 1.5em !important
 .closebutton {
   width: 40px;
   height: 40px;
-      display:block;
-        position:absolute;
-    top:-20px;
-    right: -20px;
+  display:block;
+  position:absolute;
+  top:-20px;
+  right: -20px;
   background-image: url("../images/closebutton.svg") !important;
-background-size: 40px auto;
-background-position: center center !important;
-background-repeat: no-repeat !important;
-border: 0px none !important;
+  background-size: 40px auto;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 0px none !important
 }
 
 .homebutton {
@@ -278,24 +279,21 @@ color: #dde5cd
     margin: 0 auto
 }
 
-.quizresultbuybutton {
-  width: 280px;
-  height: 140px;
-  background-image: url('../images/quizresultbuybutton.png') !important;
-  background-repeat: no-repeat !important;
-  margin:0 auto;
-  border: none
-}
 
-.listbuybutton {
+.listbuybutton, .quizresultbuybutton, .restoreButton {
   width: 308px;
   height: 70px;
   background-image: url('../images/listbuybutton.svg') !important;
   background-repeat: no-repeat !important;
   margin:0 auto;
-  border: none
+  border: none;
+  font-size: 16px;
+  color: #ecefe6
 }
 
+.restoreButton {
+    background-image: url('../images/restorebutton.svg') !important;
+}
 
 //-------------------------------------------- PLAY / QUIZ -------------------------------------
 .quizbackground {
@@ -358,6 +356,11 @@ span.number {
   &.active {
     opacity: 0.5;
   }
+}
+
+
+.enterthenumbers {
+margin: 75px 0 20px 0;
 }
 
 .parentalgate .x-button {
@@ -578,7 +581,7 @@ video {
 //  background-color: #64bba9;
   background-color: red;
   position: absolute;
-  top: 147px;
+  top: 87px;
   z-index: 2
 }
 
@@ -588,7 +591,7 @@ video {
 //  background-color: #64bba9;
   background-color: red;
   position: absolute;
-  bottom: 395px;
+  top: 519px;
   z-index: 2
 }
 .x-dataview-item {
@@ -634,6 +637,25 @@ video {
   z-index: 2
 }
 
+.quizvideoborderoverlay1 {
+  width: 160px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  top: 110px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 160px;
+  height: 5px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  top: 331px;
+  z-index: 2
+}
+
 .again {
  background-size: 80px auto;
  margin-top: 20px  
@@ -667,6 +689,25 @@ video {
   background-color: #64bba9;
   position: absolute;
   bottom: 209px;
+  z-index: 2
+}
+
+.quizvideoborderoverlay1 {
+  width: 160px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  top: 95px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 160px;
+  height: 5px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  top: 306px;
   z-index: 2
 } 
 
@@ -704,22 +745,57 @@ video {
   bottom: 179px;
   z-index: 2
 }
+}
+
+//-------------------------------------------- iPhone 2,3,4, NOT 5 specific -------------------------------------------
+
+@media screen and (min-device-height: 480px) and (max-device-height : 481px) {
+  
+  .resulttext {
+ font-size: 1em
+}
+
+.quizTitle {
+    font-size: 1.2em
+}
 .quizvideoborderoverlay1 {
-  width: 320px;
+  width: 160px;
+  height: 4px;
+//  background-color: #64bba9;
+  background-color: red;
+  position: absolute;
+  top: 21px;
+  z-index: 2
+}
+.quizvideoborderoverlay2 {
+  width: 160px;
   height: 5px;
 //  background-color: #64bba9;
   background-color: red;
   position: absolute;
-  top: 50px;
+  top: 201px;
+  z-index: 2
+}
+}
+
+//-------------------------------------------- iPhone 5 specific -------------------------------------------  
+
+@media screen and (min-device-height: 567px) and (max-device-height : 569px) {
+  
+.quizvideoborderoverlay1 {
+  width: 320px;
+  height: 4px;
+  background-color: #64bba9;
+  position: absolute;
+  top: 66px;
   z-index: 2
 }
 .quizvideoborderoverlay2 {
   width: 320px;
   height: 5px;
-//  background-color: #64bba9;
-  background-color: red;
+  background-color: #64bba9;
   position: absolute;
-  top: 230px;
+  top: 246px;
   z-index: 2
 }
 }

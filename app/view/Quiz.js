@@ -59,8 +59,8 @@ Ext.define('ASLKids.view.Quiz', {
         				xtype: 'button',
             			itemId: 'buyButton',
             			disabled: true,
-        				height: 150,
-        				text: 'Buy 50 signs',
+        				height: 70,
+        				text: 'Activate 50 more Signs 0,99',
         				cls: 'quizresultbuybutton',
         				handler: function () {
             				ASLKids.app.getController('IAP').purchase();

@@ -15,7 +15,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         	disabled: true,
        		height: 70,
         	cls: 'listbuybutton',
-        	text:'Dynamic price',
+        	text:'Activate 50 more Signs 0,99',
         	handler: function () {
 	       		ASLKids.app.getController('IAP').purchase();
 			}   			
@@ -50,7 +50,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         var IAP = ASLKids.app.getController('IAP'),
             buyBtn = this.getBuyButton();
 
-        buyBtn.setText('Buy 50 signs for ' + IAP.getPrice());
+        buyBtn.setText('Activate 50 more Signs ' + IAP.getPrice());
 
         buyBtn.setDisabled(false);
     },

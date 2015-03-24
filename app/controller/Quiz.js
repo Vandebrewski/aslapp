@@ -152,7 +152,7 @@ Ext.define('ASLKids.controller.Quiz', {
             buyButton.setHidden(true);
         }
         else {
-            buyButton.setText(IAP.getPrice());
+            buyButton.setText('Activate 50 more Signs ' + IAP.getPrice());
 
             IAP.on('purchase', function() {
                 buyButton.setHidden(true);
@@ -244,8 +244,10 @@ Ext.define('ASLKids.controller.Quiz', {
                 message += "<br />The correct answer was: <br /><br /><img src='resources/images/objects/thumbnails/" + correctAnswer.get('plaatje') + ".png'>";
             }
 
+          if (Ext.os.version.getMajor() > 7) {
             var audio = new Audio('resources/audio/soundsapp/' + (correct ? 'correct.mp3' : 'wrong.mp3'));
             audio.play();
+            }
 
             Ext.Msg.alert('', message, function() {
                 this.next();

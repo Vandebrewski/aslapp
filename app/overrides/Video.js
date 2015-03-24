@@ -14,6 +14,16 @@ Ext.define('ASLKids.overrides.Video', {
 	    this.media.setTop(null);
         this.media.setBottom(0);
 	},
+	
+	onPause: function() {
+        this.fireEvent('pause', this, this.getCurrentTime());
+
+        if (!Ext.os.is.iPhone || !this.isInlineVideo) {
+            this.media.setBottom(-2000);
+            this.ghost.show();
+        }
+   },
+	
     	
 // trying to set a delay in hiding the poster image
 	onGhostTap: function() {
