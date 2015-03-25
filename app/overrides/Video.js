@@ -1,6 +1,19 @@
 Ext.define('ASLKids.overrides.Video', {
 	override : 'Ext.Video',
 	
+	requires: ['Ext.fx.Animation'],
+	
+	    template: [{
+        reference: 'ghost',
+        classList: [Ext.baseCSSPrefix + 'video-ghost']
+    }, {
+        tag: 'video',
+        reference: 'media',
+        classList: [Ext.baseCSSPrefix + 'media'],
+        'webkit-playsinline': 'true' // makes in play inline on iPhone
+    }],
+
+	
 	//setBottom is needed to position the video correctly
     onErased: function() {
         this.pause();
@@ -17,6 +30,7 @@ Ext.define('ASLKids.overrides.Video', {
 	
 	onPause: function() {
         this.fireEvent('pause', this, this.getCurrentTime());
+        this.media.dom.currentTime = 0;
 
         if (!Ext.os.is.iPhone || !this.isInlineVideo) {
             this.media.setBottom(-2000);

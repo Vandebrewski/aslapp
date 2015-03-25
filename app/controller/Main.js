@@ -49,7 +49,10 @@ Ext.define('ASLKids.controller.Main', {
     onVideoEnded: function(video) {
         video.media.setBottom(-2000);
         video.ghost.show();
-//        video.media.pause(); // fix for: the .paused flag remains false when the media has ended. But it also causes an error in browser console
+        var video = this.getVideoView();
+        if (video.media.pause) { // fix for: the .paused flag remains false when the media has ended. But it also causes an error in browser console
+            video.media.pause(); 
+           }
     },
 	
 	
@@ -62,8 +65,8 @@ Ext.define('ASLKids.controller.Main', {
     },
 
     onBackTap: function() {
-        this.getMain().setActiveItem(0);       
-//        video.pause(); // the video must be paused here, but this is not working correctly?
+        this.getMain().setActiveItem(0);
+        this.getVideoView().pause();       
     },
 
     onNextTap: function() {

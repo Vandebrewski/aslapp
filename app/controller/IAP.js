@@ -48,7 +48,7 @@ Ext.define('ASLKids.controller.IAP', {
 
           // Check availability of the storekit plugin
           if (!window.store) {
-               console.log("window.store not found");
+//               console.log("window.store not found");
                return;
           }
 
@@ -60,8 +60,8 @@ Ext.define('ASLKids.controller.IAP', {
           // });
       
           store.when(this.getIdentifier()).approved(function(order) {
-               console.log('# approved');
-               console.log(arguments);
+//               console.log('# approved');
+//               console.log(arguments);
 
                Ext.Msg.alert('', 'Thanks! The signs pack is restored!');
 
@@ -69,18 +69,18 @@ Ext.define('ASLKids.controller.IAP', {
           });
       
           store.when(this.getIdentifier()).cancelled(function(product) {
-               console.log('cancelled');
-               console.log(arguments);
+//               console.log('cancelled');
+//               console.log(arguments);
           });
       
           store.when(this.getIdentifier()).error(function(product) {
-               console.log('error');
-               console.log(arguments);
+//               console.log('error');
+//               console.log(arguments);
           });
       
           store.when(this.getIdentifier()).updated(function(product) {
-               console.log('updated');
-               console.log(arguments);
+//               console.log('updated');
+//               console.log(arguments);
 
                me.setCanPurchase(product.canPurchase);
                me.setPrice(product.price);

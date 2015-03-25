@@ -272,21 +272,23 @@ Ext.define('ASLKids.controller.Quiz', {
 //            width: 768,
 //            height: 432,           
 			flex:9,
+			autoResume: true,
 			cls: 'QuizVideo',
             enableControls: false,
                             
             listeners: {                    
-                painted: function () {
-//                    this.media.dom.load(); // I don't think this is needed
-                    this.media.dom.setAttribute('webkit-playsinline', 'true')//; // make it play inline on iphone          
-                },
+//                painted: function () {
+//                    this.media.dom.load(); // not needed here. ios8 has update-URL-load problems but not this one
+//                    this.media.dom.setAttribute('webkit-playsinline', 'true');//; 
+//                    this.media.dom.setAttribute('showlogo', 'false');        // doesn't work 
+//                },
                 tap: {
                     fn: function () {                                                           
                         var me = this;
                         
-                        me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo ------- try canplaythrough or canplay-------
-                            me.play();
-                            }, true);  
+ //                       me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo ------- try canplaythrough or canplay-------
+ //                           me.play();
+ //                           }, true);  
                         
                         
                         if (me.isPlaying()) {                                       

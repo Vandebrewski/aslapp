@@ -88,10 +88,14 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 flex: 1,
                                 
                 listeners: {                    
-                    painted: function () {
-                      this.media.dom.load(); // do we need this; 
-                      this.media.dom.setAttribute('webkit-playsinline', 'true') //; // make it play inline on iphone                                             
-                    },
+                   painted: function () {
+                   		if (Ext.os.version.getMajor() > 7) {
+						this.media.dom.load();
+						}
+ //                     this.media.dom.load(); // 
+ //                    this.media.dom.setAttribute('webkit-playsinline', 'true'); //; // placed in the override so can be removed
+ //                     this.media.dom.setAttribute('showlogo', 'false');    // doesn't work                                      
+                   },
                                         
                     tap: {
                         fn: function () {                                                           
