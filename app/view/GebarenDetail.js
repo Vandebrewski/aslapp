@@ -88,14 +88,12 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 flex: 1,
                                 
                 listeners: {                    
-                   painted: function () {
-                   		if (Ext.os.version.getMajor() > 7) {
-						this.media.dom.load();
-						}
- //                     this.media.dom.load(); // 
- //                    this.media.dom.setAttribute('webkit-playsinline', 'true'); //; // placed in the override so can be removed
+//                   painted: function () {
+ //                  	if (Ext.os.version.getMajor() > 7) {
+//						this.media.dom.load();
+//						}
  //                     this.media.dom.setAttribute('showlogo', 'false');    // doesn't work                                      
-                   },
+//                   },
                                         
                     tap: {
                         fn: function () {                                                           

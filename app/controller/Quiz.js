@@ -269,10 +269,7 @@ Ext.define('ASLKids.controller.Quiz', {
             xtype: 'video',
             itemId: 'questionVideo',
             posterUrl: 'resources/images/playbutton2.svg',
-//            width: 768,
-//            height: 432,           
 			flex:9,
-			autoResume: true,
 			cls: 'QuizVideo',
             enableControls: false,
                             
