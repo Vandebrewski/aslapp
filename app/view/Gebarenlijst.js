@@ -6,7 +6,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         scrollable: true,        
 		layout: 'fit',
         store: 'gebaarStore',
-        itemTpl: '<img src="resources/images/objects/thumbnails/{plaatje}.png">{plaatje}',
+        itemTpl: '<img src="resources/images/objects/{plaatje}.svg">{plaatje}',
 
         items: {
         	xtype: 'button',
@@ -15,7 +15,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         	disabled: true,
        		height: 70,
         	cls: 'listbuybutton',
-        	text:'Activate 50 more Signs 0,99',
+        	text:'Get 50 more Signs',
         	handler: function () {
 	       		ASLKids.app.getController('IAP').purchase();
 			}   			
@@ -50,7 +50,7 @@ Ext.define('ASLKids.view.Gebarenlijst', {
         var IAP = ASLKids.app.getController('IAP'),
             buyBtn = this.getBuyButton();
 
-        buyBtn.setText('Activate 50 more Signs ' + IAP.getPrice());
+        buyBtn.setText('Get 50 more Signs ' + IAP.getPrice());
 
         buyBtn.setDisabled(false);
     },

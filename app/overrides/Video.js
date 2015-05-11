@@ -37,9 +37,22 @@ Ext.define('ASLKids.overrides.Video', {
             this.ghost.show();
         }
    },
+   
+   updateUrl: function() {
+        var me = this;
+        
+        me.callParent(arguments);
+        
+	if (Ext.os.version.getMajor() > 7) { // ios8 hack for loading videos in listdetail
+        setTimeout(function() {
+            me.media.dom.load();
+        }, 100);
+	}
+
+    },
 	
     	
-// trying to set a delay in hiding the poster image
+// set a delay in hiding the poster image
 	onGhostTap: function() {
         var me = this,
             media = this.media,

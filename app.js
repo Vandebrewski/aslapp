@@ -47,7 +47,8 @@ Ext.application({
         Ext.Viewport.add({
             xtype: 'main-view'
         });
-        
+
+    
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
             layout: 'fit',            

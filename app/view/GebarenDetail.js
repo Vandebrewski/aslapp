@@ -17,7 +17,7 @@ Ext.define('ASLKids.view.GebarenDetail', {
                     }
                 });
             }
-        } ,
+        },
 
         layout: {
     		type: 'vbox',
@@ -88,20 +88,10 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 flex: 1,
                                 
                 listeners: {                    
-//                   painted: function () {
- //                  	if (Ext.os.version.getMajor() > 7) {
-//						this.media.dom.load();
-//						}
- //                     this.media.dom.setAttribute('showlogo', 'false');    // doesn't work                                      
-//                   },
                                         
                     tap: {
                         fn: function () {                                                           
                             var me = this;                            
-//                            me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo
-//								me.play();
-//								}, true);  // or should this be false?                            
-                            
                             if (me.isPlaying()) {                                       
                                 me.pause();
                                 

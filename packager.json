@@ -24,7 +24,7 @@
 	 * @required
 	 * This is the version of your application.
 	 */
-	"versionString":"1.0",
+	"versionString”:”1.1”,
 
 	/**
 	 * @cfg  versionCode
@@ -71,7 +71,7 @@
 	 * This is configuration for your application. `Debug` should always be used unless you are submitting your app to an online
 	 * store - in which case `Release` should be specified.
 	 */
-	"configuration":"Debug",
+	"configuration":"Release",
 
 	/**
 	 * @cfg  platform
@@ -82,7 +82,7 @@
 	 *  - Android
 	 *  - AndroidEmulator
 	 */
-	"platform":"iOSSimulator",
+	"platform":"iOS",
 
 	/**
 	 * @cfg  deviceType
@@ -167,8 +167,6 @@
 	 */
 	"orientations": [
 		"portrait",
-		"landscapeLeft",
-		"landscapeRight",
 		"portraitUpsideDown"
 	]
 }

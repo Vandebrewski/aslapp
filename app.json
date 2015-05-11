@@ -119,6 +119,7 @@
      * Extra resources to be copied along when build
      */
     "resources": [
+    	"resources/splash",
         "resources/images",
         "resources/icons",
         "resources/fonts",

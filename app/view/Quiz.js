@@ -33,7 +33,7 @@ Ext.define('ASLKids.view.Quiz', {
                         xtype: 'dataview',
                         scrollable: null,
                         flex:6,
-                        itemTpl: '<img src="resources/images/objects/thumbnails/{plaatje}.png">{plaatje}</div>',
+                        itemTpl: '<img src="resources/images/objects/{plaatje}.svg">{plaatje}</div>',
                         cls: 'centerQuizOptions'                      
                 	},
                 	{
@@ -60,7 +60,7 @@ Ext.define('ASLKids.view.Quiz', {
             			itemId: 'buyButton',
             			disabled: true,
         				height: 70,
-        				text: 'Activate 50 more Signs 0,99',
+        				text: 'Get 50 more Signs',
         				cls: 'quizresultbuybutton',
         				handler: function () {
             				ASLKids.app.getController('IAP').purchase();

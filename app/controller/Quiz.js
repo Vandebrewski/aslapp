@@ -141,7 +141,7 @@ Ext.define('ASLKids.controller.Quiz', {
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "<div class='resulttext'> Good job !<br /><img src='resources/images/correct.png'></div>";
+        html += "<div class='resulttext'> Good job !<br /><img src='resources/images/correct.svg'></div>";
         
         var correct = results.correct;
 
@@ -152,7 +152,7 @@ Ext.define('ASLKids.controller.Quiz', {
             buyButton.setHidden(true);
         }
         else {
-            buyButton.setText('Activate 50 more Signs ' + IAP.getPrice());
+            buyButton.setText('Get 50 more Signs ' + IAP.getPrice());
 
             IAP.on('purchase', function() {
                 buyButton.setHidden(true);
@@ -163,10 +163,6 @@ Ext.define('ASLKids.controller.Quiz', {
             buyButton.setDisabled(false);
         }
         
- //       var incorrect = results.incorrect;
-
-//        html += incorrect.length + " <img src='resources/images/count5.png'></div>";
-
         this.getResultsText().setHtml(html);
     },
 
@@ -235,13 +231,13 @@ Ext.define('ASLKids.controller.Quiz', {
         view.deselectAll();
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "<img src='resources/images/correct.png'><br /><br /><img src='resources/images/cake.svg'>" : "<img src='resources/images/wrong.png'>";
+            var message = correct ? "<img src='resources/images/correct.svg'><br /><br /><img src='resources/images/cake.svg'>" : "<img src='resources/images/wrong.svg'>";
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
 
                 message += "<br />";
-                message += "<br />The correct answer was: <br /><br /><img src='resources/images/objects/thumbnails/" + correctAnswer.get('plaatje') + ".png'>";
+                message += "<br />The correct answer was: <br /><br /><img src='resources/images/objects/" + correctAnswer.get('plaatje') + ".svg'>";
             }
 
           if (Ext.os.version.getMajor() > 7) {
@@ -274,20 +270,9 @@ Ext.define('ASLKids.controller.Quiz', {
             enableControls: false,
                             
             listeners: {                    
-//                painted: function () {
-//                    this.media.dom.load(); // not needed here. ios8 has update-URL-load problems but not this one
-//                    this.media.dom.setAttribute('webkit-playsinline', 'true');//; 
-//                    this.media.dom.setAttribute('showlogo', 'false');        // doesn't work 
-//                },
                 tap: {
                     fn: function () {                                                           
                         var me = this;
-                        
- //                       me.media.dom.addEventListener("playing", function() { // wait for quicktime to be ready so it doesnt show quicktime logo ------- try canplaythrough or canplay-------
- //                           me.play();
- //                           }, true);  
-                        
-                        
                         if (me.isPlaying()) {                                       
                             me.pause();
                         } else {                                  

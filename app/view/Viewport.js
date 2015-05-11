@@ -25,7 +25,6 @@ Ext.define('ASLKids.view.Viewport', {
                 items: [
                     {
                         iconCls: 'menu',
-//                        title: 'MENU',
                         handler: function() {
                             Ext.Viewport.toggleMenu('left');
                         }

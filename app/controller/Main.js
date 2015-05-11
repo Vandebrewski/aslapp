@@ -90,8 +90,7 @@ Ext.define('ASLKids.controller.Main', {
 
         setTimeout(function() {
             me.showDetail(null, null, null, record);
-            video.media.dom.load(); // this is needed for ios8
-//            video.media.hide(); // already hidden above, is this correct?
+//            video.media.dom.load(); // this is needed for ios8 try a conditional statement
 			video.ghost.show();
         }, 150);
     },
@@ -100,13 +99,14 @@ Ext.define('ASLKids.controller.Main', {
         var me = this,
             detail = this.getDetail();
 
-        me.getListDetailImage().setSrc("resources/images/objects/" + record.data.plaatje + ".png");
-        me.getListDetailVideo().setUrl("resources/video/" + record.data.plaatje + ".mp4");
+        me.getListDetailImage().setSrc("resources/images/objects/" + record.data.plaatje + ".svg");
+         me.getListDetailVideo().setUrl("resources/video/" + record.data.plaatje + ".mp4");
+//        me.getListDetailVideo().setUrl("android.resource://com.basvanderwilk.aslkids/raw/" + record.data.plaatje); // maybe add /res before /raw
         me.getListDetailAudio().setUrl("resources/audio/" + record.data.plaatje + ".m4a");
         me.getListDetailButton().setText(record.data.plaatje);
      
         me.currentDetailRecord = record;
-        me.getMain().animateActiveItem(detail, {type: 'fade', duration: 500});
+        me.getMain().animateActiveItem(detail, {type: 'fade', duration: 250});
 
         setTimeout(function() {
             me.getListView().deselectAll();
