@@ -33,14 +33,14 @@ Ext.define('ASLKids.view.GebarenDetail', {
             },
             {
                 layout: 'hbox',
-                items: [ 
+                items: [
                     {
                         xtype: 'spacer'
                     },
                     {
                         xtype: 'button',
-                        itemId: 'listDetailButton', 
-                        cls: 'audioButton',  
+                        itemId: 'listDetailButton',
+                        cls: 'audioButton',
                         handler: function () {
                             var container = this.getParent(),
                             audio = container.down('audio');
@@ -65,7 +65,7 @@ Ext.define('ASLKids.view.GebarenDetail', {
                         xtype: 'button',
                         itemId: 'backButton',
                         cls: 'backButton'
-                    },  
+                    },
                     {
                         xtype: 'spacer'
                     },
@@ -75,35 +75,56 @@ Ext.define('ASLKids.view.GebarenDetail', {
                         cls: 'nextButton'
                     }
                 ]
-            },   
+            },
             {
                 cls: 'videoborderoverlay'
+            },
+            {
+                xtype: 'button',
+                height: 200,
+                text: 'play video',
+                itemId: 'videoPlayButton',
+                handler: function() {
+                    VideoPlayer.play(this.__url, {
+                        volume: 0.5
+                    },
+                    function () {
+                        console.log("video completed");
+                    },
+                    function (err) {
+                        console.log(err);
+                    });
+                }
             },
             {
                 xtype: 'video',
                 name: 'listDetailVideo',
                 itemId: 'videoView',
-                posterUrl: 'resources/images/playbutton.svg',          
+                posterUrl: 'resources/images/playbutton.svg',
                 enableControls: false,
                 flex: 1,
-                                
-                listeners: {                    
-                                        
+
+                listeners: {
+
                     tap: {
-                        fn: function () {                                                           
-                            var me = this;                            
-                            if (me.isPlaying()) {                                       
+                        fn: function (e) {
+                            if (Ext.os.is.Android) {
+                                return;
+                            }
+
+                            var me = this;
+                            if (me.isPlaying()) {
                                 me.pause();
-                                
-                            } else {                                  
+
+                            } else {
                                 me.play();
-                            }                            
+                            }
                         }, // END addEventListener
                         element: 'element'
                     } // END tap
                 } // END listeners
             } // END video
-           
+
         ]
     }
 });

@@ -30,6 +30,9 @@
     "installed_plugins": {
         "cc.fovea.cordova.purchase": {
             "PACKAGE_NAME": "com.basvanderwilk.aslkids"
+        },
+        "com.moust.cordova.videoplayer": {
+            "PACKAGE_NAME": "com.basvanderwilk.aslkids"
         }
     },
     "dependent_plugins": {}
