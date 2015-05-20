@@ -5,7 +5,7 @@
             "packager": "cordova",
             "cordova" : {
                 "config": {
-                    "platforms": "ios",
+                    "platforms": "android",
 
                     "id": "com.basvanderwilk.aslkids",
                     "name": "ASLKids"

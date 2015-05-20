@@ -191,7 +191,7 @@ Ext.define('ASLKids.controller.Quiz', {
         var correctAnswer = answersStore.getAt(correctIndex);
 
         this.createVideoComponent();
-        this.getVideoView().setUrl("resources/video/" + correctAnswer.get('plaatje') + ".mp4");
+        this.getVideoView().setUrl("http://www.asl-kids.com/video/" + correctAnswer.get('plaatje') + ".mp4");
 
 //        console.log("correct answer: ", correctAnswer.get('plaatje'));
 
