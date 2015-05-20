@@ -31,7 +31,7 @@ Ext.application({
 //        '768x1024': 'resources/icons/splash.png',
 //        '1536x2048': 'resources/icons/splash.png'
 //    },
-    
+
     eventPublishers: {
         touchGesture: {
             recognizers: {
@@ -42,20 +42,20 @@ Ext.application({
             }
         }
     },
-    
+
     launch: function () {
         Ext.Viewport.add({
             xtype: 'main-view'
         });
 
-    
+
         // Create native side menu
         var sideMenu = Ext.create('Ext.Menu', {
-            layout: 'fit',            
+            layout: 'fit',
             width: 150,
             id: 'nav-menu',
-            items: [           
-               
+            items: [
+
             {
                 xtype: 'list',
                 itemTpl: '{title}',
@@ -64,11 +64,11 @@ Ext.application({
                 {
                     title: '<div class="menu-icon-big">&#xe603;</div>signs',
                     itemIndex: 1
-                }, 
+                },
                 {
                     title: '<div class="menu-icon-big">&#xe602;</div>play',
                     itemIndex: 2
-                }, 
+                },
                 {
                     title: '<div class="menu-icon-small">&#xe604;</div>',
                     itemIndex: 0

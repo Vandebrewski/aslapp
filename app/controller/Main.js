@@ -14,7 +14,8 @@ Ext.define('ASLKids.controller.Main', {
             listDetailButton : '#listDetailButton',
             listDetailVideo  : 'gebarendetail video[name="listDetailVideo"]',
             listDetailImage  : 'gebarendetail image[name="listDetailImage"]',
-            detail: 'gebarendetail'
+            detail: 'gebarendetail',
+            videoPlayButton: '#videoPlayButton'
         }, // End refs
 
         control: {
@@ -42,22 +43,20 @@ Ext.define('ASLKids.controller.Main', {
             }
         } // End control
     }, // End config
-    
-	
-	
+
 
     onVideoEnded: function(video) {
         video.media.setBottom(-2000);
         video.ghost.show();
         var video = this.getVideoView();
         if (video.media.pause) { // fix for: the .paused flag remains false when the media has ended. But it also causes an error in browser console
-            video.media.pause(); 
+            video.media.pause();
            }
     },
-	
-	
+
+
     onNavMenuSelect: function(view, record) {
-        var itemIndex = record.get('itemIndex'); 
+        var itemIndex = record.get('itemIndex');
         Ext.Viewport.child('tabpanel').setActiveItem(parseInt(itemIndex));
 
         // Hide the menu?
@@ -66,7 +65,7 @@ Ext.define('ASLKids.controller.Main', {
 
     onBackTap: function() {
         this.getMain().setActiveItem(0);
-        this.getVideoView().pause();       
+        this.getVideoView().pause();
     },
 
     onNextTap: function() {
@@ -82,11 +81,11 @@ Ext.define('ASLKids.controller.Main', {
 
         var record = store.getAt(index),
             detail = me.getDetail(),
-            video = detail.down('video');  
+            video = detail.down('video');
 
         video.media.hide();
         video.pause();
-        video.setUrl(null);  
+        video.setUrl(null);
 
         setTimeout(function() {
             me.showDetail(null, null, null, record);
@@ -100,13 +99,22 @@ Ext.define('ASLKids.controller.Main', {
             detail = this.getDetail();
 
         me.getListDetailImage().setSrc("resources/images/objects/" + record.data.plaatje + ".svg");
-//         me.getListDetailVideo().setUrl("http://www.asl-kids.com/video/" + record.data.plaatje + ".mp4");
-        me.getListDetailVideo().setUrl("android.resource://com.basvanderwilk.aslkids/raw/" + record.data.plaatje); // put videos in /res/raw
+        // me.getListDetailVideo().setUrl("http://www.asl-kids.com/video/" + record.data.plaatje + ".mp4");
+        // me.getListDetailVideo().setUrl("android.resource://com.basvanderwilk.aslkids/raw/" + record.data.plaatje); // put videos in /res/raw
+        if (Ext.os.is.Android) {
+            me.getVideoPlayButton().__url = "file:///android_asset/www/resources/video/" + record.data.plaatje + '.mp4';
+            me.getVideoPlayButton().show();
+            me.getListDetailVideo().hide();
+        }
+        else {
+            me.getVideoPlayButton().hide();
+            me.getListDetailVideo().show();
+        }
         // me.getListDetailAudio().setUrl("resources/audio/" + record.data.plaatje + ".m4a");
         // me.getListDetailAudio().setUrl("http://www.asl-kids.com/sound/" + record.data.plaatje + ".m4a");
-        me.getListDetailAudio().setUrl("/android_asset/www/resources/audio/" + record.data.plaatje + ".m4a"); 
+        me.getListDetailAudio().setUrl("/android_asset/www/resources/audio/" + record.data.plaatje + ".m4a");
         me.getListDetailButton().setText(record.data.plaatje);
-     
+
         me.currentDetailRecord = record;
         me.getMain().animateActiveItem(detail, {type: 'fade', duration: 250});
 
@@ -115,4 +123,3 @@ Ext.define('ASLKids.controller.Main', {
         }, 150);
     }
 });
-

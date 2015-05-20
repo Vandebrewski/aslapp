@@ -13,7 +13,8 @@ Ext.define('ASLKids.view.Home', {
                     element: 'element',
                     event: 'tap',
                     fn: function() {
-                       Ext.Viewport.toggleMenu('left');
+                        Ext.Viewport.toggleMenu('left');
+
                     }
                 }
             ],
@@ -24,17 +25,16 @@ Ext.define('ASLKids.view.Home', {
 //    		src: 'resources/audio/home-sample.mp3',
 //    		enableControls: true,
 //    		autoplay:true
-//    		hidden: true    		
-//    	}, 
-        {       	
+//    		hidden: true
+//    	},
+        {
 			html: 'Menu<br />&#x25BC;',
 			cls: 'menu-hint'
 		},
 		{
 			html: '<audio autoplay><source src="resources/audio/soundsapp/start.mp3"></source></audio>'
 		}
-		
+
 	]
     }
 })
-

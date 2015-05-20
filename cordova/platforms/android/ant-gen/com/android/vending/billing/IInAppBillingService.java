@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /Volumes/BASDATA/appjes/asl/cordova/platforms/android/src/com/android/vending/billing/IInAppBillingService.aidl
+ * Original file: /Users/Robert/Development/odesk/aslapp/cordova/platforms/android/src/com/android/vending/billing/IInAppBillingService.aidl
  */
 package com.android.vending.billing;
 /**
