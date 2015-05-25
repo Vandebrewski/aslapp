@@ -101,15 +101,18 @@ Ext.define('ASLKids.controller.Main', {
         me.getListDetailImage().setSrc("resources/images/objects/" + record.data.plaatje + ".svg");
         // me.getListDetailVideo().setUrl("http://www.asl-kids.com/video/" + record.data.plaatje + ".mp4");
         // me.getListDetailVideo().setUrl("android.resource://com.basvanderwilk.aslkids/raw/" + record.data.plaatje); // put videos in /res/raw
-        if (Ext.os.is.Android) {
+
+       if (Ext.os.is.Android) {
             me.getVideoPlayButton().__url = "file:///android_asset/www/resources/video/" + record.data.plaatje + '.mp4';
-            me.getVideoPlayButton().show();
-            me.getListDetailVideo().hide();
+            //should I change getVideoPlayButton into something else?
         }
         else {
-            me.getVideoPlayButton().hide();
-            me.getListDetailVideo().show();
+		//// me.getListDetailVideo().setUrl("resources/video/" + record.data.plaatje + ".mp4");
+
         }
+        // me.getListDetailAudio().setUrl("resources/audio/" + record.data.plaatje + ".m4a");
+        // me.getListDetailAudio().setUrl("http://www.asl-kids.com/sound/" + record.data.plaatje + ".m4a");
+
         // me.getListDetailAudio().setUrl("resources/audio/" + record.data.plaatje + ".m4a");
         // me.getListDetailAudio().setUrl("http://www.asl-kids.com/sound/" + record.data.plaatje + ".m4a");
         me.getListDetailAudio().setUrl("/android_asset/www/resources/audio/" + record.data.plaatje + ".m4a");
