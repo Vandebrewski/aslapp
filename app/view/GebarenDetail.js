@@ -80,6 +80,23 @@ Ext.define('ASLKids.view.GebarenDetail', {
                 cls: 'videoborderoverlay'
             },
             {
+               xtype: 'button',
+                height: 200,
+                text: 'play video',
+                itemId: 'videoPlayButton',
+                handler: function() {
+                    VideoPlayer.play(this.__url, {
+                        volume: 0.5
+                    },
+                    function () {
+                        console.log("video completed");
+                    },
+                    function (err) {
+                        console.log(err);
+                    });
+                }
+            },
+            {
                 xtype: 'video',
                 name: 'listDetailVideo',
                 itemId: 'videoView',
