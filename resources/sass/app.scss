@@ -221,7 +221,7 @@ background-repeat: no-repeat !important;
 border: 0px none !important;
 width:120px;
 padding: 0px 0px 60px !important;
-font-size: 1.1em;
+font-size: 1.3em;
 margin-top:-10px;
 z-index: 4
 }
@@ -465,11 +465,18 @@ border-radius: 10px
 
 
 .x-button {
-background-color: transparent !important
+background-color: transparent !important;
+border: none;
 }
 
 .x-layout-card-item {
   background: transparent
+}
+
+.videoPlayButton {
+    background-image: url('../images/playbutton.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center
 }
 
 //-------------------------------------------- ANIMATION -------------------------------------------
