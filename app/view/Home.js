@@ -14,27 +14,18 @@ Ext.define('ASLKids.view.Home', {
                     event: 'tap',
                     fn: function() {
                         Ext.Viewport.toggleMenu('left');
-
                     }
                 }
-            ],
+            ]
 
-        items: [
-//        {
-//    		xtype: 'audio',
-//    		src: 'resources/audio/home-sample.mp3',
-//    		enableControls: true,
-//    		autoplay:true
-//    		hidden: true
-//    	},
-        {
-			html: 'Menu<br />&#x25BC;',
-			cls: 'menu-hint'
-		},
-		{
-			html: '<audio autoplay><source src="resources/audio/soundsapp/start.mp3"></source></audio>'
-		}
+//        items: [
+//		{
+// FOR ANDROID:			
+//			html: '<audio autoplay><source src="/android_asset/www/resources/audio/soundsapp/start.mp3"></source></audio>'
+// for iOS			
+//			html: '<audio autoplay><source src="resources/audio/soundsapp/start.mp3"></source></audio>'
+//		}
 
-	]
+//	]
     }
 })

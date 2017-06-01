@@ -9,6 +9,7 @@ Ext.define('ASLKids.controller.Quiz', {
             'questionView': 'quizpanel #questionView',
             'answersView': 'quizpanel dataview',
             'videoView': 'quizpanel #questionVideo',
+            'videoPlayButton': 'quizpanel #videoPlayButton',
             'resultsView': 'quizpanel #resultsView',
             'resultsText': 'quizpanel #resultsText',
             'quizTitle': 'quizpanel #quizTitle'
@@ -82,6 +83,9 @@ Ext.define('ASLKids.controller.Quiz', {
             incorrect: []
         });
 
+        var store = Ext.getStore('gebaarStore');
+            store.clearFilter(true);
+
         this.setCurrentQuestionIndex(0);
         this.setExistingQuestionIndexes([]);
         this.setFinished(false);
@@ -97,10 +101,11 @@ Ext.define('ASLKids.controller.Quiz', {
         var index = this.getCurrentQuestionIndex(),
             max = this.getQuestionCount(),
             title = 'Which sign is this?',
+            finishtitel = '',
             tmp = '<div class="quizcounter count{index}"></div>';
 
         if (index >= max) {
-            this.getQuizTitle().setHtml(title);
+            this.getQuizTitle().setHtml(finishtitel);
         }
         else {
             tmp = tmp.replace('{index}', index + 1);
@@ -118,7 +123,7 @@ Ext.define('ASLKids.controller.Quiz', {
             max = this.getQuestionCount();
 
         index++;
-        
+
         if (index >= max) {
             this.finish();
         }
@@ -128,6 +133,7 @@ Ext.define('ASLKids.controller.Quiz', {
 
         this.setCurrentQuestionIndex(index);
         this.updateQuizTitle();
+//        this.getAnswersView().show();
     },
 
     finish: function() {
@@ -135,34 +141,20 @@ Ext.define('ASLKids.controller.Quiz', {
 
         var resultsView = this.getResultsView(),
             results = this.getResults(),
-            buyButton = resultsView.getComponent('buyButton'),
+//            buyButton = resultsView.getComponent('buyButton'),
             html = "";
 
         resultsView.getParent().setActiveItem(resultsView);
 
         // correct
-        html += "<div class='resulttext'> Good job !<br /><img src='resources/images/correct.svg'></div>";
         
+//IOS  verwijder audio stukje hieronder voor Android        
+        html += "<div class='resulttext'> Great job !<br /><img src='resources/images/correct.svg'></div><audio autoplay><source src='resources/audio/soundsapp/start.mp3'></source></audio>";
+
         var correct = results.correct;
 
         html += "<div class='quizresult resultcount" + correct.length + "'></div>";
 
-        var IAP = ASLKids.app.getController('IAP');
-        if (IAP.getPurchased()) {
-            buyButton.setHidden(true);
-        }
-        else {
-            buyButton.setText('Get 50 more Signs ' + IAP.getPrice());
-
-            IAP.on('purchase', function() {
-                buyButton.setHidden(true);
-            }, this);
-        }
-        
-        if (IAP.getReady()) {
-            buyButton.setDisabled(false);
-        }
-        
         this.getResultsText().setHtml(html);
     },
 
@@ -191,8 +183,16 @@ Ext.define('ASLKids.controller.Quiz', {
         var correctAnswer = answersStore.getAt(correctIndex);
 
         this.createVideoComponent();
-        this.getVideoView().setUrl("http://www.asl-kids.com/video/" + correctAnswer.get('plaatje') + ".mp4");
+        
+        this.getVideoView().setUrl("resources/video/" + correctAnswer.get('plaatje') + ".mp4");
 
+/*        if (Ext.os.is.Android) {
+            this.getVideoPlayButton().__url = "file:///android_asset/www/resources/video/" + correctAnswer.get('plaatje') + '.mp4';
+        }
+        else {
+            this.getVideoView().setUrl("resources/video/" + correctAnswer.get('plaatje') + ".mp4");
+        }
+*/
 //        console.log("correct answer: ", correctAnswer.get('plaatje'));
 
         existingQuestionIndexes.push(answerIndexes[correctIndex]);
@@ -229,21 +229,39 @@ Ext.define('ASLKids.controller.Quiz', {
         this.setResults(results);
 
         view.deselectAll();
+        
+//        this.getAnswersView().hide();
+
+//		this.getVideoView().pause(); //IOS only? Is niet echt nodig en zorgt voor extra activiteit
+
 
         if (this.getShowAnswerResultAlert()) {
-            var message = correct ? "<img src='resources/images/correct.svg'><br /><br /><img src='resources/images/cake.svg'>" : "<img src='resources/images/wrong.svg'>";
+// IOS verwijder stukje audio hieronder voor Android        	
+            var message = correct ? "<img src='resources/images/correct.svg'><br /><br /><img src='resources/images/cake.svg'>" : "";
+            var audio = new Audio('resources/audio/soundsapp/' + (correct ? 'correct.mp3' : 'wrong.mp3'));
+			audio.play();
 
             if (!correct) {
                 var correctAnswer = store.getAt(store._correctIndex);
 
-                message += "<br />";
-                message += "<br />The correct answer was: <br /><br /><img src='resources/images/objects/" + correctAnswer.get('plaatje') + ".svg'>";
-            }
+                message += "<br />";             
+                message += "<img src='resources/images/wrong.svg'><br />" + correctAnswer.get('plaatje') + "<br /><img src='resources/images/objects/" + correctAnswer.get('plaatje') + ".svg'>";
 
-          if (Ext.os.version.getMajor() > 7) {
-            var audio = new Audio('resources/audio/soundsapp/' + (correct ? 'correct.mp3' : 'wrong.mp3'));
-            audio.play();
             }
+/*
+// iOS sound 
+          if (Ext.os.is.iOS) {
+            var audio = new Audio('resources/audio/soundsapp/' + (correct ? 'correct.mp3' : 'wrong.mp3'));
+			audio.play(); 
+			}
+// END iOS sound
+
+// Android sound
+          if (Ext.os.is.Android) {
+		var audio = new Audio('/android_asset/www/resources/audio/soundsapp/' + (correct ? 'correct.mp3' : 'wrong.mp3'));
+            audio.play();            }
+// END Android  
+*/          
 
             Ext.Msg.alert('', message, function() {
                 this.next();
@@ -255,29 +273,84 @@ Ext.define('ASLKids.controller.Quiz', {
     },
 
     createVideoComponent: function() {
-        if (this.getVideoView()) {
-			 this.getVideoView().pause();
-			this.getVideoView().setUrl(null);
-			this.getVideoView().destroy();
+        if (this.getVideoView() || this.getVideoPlayButton()) {
+/*            if (Ext.os.is.Android) {
+                this.getVideoPlayButton().destroy();
+            } else {
+    			this.getVideoView().pause();
+    			this.getVideoView().setUrl(null);
+    			this.getVideoView().destroy();
+            }
+*/            
+            	this.getVideoView().pause();
+    			this.getVideoView().setUrl(null);
+    			this.getVideoView().destroy();    
         }
 
-        this.getAnswersView().getParent().insert(1, {
+        this.getAnswersView().getParent().insert(1, Ext.os.is.Android ? {
+
+		xtype: 'video',
+            itemId: 'questionVideo',
+            posterUrl: 'resources/images/playbutton2.svg',
+			flex:9,
+            enableControls: false,
+            
+
+            listeners: {
+                tap: { 
+                    fn: function () {
+                        var me = this;
+                        // removed the Pause option for now
+//                        if (me.isPlaying()) {
+//                            me.pause();
+//                        } else {
+//                            me.play();
+//                        }
+						me.play();
+                    }, // END addEventListener
+                    element: 'element'
+                } // END tap
+            } // END listeners
+
+/*
+            itemId: 'videoPlayButton',
+            cls: 'videoPlayButtonquiz',
+            xtype: 'button',
+            flex: 9,
+           //  text: 'play video',
+            handler: function() {
+                 VideoPlayer.play(this.__url, {
+                     volume: 0.5
+                 }//,
+                 //function () {
+                 //    console.log("video completed");
+                 //},
+                 //function (err) {
+                 //    console.log(err);
+                 //}
+                 );
+            }
+*/            
+            
+        } : {
             xtype: 'video',
             itemId: 'questionVideo',
             posterUrl: 'resources/images/playbutton2.svg',
 			flex:9,
-			cls: 'QuizVideo',
             enableControls: false,
-                            
-            listeners: {                    
-                tap: {
-                    fn: function () {                                                           
+            
+
+            listeners: {
+                tap: { 
+                    fn: function () {
                         var me = this;
-                        if (me.isPlaying()) {                                       
-                            me.pause();
-                        } else {                                  
-                            me.play();
-                        }                            
+                        // removed the Pause option for now
+//                        if (me.isPlaying()) {
+//                            me.pause();
+//                        } else {
+//                            me.play();
+//                        }
+						me.play();
                     }, // END addEventListener
                     element: 'element'
                 } // END tap
@@ -286,11 +359,10 @@ Ext.define('ASLKids.controller.Quiz', {
     },
 
     onVideoEnded: function(video) {
-        video.media.setBottom(-2000);
+        video.media.setBottom(-2000); // wwarom was dit eigenlijk nodig???
         video.ghost.show();
-        if (video.media.pause) {
-            video.media.pause(); // fix for: the .paused flag remains false when the media has ended
-        }
+//        if (video.media.pause) {
+//            video.media.pause(); // fix for: the .paused flag remains false when the media has ended. I don't think this is needed anymore for IOS9 and 10
+//        }
     }
 });
-

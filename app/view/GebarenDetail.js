@@ -1,10 +1,12 @@
 Ext.define('ASLKids.view.GebarenDetail', {
     extend: 'Ext.Container',
     xtype: 'gebarendetail',
+    
 
     config: {
         cls: 'gebarendetail',
 
+// swipe to next element
         listeners: {
             initialize: function(c) {
                 var me = this;
@@ -26,9 +28,14 @@ Ext.define('ASLKids.view.GebarenDetail', {
 			},
         items: [
             {
+                 xtype: 'button',
+                 itemId: 'backListButton',
+                 cls: 'backListButton'
+            },
+            {
                 xtype: 'image',
                 name: 'listDetailImage',
-               flex: 1,
+                flex: 1,
                 cls: 'listdetailimage'
             },
             {
@@ -45,7 +52,16 @@ Ext.define('ASLKids.view.GebarenDetail', {
                             var container = this.getParent(),
                             audio = container.down('audio');
                             audio.play();
-                        }
+							}
+// Android, beacause html5 audio is not supported, above function is for iOS. Remove above function (5 lines) and activate underneath function for android
+/*
+						handler: function playAudio(url) {
+    						var my_media = new Media(this.__url);
+    						my_media.play();
+						}
+*/
+// end android
+                       
                     },
                 	{
                 		xtype: 'audio',
@@ -76,26 +92,25 @@ Ext.define('ASLKids.view.GebarenDetail', {
                     }
                 ]
             },
-            {
+// iOS
+/*
+           {
                 cls: 'videoborderoverlay'
             },
-            {
+*/            
+
+// this button underneath is only for the Android native player
+/*            {
                xtype: 'button',
-                height: 200,
-                text: 'play video',
+                flex: 1,
                 itemId: 'videoPlayButton',
+                cls: 'videoPlayButton',
                 handler: function() {
                     VideoPlayer.play(this.__url, {
-                        volume: 0.5
-                    },
-                    function () {
-                        console.log("video completed");
-                    },
-                    function (err) {
-                        console.log(err);
                     });
                 }
             },
+*/            
             {
                 xtype: 'video',
                 name: 'listDetailVideo',
@@ -108,17 +123,21 @@ Ext.define('ASLKids.view.GebarenDetail', {
 
                     tap: {
                         fn: function (e) {
-                            if (Ext.os.is.Android) {
-                                return;
-                            }
+//                            if (Ext.os.is.Android) {
+//                                return;
+//                            }
 
                             var me = this;
-                            if (me.isPlaying()) {
-                                me.pause();
+                            // Removed Pause function for now
+//                            if (me.isPlaying()) {
+//                                me.pause();
 
-                            } else {
-                                me.play();
-                            }
+//                            } else {
+//                                me.play();
+//                            }
+//							me.load();
+							
+							me.play();
                         }, // END addEventListener
                         element: 'element'
                     } // END tap

@@ -837,7 +837,9 @@ Ext.define('Ext.dataview.DataView', {
         if (loadingText && this.isPainted()) {
             this.setMasked({
                 xtype: 'loadmask',
-                message: loadingText
+//                message: loadingText
+        message:'<img src="resources/images/loader.gif"/>',
+        messageCls:'width:48px;
             });
         }
 

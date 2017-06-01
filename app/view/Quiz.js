@@ -2,7 +2,7 @@ Ext.define('ASLKids.view.Quiz', {
     extend: 'Ext.Container',
     xtype: 'quizpanel',
     fullscreen: true,
-    
+
 
     config: {
         iconCls: 'home',
@@ -15,7 +15,7 @@ Ext.define('ASLKids.view.Quiz', {
                 docked: 'top',
                 itemId: 'quizTitle',
                 cls:'quizTitle'
-            }, 
+            },
             {
                 itemId: 'questionView',
                 layout: 'vbox',
@@ -26,19 +26,27 @@ Ext.define('ASLKids.view.Quiz', {
                     {
                         xtype: 'spacer'
                     },
-                    {
+/*
+// iOS
+                   {
                 		cls: 'quizvideoborderoverlay1'
                 	},
+// END IOS
+*/                	
                     {
                         xtype: 'dataview',
                         scrollable: null,
                         flex:6,
                         itemTpl: '<img src="resources/images/objects/{plaatje}.svg">{plaatje}</div>',
-                        cls: 'centerQuizOptions'                      
+                        cls: 'centerQuizOptions'
                 	},
+/*
+// iOS
                 	{
                 		cls: 'quizvideoborderoverlay2'
                 	},
+// END IOS
+*/                	
                     {
                         xtype: 'spacer'
                     }
@@ -49,27 +57,15 @@ Ext.define('ASLKids.view.Quiz', {
                 items: [
                     {
                         itemId: 'resultsText'
-                    }, 
+                    },
                     {
                         xtype: 'button',
                         cls:'again',
                         itemId: 'repeatButton'
-                    }, 
-                    {
-        				xtype: 'button',
-            			itemId: 'buyButton',
-            			disabled: true,
-        				height: 70,
-        				text: 'Get 50 more Signs',
-        				cls: 'quizresultbuybutton',
-        				handler: function () {
-            				ASLKids.app.getController('IAP').purchase();
-        				}
-        			}
+                    }
                 ]
             }
         ]
-    }   
-    
-});
+    }
 
+});

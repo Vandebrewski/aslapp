@@ -10,15 +10,17 @@ Ext.define('ASLKids.view.Viewport', {
         layout: {
             animation: {
                 type: 'slide',
-                duration: 100
+                duration: 5
             }
         },
+        fullscreen: true, // test
         
         items: [
             {xtype: 'homepanel'}, 
             {xtype: 'navlist'}, 
             {xtype: 'quizpanel'}, 
             {xtype: 'extrapanel'},
+            {xtype: 'fingerspelling'},
             {
                 xtype: 'tabbar',
                 docked: 'bottom',
@@ -31,20 +33,23 @@ Ext.define('ASLKids.view.Viewport', {
                     }
                 ]
             }
-        ],
+        ]//,
 
-        listeners: {
-            swipe: {
-                element: 'element',
-                fn: function(event, node, options, eOpts) {
-                    if (event.direction == 'right') {
-                        Ext.Viewport.showMenu('left');
-                    } else {
-                        Ext.Viewport.hideMenu('left');
-                    }
-                }
-            }
-        }
+// removed swipe menu because it was interfering with carousel swipe page
+
+
+//        listeners: {
+//            swipe: {
+//                element: 'element',
+//                fn: function(event, node, options, eOpts) {
+//                    if (event.direction == 'right') {
+//                        Ext.Viewport.showMenu('left');
+ //                   } else {
+ //                       Ext.Viewport.hideMenu('left');
+ //                   }
+ //               }
+ //           }
+ //       }
     },
 
     doTabChange: function(tabBar, newTab) {

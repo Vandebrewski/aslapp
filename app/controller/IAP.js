@@ -122,7 +122,7 @@ Ext.define('ASLKids.controller.IAP', {
           var me = this;
 
           if (!me.getCanPurchase()) {
-               Ext.Msg.alert('', 'Looks like you have disabled In App Purchase. Please turn it on in Settings.app');
+               Ext.Msg.alert('', 'Looks like you have disabled In App Purchase or have no internet. Please turn it on in Settings.app');
                return;
           }
 
@@ -148,7 +148,7 @@ Ext.define('ASLKids.controller.IAP', {
 
      restorePurchases: function() {
           if (!this.getCanPurchase() && !this.getPurchased()) {
-               Ext.Msg.alert('', 'Looks like you have disabled In App Purchase. Please turn it on in Settings.app');
+               Ext.Msg.alert('', 'Looks like you have disabled In App Purchase or have no internet. Please turn it on in Settings.app');
                return;
           }
 

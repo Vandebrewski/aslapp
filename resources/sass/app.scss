@@ -3,10 +3,10 @@ $include-pictos-font: false;
 $include-default-icons: false;
 $include-highlights: false;
 $base-gradient: none;
-$basic-slider: true;
-$body-bg-color: #65bcab;
+$basic-slider: false; //stond op true
+$body-bg-color: #fff;
 $list-pressed-color: none;
-$loading-spinner-color: #409d8b;
+$loading-spinner-color: #62a4a2;
 
 $experimental-support-for-mozilla : false;
 $experimental-support-for-webkit : false;
@@ -27,64 +27,109 @@ $experimental-support-for-khtml : false;
   
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon.ttf')}  
-
-.again, h3, .quizTitle, .resulttext, .x-dataview-item, .x-list .x-list-item, .audioButton, .menu-hint, .x-msgbox-text, .parentalgate {
+  src: url('../fonts/icomoon.ttf')
+  }  
+  
+.again, h3, .quizTitle, .resulttext, .audioButton, .menu-hint, .x-msgbox-text, .menu-abc, .x-list .x-list-item, .x-dataview-item, .x-list-header, .parentalgate, .x-button-label, .x-badge, .catitemtitle  {
   font-family: 'Handlee', Helvetica Neue;
-  color: #dde5cd !important;
+  color: #fff !important;
 }
 
 
 body {
-  background-color: #65bcab
+  background-color: #fff
 }
 
+//--------------------------------------------- Hardware Acceleration Trick -----------------------------------------
+.viewport-inner {
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s;
+}
+
+//--------------------------------------------- MASK -----------------------------------------
+
+.x-mask {
+background: #7BCDC7;
+//-webkit-animation: fadein 0.3s ease-in !important;
+}
+.x-mask .x-mask-inner, .x-mask .x-mask-outer {
+  background: none;
+}
+
+.x-mask .x-mask-message {
+  color:#fff;
+}
+
+.masklist {
+background-image: url('../images/fingerspellingbg.svg') !important;
+background-size: auto 100% !important;
+z-index:600 !important;
+}
 //-------------------------------------------- MENU -------------------------------------------
 
 #nav-menu {
   background-color: #E56072;
   background-image: url('../images/navback.svg') !important;
   background-repeat: no-repeat !important;
-  color: #dde5cd;
-  padding: 0 0 0 20px
+  color: #fff;
+  padding: 0 0 0 20px;
+  z-index: 0;
 }
 
-.x-list .x-list-item.x-item-pressed {
+
+ .x-list .x-list-item.x-item-pressed {
+  background-color: transparent !important;
+// border: 1px dashed rgba(255, 255, 255, 0.40) !important;
+ }
+
+ .x-list .x-list-item.x-item-selected .x-dock-horizontal {
  background-color: transparent !important;
-border: 1px dashed rgba(222, 227, 206, 0.40) !important;
-}
+// border: 1px dashed rgba(255, 255, 255, 0.40) !important;
+ }
 
-.x-list .x-list-item.x-item-selected .x-dock-horizontal {
-background-color: transparent !important;
-border: 1px dashed rgba(222, 227, 206, 0.40) !important;
-}
+ .x-list .x-list-item.x-item-selected.x-list-item-tpl {
+ background-color: transparent !important;
+// border: 1px dashed rgba(255, 255, 255, 0.40) !important;
+ }
 
-.x-list .x-list-item.x-item-selected.x-list-item-tpl {
-background-color: transparent !important;
-border: 1px dashed rgba(222, 227, 206, 0.40) !important;
+.menu-icon-big1 {
+    font-size: 60px;
+    margin: 30px 0 0 0;
+    font-family: 'icomoon';
+    width: 100px;
+    line-height: 70px;
+    color: #fff !important;
 }
 
 .menu-icon-big {
-  font-size: 60px;
-  margin: 15px 0 0 0;
-  font-family: 'icomoon';
-  width: 100px;
-  color: rgba(221, 229, 206, 0.7) !important
+    font-size: 60px;
+    margin: 15px 0 0;
+    font-family: 'icomoon';
+    width: 100px;
+    line-height: 70px;
+    color: #fff !important;
 }
 
 .menu-icon-small {
   font-size: 30px;
-  margin: 5px 0 5px;
   font-family: 'icomoon';
+  width:50px;
+  color: #fff !important
+}
+
+.menu-abc {
+  font-size: 30px;
+  margin: 0;
   width:100px;
-  color: rgba(221, 229, 206, 0.7) !important
+  color: #fff !important
 }
 
 #nav-menu .x-list .x-list-item {
- margin: 25px 0;
+ margin: 0px 0 50px 0;
   width: auto;
   height: auto;
-  border: 1px solid transparent;
+border: 0px solid transparent !important;
 }
 
 
@@ -97,31 +142,75 @@ background-position: center center, center top !important;
 background-repeat: no-repeat !important
 }
   
-.menu-hint {
-  -webkit-animation: menudown 3s;
-  -webkit-animation-delay: 4s;
- position: absolute;
-  bottom: 150px;
-  left: 50%;
-  margin-left: -50px;
-  width: 100px;
-  height: 100px;
-  background-color: #f4c151;
-  opacity:0;
-  color: #c53c4c !important;
-  padding-top: 20px;
-  text-align: center;
-  line-height: 35px;
-  border-radius: 50%;
-  font-size: 28px
+//-------------------------------------------- list ------------------------------------------- 
+.x-scroll-bar-y.active {
+  width: 0px; /*CHANGE: replace width: 6px;*/
 }
 
-@-webkit-keyframes menudown {
-    0% { bottom: 0; opacity: 0; }
-    75%   { bottom: 20px; opacity: 1;}
-    100%   { bottom: 0; opacity: 0;}
+.gebarenview {
+  background-color: #99dddb;
+  background-image: url('../images/signoverviewback.svg') !important;
+  background-size: auto 100% !important;
 }
-//-------------------------------------------- list ------------------------------------------- 
+
+.catitemtitle {
+  background-color: #99dddb;
+  margin: 30px 0 0 0;
+  font-size: 22px;
+}
+
+.x-toolbar {
+    border-radius: 0 !important;
+background-color: transparent !important;
+  }
+
+.gebarencat .x-dataview-item {
+    width: 80%;
+    height: 100px;
+    margin: 15px 0 5px 0;
+    background-color: rgba(186, 228, 226, 0.32);
+    font-size: 20px !important;
+    line-height: 100px !important;
+    display: inline-block;
+}
+
+
+
+.gebarencat .x-dataview-item img {
+    width: 50%;
+    height: 100px;
+    float: left;
+    margin: 0 -25px 0 20px;   
+}
+
+.x-layout-card-item {
+   background: none; 
+}
+
+.arrow_left {
+    background-image: url('../images/previous.svg') !important;
+  background-size: 58px;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important;
+ height: 60px;
+   width: 60px;
+   margin:5px 10px;
+}
+
+.x-list .x-list-header {
+position: absolute;
+left: 0;
+width: 100%;
+z-index: 2 !important;
+background-color: #99dddb;
+border-top: 1px solid #fff;
+border-bottom: 1px solid #fff;
+font-weight: normal;
+color: white;
+margin: 20px 0;
+padding: 5px;
+font-size: 20px;
+}
 
 .gebarendetail {
  background-color: #64bba9 !important;
@@ -136,8 +225,9 @@ background-repeat: no-repeat !important
 
 
 .gebarenlijst {
-  background-color: #65bcab !important;
-  text-align: center
+text-align: center;
+padding: 20px 0 0 0;
+
 }
 
 .gebarenlijst img {
@@ -159,21 +249,36 @@ display:inline-block;
   margin: 2px;
   width: 100px;
   height: 100px;
-  border: 1px solid #9ED0BB;
-  border-radius: 5px;
+  border: 1px solid #fff !important;
+//  border-radius: 5px;
   text-align: center;
-  font-size: 1em
+// Android list font 0.1 groter gemaakt
+  font-size: 1.1em;
 }
 
 .x-list .x-list-item.x-list-item-tpl .x-innerhtml {
-  padding:0
+  overflow: hidden;
+  padding: 0
+}
+
+.listbuybutton {
+  width: 308px;
+  height: 85px;
+  background-image: url('../images/listbuybutton.svg') !important;
+  background-repeat: no-repeat !important;
+  margin:0 auto;
+  border: none;
+  font-size: 15px;
+  padding:0 0 11px 210px;
 }
 
 
 //-------------------------------------------- INFO-------------------------------
 
 .infoscreen {
- background: -webkit-linear-gradient(#409d8b, #65bcab) !important; /* For Safari 5.1 to 6.0 */
+ background: #ffffff;
+ background-image: url('../images/infobackgr.svg') !important;
+background-size: auto 100% !important;
 }
 
 h3 {margin:0; padding: 10px 0 10px 0; font-size: 1.4em !important} 
@@ -186,13 +291,23 @@ h4 {color: #A9D1BC !important; font-size: 1em !important; text-align: center}
 
 .infotext {
   line-height: 1.6 !important;
-  color: #dde5cd;
-  font-size: 1.1em !important;
+  color: #54c2c2;
+  font-size: 1.2em !important;
   padding: 0 5% !important
 //  font-family: 'Helvetica Neue'
 }
 
 //-------------------------------------------- BUTTONS -------------------------------------------
+.x-msgbox-buttons .x-button-label {
+  visibility: hidden;
+}
+
+.x-msgbox-buttons .x-button-label:after {
+  content: 'continue >'; 
+  visibility: visible;
+  text-indent: 0;
+  margin-left:-40px !important;
+}
 
 .closebutton {
   width: 40px;
@@ -219,7 +334,7 @@ background-size: 60px auto;
 background-position: center bottom !important;
 background-repeat: no-repeat !important;
 border: 0px none !important;
-width:120px;
+width:300px;
 padding: 0px 0px 60px !important;
 font-size: 1.3em;
 margin-top:-10px;
@@ -227,18 +342,19 @@ z-index: 4
 }
 
 .x-button-icon .x-shown menu .x-button-label {
-  color: #dde5cd !important;  
+  color: #fff !important;  
   letter-spacing: 1px !important;
   text-align: left !important;
   font-family: Helvetica Neue 
 }
 
 .x-button-label {
-color: #dde5cd
+color: #fff;
+// padding: 0 0 15px 0;
 }
 
 .backButton  {
-  background-image: url('../images/back.svg') !important;
+  background-image: url('../images/previous.svg') !important;
   background-size: 58px;
   background-position: 0 0 !important;
   background-repeat: no-repeat !important;
@@ -247,6 +363,18 @@ color: #dde5cd
    margin: -40px 0 0 10px;
     border: none;
     z-index: 4
+}
+.backListButton  {
+  background-image: url('../images/back.svg') !important;
+  background-size: 58px;
+  background-position: 0 0 !important;
+  background-repeat: no-repeat !important;
+ height: 60px;
+   width: 60px;
+   margin: 40px 0 0 10px;
+    border: none;
+    z-index: 4;
+    position: absolute;
 }
 
 .nextButton  {
@@ -266,7 +394,7 @@ color: #dde5cd
      background-position: center center;
      background-size: 60px;
    background-repeat: no-repeat;
-   width: 200px !important;
+//   width: 200px !important;
    height: 80px !important; 
    border: 0 !important;
     font-size: 2em;
@@ -274,35 +402,47 @@ color: #dde5cd
 }
 
 
-.listbuybutton, .quizresultbuybutton, .restoreButton {
-  width: 308px;
-  height: 70px;
-  background-image: url('../images/listbuybutton.svg') !important;
-  background-repeat: no-repeat !important;
-  margin:0 auto;
-  border: none;
-  font-size: 16px;
-  color: #ecefe6
-}
+//.quizresultbuybutton {
+//  width: 768px;
+//  height: 285px;
+//  background-image: url('../images/logos.png') !important;
+//  background-repeat: no-repeat !important;
+//  margin:0 auto;
+//  border: none;
+//  font-size: 15px;
+//  padding:0 0 11px 0px;
+//}
 
-.restoreButton {
-    background-image: url('../images/restorebutton.svg') !important;
+//.restoreButton {
+//    background-image: url('../images/restorebutton.svg') !important;
+//      width: 308px;
+//  height: 85px;
+//  background-repeat: no-repeat !important;
+//  margin:0 auto;
+//  border: none;
+//  font-size: 15px;
+//    padding:6px 0 11px 5px;
+//}
+
+.fingerspellingscreen {
+background-image: url('../images/fingerspellingbg.svg') !important;
+background-color: #7bcdcb!important;
+background-size: auto 100% !important;
+  padding-top: 50px 
 }
 
 //-------------------------------------------- PLAY / QUIZ -------------------------------------
 .quizbackground {
   background-image: url('../images/quizbackground.svg') !important;
   background-color: #65bcab !important;
-  background-size: auto 100% !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important
+background-size: auto 100% !important
 }
 
 .quizTitle {
   font-size: 1.4em;
   background-color: transparent;
   border: none !important;
-  color: #dde5cd;
+  color: #fff;
   padding: 25px 25px 0 25px
 }
 
@@ -311,14 +451,27 @@ text-align: center !important;
 }
 
 .x-dataview-item {
-  display:inline-block;
-  margin: 2px;
-  width: 100px;
-  height: 100px;
-  border: 1px solid #dde5cd;
-  border-radius: 5px;
-  font-size: 1em
+    display: -webkit-inline-box;
+    margin: 3px;
+    width: 100px;
+    height: 102px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 1.1em;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+    vertical-align: top!important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+   line-height: 1.5;
 }
+
+.x-dataview-item:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+}
+
 
 .x-dataview-item img {
 width: 140px;
@@ -337,39 +490,11 @@ border-radius: 10px;
 color: #DDE4CE
 }
 
-.parentalgate {
-width: 280px;
-height: 400px;
-border: medium none;
-background-color: #0990D3 !important;
-  background-image: url('../images/parentalgate.svg') !important;
-  background-repeat: no-repeat !important;
-border-radius: 10px;
-padding: 25px !important;
-text-align: center;
-padding: 0 10px;
-margin: 5px
-}
 
-span.number {
-  background-color: #d29f1c;
-  margin: 0 10px;
-  padding: 0 10px;
-  font-size: 22px;
-
-  &.active {
-    opacity: 0.5;
-  }
-}
-
-
-.enterthenumbers {
-margin: 75px 0 20px 0;
-}
-
-.parentalgate .x-button {
+.x-button {
     background-color: transparent !important;
-    margin: 10px 5px 0 5px;
+//    margin: 10px 5px 0 5px;
+//    margin: 0;
     font-size: 30px;
     border-radius: 5px
 }
@@ -387,9 +512,6 @@ height: 70px !important;
 border-radius: 10px
 }
 
-.x-toolbar {
-border-radius: 10px
-}
 
 .resulttext {
   font-size: 1.7em;
@@ -459,6 +581,54 @@ border-radius: 10px
  background-image: url('../images/count5.png') !important
 }
 
+.videoPlayButtonquiz {
+   background-image: url('../images/playbutton2.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center;
+  background-size:cover !important
+}
+
+
+// -------------------------------------------.parental gate -------------------------------------------
+
+
+.parentalgate {
+width: 280px;
+height: 400px;
+border: medium none;
+background-color: #0990D3 !important;
+  background-image: url('../images/parentalgate.svg') !important;
+  background-repeat: no-repeat !important;
+border-radius: 10px;
+padding: 25px !important;
+text-align: center;
+padding: 0 10px;
+margin: 5px
+}
+
+span.number {
+  background-color: #d29f1c;
+  margin: 0 10px;
+  padding: 0 10px;
+  font-size: 22px;
+
+  &.active {
+    opacity: 0.5;
+  }
+}
+
+
+.enterthenumbers {
+margin: 75px 0 20px 0;
+}
+
+.parentalgate .x-button {
+    background-color: transparent !important;
+    margin: 10px 5px 0 5px;
+    font-size: 30px;
+    border-radius: 5px
+}
+
 
 
 //-------------------------------------------- VIDEO -------------------------------------------
@@ -474,9 +644,17 @@ border: none;
 }
 
 .videoPlayButton {
-    background-image: url('../images/playbutton.svg') !important;
+   background-image: url('../images/playbutton.svg') !important;
   background-repeat: no-repeat !important;
-  background-position: center
+  background-position: center;
+    background-size:cover !important
+}
+
+video {
+ width: 100% !important;
+ height: auto !important;
+ -webkit-animation: fadein 0.3s ease-in !important;
+ bottom: 0 !important
 }
 
 //-------------------------------------------- ANIMATION -------------------------------------------
@@ -530,27 +708,66 @@ width: 3em;
 }
 
 .x-tabbar-dark {
-  border-top-color: #409d8b !important; 
-  border-bottom-color: #409d8b !important; 
-  background-image: #409d8b !important; 
-  background-color: #409d8b !important;
+  border-top-color: #EA5F72 !important; 
+  border-bottom-color: #EA5F72 !important; 
+  background-image: #EA5F72 !important; 
+  background-color: #EA5F72 !important;
 }
 
+.x-tabbar-dark .x-tab {
+    color: #fff !important;
+  }
+
+.x-tabbar-dark.x-docked-bottom .x-tab-active .x-button-icon:before {
+    color: #ffffff;
+}
+
+//.mask {
+//-webkit-mask-box-image: url('../images/mask.png') !important;
+//height: 432px !important;
+//   }
 //-------------------------------------------- NAVIGATION ICONS -------------------------------------------
 
 @include icon-font('icomoon', inline-font-files ('../fonts/icomoon.ttf'));
-@include icon("menu", "\e601", "icomoon");
+@include icon("menu", "\e903", "icomoon");
 
-//-------------------------------------------- iPad specific -------------------------------------------
+//-------------------------------------------- Tablets: iPad and Nexus 7 -------------------------------------------
+
+@media (min-width:600px) {
+
+
+  .x-dataview-item {
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  font-size: 1.3em;
+}
+
+.x-dataview-item img {
+    width: 190px;
+}  
+    
+  }
+
+//-------------------------------------------- iPad and bigger Androids screens specific -------------------------------------------
 
  
-@media screen and (min-device-width: 768px) and (max-device-width : 1024px) {
-video {
- width: 768px !important;
- height: 432px !important;
- -webkit-animation: fadein 0.3s ease-in !important;
- bottom: 0 !important
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  /* Styles */
+
+//video {
+// width: 768px !important;
+// height: 432px !important;
+//}
+
+.x-button {
+font-size: 40px;
+// margin: 0px 5px -15px 5px !important;
 }
+
 
 .again {
  background-size: 80px auto;
@@ -560,16 +777,16 @@ video {
 .videoborderoverlay {
   width: 768px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   bottom: 430px;
-  z-index: 3
-} 
+  z-index: 2
+}
 
 .quizvideoborderoverlay1 {
   width: 768px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   top: 60px;
   z-index: 3
@@ -578,27 +795,25 @@ video {
 .quizvideoborderoverlay2 {
   width: 768px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
-  top: 492px;
+  top: 490px;
   z-index: 3
 }
-.x-dataview-item {
-margin: 10px
-}
+
 
 .resulttext {
- margin-top: 200px;
+ margin-top: 100px;
 }
 
 .resulttext img {
   margin: 30px 0
 }
-.audioButton {
-  margin-top: -50px;
-  font-size: 1.5em
-}
-
+//.audioButton {
+//  margin-top: -50px;
+//  font-size: 1.5em;
+//  padding: 0px 0px 55px !important;
+//}
 
 .quizTitle {
   font-size: 2em
@@ -609,18 +824,17 @@ margin: 10px
 
 //-------------------------------------------- iPhone 6+ specific -------------------------------------------
 
-@media screen and (min-device-width: 414px) and (max-device-width : 415px) {
-video {
- width: 414px !important;
- height: 233px !important;
- -webkit-animation: fadein 0.3s ease-in !important;
-   bottom: 0 !important
-}
+@media screen and (min-device-width: 414px) and (max-device-width : 767px) {
+
+//video {
+// width: 414px !important;
+// height: 233px !important;
+//}
 
 .videoborderoverlay {
   width: 414px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   bottom: 232px;
   z-index: 2
@@ -629,7 +843,7 @@ video {
 .quizvideoborderoverlay1 {
   width: 414px;
   height: 4px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
 //  background-color: red;
   position: absolute;
   top: 122px;
@@ -638,7 +852,7 @@ video {
 .quizvideoborderoverlay2 {
   width: 414px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
 //  background-color: red;
   position: absolute;
   top: 354px;
@@ -665,17 +879,16 @@ video {
 //-------------------------------------------- iPhone 6 specific -------------------------------------------
 
 @media screen and (min-device-width: 375px) and (max-device-width : 376px) {
-video {
- width: 375px !important;
- height: 211px !important;
- -webkit-animation: fadein 0.3s ease-in !important;
-   bottom: 0 !important
-}
+  
+//video {
+// width: 375px !important;
+// height: 211px !important;
+//}
 
 .videoborderoverlay {
   width: 375px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   bottom: 209px;
   z-index: 2
@@ -684,7 +897,7 @@ video {
 .quizvideoborderoverlay1 {
   width: 375px;
   height: 4px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
 //  background-color: red;
   position: absolute;
   top: 90px;
@@ -693,7 +906,7 @@ video {
 .quizvideoborderoverlay2 {
   width: 375px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
 //  background-color: red;
   position: absolute;
   top: 301px;
@@ -713,6 +926,11 @@ video {
   margin: 20px 0
 }
 
+.x-button {
+//font-size: 40px;
+// margin: 0px !important;
+}
+
 }
 
 
@@ -724,7 +942,7 @@ video {
 .videoborderoverlay {
   width: 320px;
   height: 5px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   bottom: 179px;
   z-index: 2
@@ -735,15 +953,13 @@ video {
 
 @media screen and (min-device-height: 480px) and (max-device-height : 481px) {
 
-video {
- width: 320px !important;
- height: 180px !important;
-// -webkit-animation: fadein 0.3s ease-in !important;
-  bottom: 0 !important
-}
+//video {
+// width: 320px !important;
+// height: 180px !important;
+//}
 
 .gebarendetail {
-// background-color: #64bba9 !important;
+// background-color: #7bcdcb !important;
 // background-image: url('../images/textballoon.svg'), url('../images/rainbow.svg') !important;
  background-position: center top, center bottom !important
 //background-repeat: no-repeat !important
@@ -763,8 +979,8 @@ video {
 .quizvideoborderoverlay1 {
   width: 320px;
   height: 4px;
-//  background-color: #64bba9;
-  background-color: #64bba9;
+//  background-color: #7bcdcb;
+  background-color: #7bcdcb;
   position: absolute;
   top: 21px;
   z-index: 2
@@ -772,8 +988,8 @@ video {
 .quizvideoborderoverlay2 {
   width: 320px;
   height: 4px;
-//  background-color: #64bba9;
-  background-color: #64bba9;
+//  background-color: #7bcdcb;
+  background-color: #7bcdcb;
   position: absolute;
   top: 201px;
   z-index: 2
@@ -781,6 +997,7 @@ video {
 .backButton  {
    margin: -60px 0 0 10px;
 }
+
 
 .nextButton  {
    margin: -60px 10px 0 0;
@@ -797,17 +1014,15 @@ video {
 
 @media screen and (min-device-height: 567px) and (max-device-height : 569px) {
  
-video {
- width: 320px !important;
- height: 180px !important;
- -webkit-animation: fadein 0.3s ease-in !important;
-  bottom: 0 !important
-}
+//video {
+// width: 320px !important;
+// height: 180px !important;
+//}
   
 .quizvideoborderoverlay1 {
   width: 320px;
   height: 4px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   top: 66px;
   z-index: 2
@@ -815,7 +1030,7 @@ video {
 .quizvideoborderoverlay2 {
   width: 320px;
   height: 4px;
-  background-color: #64bba9;
+  background-color: #7bcdcb;
   position: absolute;
   top: 246px;
   z-index: 2

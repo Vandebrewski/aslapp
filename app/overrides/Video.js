@@ -10,7 +10,8 @@ Ext.define('ASLKids.overrides.Video', {
         tag: 'video',
         reference: 'media',
         classList: [Ext.baseCSSPrefix + 'media'],
-        'webkit-playsinline': 'true' // makes in play inline on iPhone
+//        'webkit-playsinline': 'true' // makes in play inline on iPhone iOS8 & iOS9
+        'playsinline': 'true' // makes in play inline on iPhone iOS10       
     }],
 
 	
@@ -30,7 +31,7 @@ Ext.define('ASLKids.overrides.Video', {
 	
 	onPause: function() {
         this.fireEvent('pause', this, this.getCurrentTime());
-        this.media.dom.currentTime = 0;
+//        this.media.dom.currentTime = 0; // this causes the first frame to be visible on videoEnded on slower devices
 
         if (!Ext.os.is.iPhone || !this.isInlineVideo) {
             this.media.setBottom(-2000);
@@ -43,7 +44,7 @@ Ext.define('ASLKids.overrides.Video', {
         
         me.callParent(arguments);
         
-	if (Ext.os.version.getMajor() > 7) { // ios8 hack for loading videos in listdetail
+	if (Ext.os.version.getMajor() > 7) { // ios8+ hack for loading videos in listdetail
         setTimeout(function() {
             me.media.dom.load();
         }, 100);

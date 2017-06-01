@@ -2,10 +2,16 @@ Ext.define('ASLKids.store.Gebaar',{
     extend: 'Ext.data.Store',
     config: {
         model: 'ASLKids.model.Gebaar',
+        
+       grouper: {
+            property: 'cat',
+            direction:'ASC'
+        },
+        
         autoLoad: true,
-        sorters: 'plaatje',
         storeId:'gebaarStore',
         method : 'GET',
+        
 
         proxy: {
             type: 'ajax',
@@ -15,8 +21,8 @@ Ext.define('ASLKids.store.Gebaar',{
                 rootProperty: 'Gebaartje'
             }
         }
-    },
-
+   },
+   
     initialize: function() {
         this.callParent(arguments);
 
@@ -32,5 +38,6 @@ Ext.define('ASLKids.store.Gebaar',{
     _onPurchase: function() {
         this.getProxy().setUrl('resources/images/Gebaren-purchased.json');
         this.load();
-    }
+}
+       
 });

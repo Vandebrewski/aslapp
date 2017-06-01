@@ -1,62 +1,21 @@
+
 Ext.define('ASLKids.view.Gebarenlijst', {
-    extend: 'Ext.List',
+    extend: 'Ext.dataview.DataView', // or should I use Ext.List instead of Ext.dataview.List
     xtype: 'gebarenlijst',
+    
+    fullscreen: true, // fix scroll issue?
     config: {
         cls: 'gebarenlijst',
-        scrollable: true,        
-		layout: 'fit',
-        store: 'gebaarStore',
+       	//grouped: true,
+        //scrollable: true,
+        //scroll: 'vertical',
+		//layout: 'fit',
+        store:'gebaarStore',
+//       cover: true,
+        
         itemTpl: '<img src="resources/images/objects/{plaatje}.svg">{plaatje}',
-
-        items: {
-        	xtype: 'button',
-        	docked: 'bottom',
-        	itemId: 'buyButton',
-        	disabled: true,
-       		height: 70,
-        	cls: 'listbuybutton',
-        	text:'Get 50 more Signs',
-        	handler: function () {
-	       		ASLKids.app.getController('IAP').purchase();
-			}   			
-		}
-    },
-
-    initialize: function() {
-        this.callParent(arguments);
-
-        var IAP = ASLKids.app.getController('IAP');
-
-        if (!IAP.getReady()) {
-            IAP.on('ready', this._onReady, this);
-        }
-        else {
-            this._onReady();
-        }
-
-        if (!IAP.getPurchased()) {
-            IAP.on('purchase', this._onPurchase, this);
-        }
-        else {
-            this._onPurchase();
-        }
-    },
-
-    getBuyButton: function() {
-        return this.getComponent('buyButton');
-    },
-
-    _onReady: function() {
-        var IAP = ASLKids.app.getController('IAP'),
-            buyBtn = this.getBuyButton();
-
-        buyBtn.setText('Get 50 more Signs ' + IAP.getPrice());
-
-        buyBtn.setDisabled(false);
-    },
-
-    _onPurchase: function() {
-        this.getBuyButton().setHidden(true);
+        
+        
+        
     }
 });
-
